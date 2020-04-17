@@ -27,10 +27,12 @@ jobs:
         run: |
           git submodule sync && git submodule update --init
 
-      - name: Installing dependency
+      - name: Installing Nodejs
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      
+      - name: Installing Dependency
         run: |
           npm install -g postcss-cli
           npm install -g autoprefixer
