@@ -1,0 +1,16 @@
+baseURL = "/"
+title = "Hobikoding"
+
+languageCode = "id-id"
+DefaultContentLanguage = "id"
+theme = "hobikoding-theme"
+disqusShortname = "XXXX"
+googleAnalytics = "UA-XXXXXXXX-X"
+paginate = 7
+
+[author]
+    name = "Saefulloh Maslul"
+    email = "hobikoding@gmail.com"
+
+[params]
+    description = "hobikoding - mari ngoding sambil tidur"
