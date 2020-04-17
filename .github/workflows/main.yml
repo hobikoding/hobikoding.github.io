@@ -12,12 +12,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: true
-
-      - name: Install Ruby Dev
-        run: sudo apt-get install ruby-dev
-
-      - name: Install AsciiDoctor and Rouge
-        run: sudo gem install asciidoctor rouge        
       
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
@@ -45,6 +39,5 @@ jobs:
           external_repository: saefullohmaslul/saefullohmaslul.github.io
           publish_dir: ./public
           publish_branch: master
-          keep_files: true
           user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
