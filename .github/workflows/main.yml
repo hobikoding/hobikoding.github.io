@@ -2,7 +2,7 @@ name: CI
 on: 
   push:
     branchs:
-      - master
+      - blog
 
 jobs:
   deploy:
@@ -44,7 +44,7 @@ jobs:
           personal_token: ${{ secrets.TOKEN }}
           external_repository: saefullohmaslul/saefullohmaslul.github.io
           publish_dir: ./public
-          publish_branch: gh-pages
+          publish_branch: master
           keep_files: true
           user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
