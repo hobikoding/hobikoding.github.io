@@ -30,10 +30,9 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.TOKEN }}
-          PUBLISH_BRANCH: master
-          PUBLISH_DIR: ./public
         with:
+          personal_token: ${{ secrets.TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
           user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
