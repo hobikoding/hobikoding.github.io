@@ -24,3 +24,4 @@ jobs:
           user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
           publish_branch: master
+          keep_files: true
