@@ -1,27 +1,43 @@
 name: CI
-on: push
+on: 
+  push:
+    branchs:
+      - master
+
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Install Ruby Dev
+        run: sudo apt-get install ruby-dev
+
+      - name: Install AsciiDoctor and Rouge
+        run: sudo gem install asciidoctor rouge        
       
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.64.0"
+          hugo-version: "0.68.3"
       
       - name: Build
-        run: hugo --minify
+        run: hugo
       
-      - name: deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
         with:
           personal_token: ${{ secrets.TOKEN }}
           external_repository: saefullohmaslul/saefullohmaslul.github.io
           publish_dir: ./public
+          publish_branch: gh-pages
+          keep_files: true
           user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
-          publish_branch: master
-          keep_files: true
