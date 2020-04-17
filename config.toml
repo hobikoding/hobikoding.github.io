@@ -3,7 +3,8 @@ title = "Hobikoding"
 
 languageCode = "id-id"
 DefaultContentLanguage = "id"
-theme = "hobikoding-theme"
+# theme = "hobikoding-theme"
+theme = "tailwind"
 disqusShortname = "XXXX"
 googleAnalytics = "UA-XXXXXXXX-X"
 paginate = 7

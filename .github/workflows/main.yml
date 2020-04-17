@@ -7,6 +7,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
@@ -21,6 +26,16 @@ jobs:
       - name: Prepare hugo
         run: |
           git submodule sync && git submodule update --init
+
+      - name: Installing dependency
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+        run: |
+          npm install -g postcss-cli
+          npm install -g autoprefixer
+          cd themes/tailwind
+          npm install
 
       - name: Build
         run: make build
