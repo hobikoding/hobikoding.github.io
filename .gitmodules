@@ -1,6 +1,3 @@
 [submodule "themes/hobikoding-theme"]
 	path = themes/hobikoding-theme
 	url = https://github.com/saefullohmaslul/hobikoding-theme.git
-[submodule "themes/tailwind"]
-	path = themes/tailwind
-	url = https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter
