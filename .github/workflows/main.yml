@@ -13,36 +13,24 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - name: Git checkout
+      - name: Checkout Latest Commit
         uses: actions/checkout@v2
         with:
           submodules: true
       
-      - name: Setup hugo
+      - name: Installing Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.68.3"
       
-      - name: Prepare hugo
+      - name: Preparation
         run: |
           git submodule sync && git submodule update --init
-
-      - name: Installing Nodejs
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      
-      - name: Installing Dependency
-        run: |
-          npm install -g postcss-cli
-          npm install -g autoprefixer
-          cd themes/tailwind
-          npm install
 
       - name: Build
         run: make build
       
-      - name: add nojekyll
+      - name: Add .nojekyll
         run: touch ./public/.nojekyll
 
       - name: Deploy
