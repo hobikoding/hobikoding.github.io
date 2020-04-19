@@ -7,11 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-18.04
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
       - name: Checkout Latest Commit
         uses: actions/checkout@v2
