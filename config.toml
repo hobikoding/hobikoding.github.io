@@ -1,16 +1,30 @@
 baseURL = "http://saefullohmaslul.github.io"
-title = "Hobikoding"
+title = "Hobi Koding — Mati Ngoding Sambil Tidur"
+copyright = "Copyright (c) 2018, Hobikoding; all rights reserved."
 
 languageCode = "id-id"
 DefaultContentLanguage = "id"
 theme = "hobikoding-theme"
-disqusShortname = "XXXX"
-googleAnalytics = "UA-XXXXXXXX-X"
-paginate = 7
+
+enableRobotsTXT = true
+enableEmoji = true
+disqusShortname = "hobikode"
+googleAnalytics = "UA-136352097-1"
+paginate = 6
+linenos=false
 
 [author]
     name = "Saefulloh Maslul"
     email = "hobikoding@gmail.com"
+    web = "https://hobikoding.com"
 
 [params]
     description = "hobikoding - mari ngoding sambil tidur"
+    SiteDescription = "Mari ngoding sambil tidur. Hobikode adalah blog yang akan membantumu belajar pemrograman dengan konten-konten berkualitas yang mudah dipahami"
+    DefaultKeywords = "ReactJS, Node.js, React Native, JavaScript, Typescript"
+
+[permalinks]
+    post = "/:slug/"
+
+[taxonomiex]
+    topic = "topic"
