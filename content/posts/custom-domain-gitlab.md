@@ -1,13 +1,13 @@
 ---
-title: "Custom Domain Gitlab Pages Dengan Idwebhost di Cloudflare + Sertifikat SSL/TLS Gratis"
+title: Custom Domain Gitlab Pages Dengan Idwebhost di Cloudflare + Sertifikat SSL/TLS Gratis
 date: 2019-03-22T18:57:42+07:00
-description: "Custom Domain Gitlab Pages Dengan Idwebhost di Cloudflare + Sertifikat SSL/TLS Gratis, Cara custom domain gitlab pages di cloudflare, cara mendapatkan SSL TLS gratis untuk blog, hosting gratis di gitlab dan github pages, pentingnya custom domain blog, manfaat custom domain static site generator, setting idwebhoat di cloudflare"
-keywords: "hugo custom domain gitlab pages idwebhost cloudflare SSL/TLS"
+description: Custom Domain Gitlab Pages Dengan Idwebhost di Cloudflare + Sertifikat SSL/TLS Gratis, Cara custom domain gitlab pages di cloudflare, cara mendapatkan SSL TLS gratis untuk blog, hosting gratis di gitlab dan github pages, pentingnya custom domain blog, manfaat custom domain static site generator, setting idwebhoat di cloudflare
+keywords: hugo custom domain gitlab pages idwebhost cloudflare SSL/TLS
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1553449712/Artikel/hosting.jpg"
-topik: [hugo, gitlab, cloudflare, idwebhost]
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1553449712/Artikel/hosting.jpg
+topic: [hugo, gitlab, cloudflare, idwebhost]
 slug: custom-domain-gitlab
-gitlab: 'artikel/custom-domain-gitlab.md'
+github: posts/custom-domain-gitlab.md
 ---
 
 Punya Gitlab Pages? dan mau custom domain gitlab pages agar terlihat lebih profesional?
@@ -24,7 +24,7 @@ Oke, pada artikel ini akan saya bagi menjadi beberapa bab:
 * [Setting domain gitlab pages dari cloudflare](#gitlab-cloudflare)
 * [Redirect domain.com ke www.domain.com](#redirect-cloudflare)
 
-# Apa Itu Gitlab Pages{#gitlab-pages}
+## Apa Itu Gitlab Pages{#gitlab-pages}
 
 Bagi yang sudah tau, silakan lanjut saja pada bab selanjutnya.
 
@@ -32,23 +32,23 @@ Gitlab pages adalah sarana yang diberikan Gitlab untuk meng-_host_ file static s
 
 Selain gitlab juga ada Github pages, keduanya sama saja. Namun jika project anda bukan _opensource_ disarankan menggunakan gitlab. Karena untuk membuat github pages, github meminta kita untuk _opensource_.
 
-## Kenapa harus gitlab/github pages{#pentingnya-gitlab-pages}
+### Kenapa harus gitlab/github pages{#pentingnya-gitlab-pages}
 
 Kenapa harus menggunakan sarana mereka?
 
 Sebenarnya tidak harus juga, anda bisa langsung menggunakan hosting kalau mau, tapi dengan sarana gitlab dan github pages kita bisa menghemat pengeluaran untuk menyewa hosting yang mahal, asalkan tadi, file kita adalah file _static_.
 
-## Apa itu file static{#apa-itu-ssg}
+### Apa itu file static{#apa-itu-ssg}
 
 Intinya file kita hanya html, css dan javascript. Ketiga file tersebut berjalan di sisi client, bukan di sisi server. Oleh karena itu disebut file static. Baca secara lengkap perbedaan _website static_ dan _dynamic_ di [dokumentasi gitlab](https://about.gitlab.com/2016/06/03/ssg-overview-gitlab-pages-part-1-dynamic-x-static/).
 
-## Kenapa harus custom domain{#pentingnya-custom-domain}
+### Kenapa harus custom domain{#pentingnya-custom-domain}
 
 Secara default, gitlab sudah memberikan domain yang cukup bagus, yaitu `*.gitlab.io`. Demikian juga github sudah memberikan domain `*.github.io`.
 
-Namun jika kita ingin mengubahnya menjadi `www``.hobikoding``.com` contohnya, kita harus meng-_custom_ domain kita.
+Namun jika kita ingin mengubahnya menjadi `www.hobikoding.com` contohnya, kita harus meng-_custom_ domain kita.
 
-# Mengalihkan Idwebhost ke Cloudflare{#idwebhost-ke-cloudflare}
+## Mengalihkan Idwebhost ke Cloudflare{#idwebhost-ke-cloudflare}
 
 Salah satu penyedia layanan domain dan hosting adalah idwebhost. Bukan bermaksud promosi karena jujur saja saya juga pernah mengalami hal yang tidak menyenangkan dengan cs idwebhost, saat itu ketika saya order domain organisasi yang katanya bisa di proses dengan surat pengantar organisasi ternyata tidak bisa, harus menyerahkan sk pendirian organisasi dan pertama kalinya saya kecewa dengan idwebhost karena saya telah bayar domain tersebut.
 
@@ -77,13 +77,13 @@ Oke kita lupakan ceritanya, balik lagi ke topik hehe :smiley:
 
     Proses penggantian nameserver dapat memakan waktu hingga satu hari. Cloudflare akan mengecek penggantian secara berkala, jadi tunggu saja hingga proses penggantian nameserver selesai.
 
-# Setting SSL/TLS Certificates untuk gitlab pages{#ssl-tls-gratis}
+## Setting SSL/TLS Certificates untuk gitlab pages{#ssl-tls-gratis}
 
 Apabila domain kita sudah dialihkan ke cloudflare, selanjutnya kita setting DNS.
 
 1. Masuk ke akun gitlab, kemudian pilih repository yang akan disetting domainnya. Pilih menu ***Pengaturan*** repository -> ***Pages*** -> ***New Domain***
 
-1. Pada kolom Domain masukkan domain custom, contoh: `hobikoding``.com`
+1. Pada kolom Domain masukkan domain custom, contoh: `hobikoding.com`
 
 1. Kemudian jika anda ingin alamat domainnya menggunakan `https` maka masukkan Certificat PEM dan Key (PEM). Dimana kita mendapatkannya?
 
@@ -92,7 +92,7 @@ Apabila domain kita sudah dialihkan ke cloudflare, selanjutnya kita setting DNS.
     * apabila alamat gitlab pages <mark>`https`://gitlabpages.gitlab.io</mark> maka pilih ***Full***.
     * apabila alamat gitlab pages <mark>`http`://gitlabpages.gitlab.io</mark> maka pilih ***Flexible***
 
-1. Selanjutnya pada pengaturan Origin Certificates, buat sertifikat dengan ***Create Certificates***. Isi domain dengan `www``.domain``.com` contoh `www``.hobikoding``.com` kemudian tekan **Next**.
+1. Selanjutnya pada pengaturan Origin Certificates, buat sertifikat dengan ***Create Certificates***. Isi domain dengan `www.domain.com` contoh `www.hobikoding.com` kemudian tekan **Next**.
 1. Cloudflare akan memberikan Certificat PEM dan Key (PEM), masukkan kedua kode tersebut ke pengaturan domain pada gitlab. Kemudian pada kolom Certificat PEM **tambahkan** [kode berikut](https://about.gitlab.com/2017/02/07/setting-up-gitlab-pages-with-cloudflare-certificates/#step-4-the-trick):
 
     ```bash
@@ -125,17 +125,18 @@ Apabila domain kita sudah dialihkan ke cloudflare, selanjutnya kita setting DNS.
     >**Catatan:**
     >
     >Antara Certificate PEM dengan kode di atas diberi `enter` sehingga akan nampak seperti ini
+
     ```bash
     *****************************************************dBGao4sYdE=
     -----END CERTIFICATE-----
-    
+
     -----BEGIN CERTIFICATE-----
     MIID/DCCAuagAwIBAgIID+rOSdTGfGcwCwYJKoZIhvcNAQELMIGLMQswCQYDVQQG
     ```
 
 1. Setelah itu tekan **Create New Domain**
 
-# Setting domain gitlab pages dari cloudflare{#gitlab-cloudflare}
+## Setting domain gitlab pages dari cloudflare{#gitlab-cloudflare}
 
 1. Setelah kita membuat domain di gitlab, selanjutnya kita memverifikasi domain tersebut dengan cara masuk ke menu DNS pada akun cloudflare. Kemudian buat pengaturan DNS seperti berikut ini **(dengan catatan)**
 
@@ -143,25 +144,25 @@ Apabila domain kita sudah dialihkan ke cloudflare, selanjutnya kita setting DNS.
 
     | Type | Name | Value |
     |:----:|------|------
-    | A | `hobikoding``.com` | 35.185.44.232 |
+    | A | `hobikoding.com` | 35.185.44.232 |
     | CNAME | www | gitlabpages.gitlab.io |
     | TXT | _gitlab-pages-verification-code.www | gitlab-pages-verification-code=********** |
 
     >**Catatan:**
     >
     >1. 35.185.44.232 merupakan [DNS dari Gitlab](https://about.gitlab.com/2018/07/19/gcp-move-update/#gitlab-pages-and-custom-domains)
-    >1. ganti `hobikoding``.com` dengan domain anda
+    >1. ganti `hobikoding.com` dengan domain anda
     >1. ganti `gitlabpages.gitlab.io` dengan alamat gitlab anda
     >1. ganti `_gitlab-pages-verification-code.www` dengan kode yang diberikan oleh gitlab pada halaman verifikasi domain sebelumnya
     >1. ganti `gitlab-pages-verification-code=**********` dengan kode yang diberikan oleh gitlab pada halaman verifikasi domain sebelumnya
 
 1. Jika sudah, kembali ke halaman verifikasi gitlab dan tekan **verifikasi**. Apabila gagal, tunggu hingga 24 jam kemudian verifikasi kembali.
 
-# Redirect domain.com ke www.domain.com{#redirect-cloudflare}
+## Redirect domain.com ke www.domain.com{#redirect-cloudflare}
 
-Jika anda berhasil mengikuti semua langkah di atas, maka kita sudah bisa mengakses gitlab pages menggunakan domain custom kita seperti `www``.hobikoding``.com`.
+Jika anda berhasil mengikuti semua langkah di atas, maka kita sudah bisa mengakses gitlab pages menggunakan domain custom kita seperti `www.hobikoding.com`.
 
-Namun ketika kita buang `www`-nya akan terjadi error. Hal ini karena kita belum redirect `domain``.com` ke `www``.domain``.com`.
+Namun ketika kita buang `www`-nya akan terjadi error. Hal ini karena kita belum redirect `domain.com` ke `www.domain.com`.
 
 Cara redirectnya yaitu:
 
@@ -169,6 +170,6 @@ Cara redirectnya yaitu:
 
 1. Buat pengaturan baru dengan menekan tombol Create Page Rule
 
-1. Buat pengaturan **Forwarding URL (301 - Permanent Redirect)** dari `domain``.com/*` ke `https:``//www``.domain``.com/$1` dan dari `domain``.com/` ke `https:``//www``.domain``.com`
+1. Buat pengaturan **Forwarding URL (301 - Permanent Redirect)** dari `domain.com/*` ke `https://www.domain.com/$1` dan dari `domain.com/` ke `https://www.domain.com`
 
 1. Tekan Save and Deploy

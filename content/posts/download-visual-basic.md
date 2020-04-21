@@ -1,13 +1,13 @@
 ---
-title: "Download Visual Basic 6.0 Enterprise"
+title: Download Visual Basic 6.0 Enterprise
 date: 2019-03-19T20:38:48+07:00
-description: "download visual basic full serial number, download serial number visual basic 6.0, download vb6 full registration, download vb 6.0 full serial number google drive"
-keywords: "download visual basic"
+description: download visual basic full serial number, download serial number visual basic 6.0, download vb6 full registration, download vb 6.0 full serial number google drive
+keywords: download visual basic
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1553005144/vb/vb.jpg"
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1553005144/vb/vb.jpg
 topik: [download]
 slug: download-visual-basic
-gitlab: 'artikel/download-visual-basic.md'
+github: posts/download-visual-basic.md
 ---
 
 Visual Basic 6.0 merupakan bahasa pemrograman kembangan dari bahasa BASIC (_Begineer's All-purpose Sysmbolic Instruction Code_) buatan Microsoft.

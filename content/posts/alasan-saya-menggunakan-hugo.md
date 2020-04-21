@@ -1,13 +1,13 @@
 ---
 title: "Alasan Saya Menggunakan Hugo: Migrasi Blogger Ke Hugo"
 date: 2019-03-13T14:55:01+07:00
-description: "Banyak sekali SSG yang tersedia. Ada Hugo, Gatsby, Next.js, Jekly dan Nuxt. Bagaimana cara migrasi dari blogger ke hugo, alasan menggunakan hugo daripada wordpress, membuat blog dengan static site generator, blogging offline, kelebihan hugo, kelemahan blogger dan wordpress, Saya belum pernah belajar bahasa pemrograman Go tapi sangat mudah membuat Hugo tanpa terlebih dahulu belajar Go, digaan saya hugo tidak mau menampilkan postingan karena tema yang eror"
-keywords: "hugo wordpress blogger"
+description: Banyak sekali SSG yang tersedia. Ada Hugo, Gatsby, Next.js, Jekly dan Nuxt. Bagaimana cara migrasi dari blogger ke hugo, alasan menggunakan hugo daripada wordpress, membuat blog dengan static site generator, blogging offline, kelebihan hugo, kelemahan blogger dan wordpress, Saya belum pernah belajar bahasa pemrograman Go tapi sangat mudah membuat Hugo tanpa terlebih dahulu belajar Go, digaan saya hugo tidak mau menampilkan postingan karena tema yang eror
+keywords: hugo wordpress blogger
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552640822/Hugo/hugo.png"
-topik: [hugo]
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552640822/Hugo/hugo.png
+topic: [hugo]
 slug: alasan-saya-menggunakan-hugo
-gitlab: 'artikel/alasan-saya-menggunakan-hugo.md'
+github: posts/alasan-saya-menggunakan-hugo.md
 ---
 
 Saya memiliki blog baru. Tapi tidak menggunakan Blogger ataupun Wordpress. Saya ingin mencoba sesuatu yang baru, yaitu menggunakan _Static Site Generator_ (SSG).
@@ -20,7 +20,7 @@ Tetapi setelah membaca panduan dari Next.js yang benar-benar harus membangun dar
 
 Disamping itu saya masih belum paham _query_ untuk menampilkan postingan yang dibuat. Jadi saya putuskan untuk mencoba hugo.
 
-# Mencoba Hugo Untuk Pertama Kali
+## Mencoba Hugo Untuk Pertama Kali
 
 Saya belum pernah belajar bahasa pemrograman Go. Tapi setelah melihat [Petanikode](https://www.petanikode.com/membuat-blog-dengan-hugo/) saya mulai mencoba belajar hugo.
 
@@ -38,7 +38,7 @@ Setelah saya coba, Wallaaa berhasil!
 
 Dugaan saya, ada eror untuk tema yang sebelumnya saya pakai sehingga postingan tidak bisa muncul.
 
-# Mendesain Layout
+## Mendesain Layout
 
 Jadi yang saya pelajari hingga kini, hugo menggenerate project kita sebagai file statis. Sedangkan untuk menampilkannya menggunakan layout yang sebelumnya harus kita buat terlebih dahulu.
 
@@ -46,13 +46,13 @@ Mendesain layout di hugo cukup mudah, karena saya pernah belajar bootstrap, dasa
 
 Tema yang saya buat merujuk pada tema milik [Petanikode](https://www.petanikode.com/), [Medium](https://medium.com/) dan [Javascript.info](http://javascript.info).
 
-## Kenapa merujuk ke dua situs itu?
+### Kenapa merujuk ke dua situs itu
 
 Menurut saya tema mereka bagus. Bersih dan nyaman untuk dibaca. Oleh karena itu saya mencoba menerapkan kedua tema tersebut di Blog ini.
 
 > Pada artikel selanjutnya akan saya jelaskan langkah-langkahnya membuat [Hobikoding](https://www.hobikoding.com) ini.
 
-# Rasanya Ngeblog Dengan Text Editor
+## Rasanya Ngeblog Dengan Text Editor
 
 Saya sendiri baru pernah menggunakan SSG. Sehingga baru pernah merasakan bloging dengan teks editor.
 
@@ -76,7 +76,7 @@ Saya tidak pelu menuliskan _syntax_ `html` yang rumit. Mengatur ukuran gambar, M
 
 Benar memang di blogger kita bisa menggunakan mode visualnya, tapi tetap saja ketika kita harus mengubah format tertentu dengan warna pilihan, akan sangat merepotkan melihat _syntax_ di blogger yang sangat ambur adul.
 
-# Mengapa Tidak Menggunakan Wordpress
+## Mengapa Tidak Menggunakan Wordpress
 
 Saya sudah dari 2014 menggunakan blogger untuk tempat ngeblog. Alasannya simpel, karna gratis.
 
@@ -94,7 +94,7 @@ Selain itu juga saya kurang suka dengan blogger. Karena menurut saya blogger ada
 
 Padahal penggunanya sangat banyak. Andai saja google mulai perhatian...
 
-# Penutup
+## Penutup
 
 Untuk saat ini saya akan fokus membangun blog dengan Hugo. Disamping saya juga akan belajar Gatsby.
 

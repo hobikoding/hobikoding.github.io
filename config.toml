@@ -24,7 +24,8 @@ linenos=false
     DefaultKeywords = "ReactJS, Node.js, React Native, JavaScript, Typescript"
 
 [permalinks]
-    post = "/:slug/"
+    posts = "/:slug"
+    page = "/:slug"
 
 [taxonomiex]
     topic = "topic"

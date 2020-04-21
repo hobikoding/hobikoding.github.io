@@ -1,13 +1,13 @@
 ---
-title: "Kelebihan Linux Fedora Dari Ubuntu dan Windows"
+title: Kelebihan Linux Fedora Dari Ubuntu dan Windows
 date: 2019-03-14T07:56:09+07:00
-description: "Kelebihan linux fedora dari ubuntu dan windows, kelebihan linux fedora dari distro linux lainnya, mengapa saya memilih fedora daripada ubuntu, perbandingan fedora dengan ubuntu, fedora vs ubuntu, banyaknya distro dalam linux justru menurut saya sedikit merepotkan bagi pemula. Karena banyaknya pilihan yang justru dapat membingungkan, kelebihan linux fedora yaitu minim error, desain yang elegan dan komunitas yang besar, lalu mana distro linux yang harus saya pilih?"
-keywords: "fedora linux ubuntu"
+description: Kelebihan linux fedora dari ubuntu dan windows, kelebihan linux fedora dari distro linux lainnya, mengapa saya memilih fedora daripada ubuntu, perbandingan fedora dengan ubuntu, fedora vs ubuntu, banyaknya distro dalam linux justru menurut saya sedikit merepotkan bagi pemula. Karena banyaknya pilihan yang justru dapat membingungkan, kelebihan linux fedora yaitu minim error, desain yang elegan dan komunitas yang besar, lalu mana distro linux yang harus saya pilih?
+keywords: fedora linux ubuntu
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552861569/Fedora/fedora.jpg"
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552861569/Fedora/fedora.jpg
 topik: [linux, fedora]
 slug: kelebihan-linux-fedora-dari-ubuntu-windows
-gitlab: 'artikel/kelebihan-linux-fedora-dari-ubuntu-windows.md'
+github: posts/kelebihan-linux-fedora-dari-ubuntu-windows.md
 ---
 
 Tercatat pada hari ini saya menginstal kembali Linux di laptop saya.

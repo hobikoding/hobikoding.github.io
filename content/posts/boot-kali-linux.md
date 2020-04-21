@@ -1,13 +1,13 @@
 ---
-title: "Cara Boot Live Kali Linux Iso Dari Linux Fedora"
+title: Cara Boot Live Kali Linux Iso Dari Linux Fedora
 date: 2019-03-18T11:03:30+07:00
-description: "Bagaimana cara bootable live cd kali linux menggunakan flashdisk di linux, cara membuat live iso kali linux di linux dengan benar, Bahkan ketika mencari artikel membuat bootable linux melalui linux sendiri sangat susah ditemukan"
-keywords: "boot live kali linux hacking pentest"
+description: Bagaimana cara bootable live cd kali linux menggunakan flashdisk di linux, cara membuat live iso kali linux di linux dengan benar, Bahkan ketika mencari artikel membuat bootable linux melalui linux sendiri sangat susah ditemukan
+keywords: boot live kali linux hacking pentest
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552895931/Kali/kali.jpg"
-topik: [linux]
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552895931/Kali/kali.jpg
+topic: [linux]
 slug: live-boot-kali-linux
-gitlab: 'artikel/boot-kali-linux.md'
+github: posts/boot-kali-linux.md
 ---
 
 Kita biasa membuat bootable linux via Windows. Bahkan ketika mencari artikel membuat bootable linux melalui linux sendiri sangat susah ditemukan.
@@ -18,13 +18,13 @@ Contohnya ketika membuat live boot Kali Linux, kebanyakan linux bisa di boot mel
 
 Jadi bagaimana cara yang benar untuk membuat bootable kali linux dari linux sendiri?
 
-# Menggunakan Terminal
+## Menggunakan Terminal
 
 Ya, cara ini memang sedikit menakutkan apabila kita melakukan kesalahan. Tapi mau bagaimana lagi?
 
 Caranya cukup mudah dan sudah dilansir pada [dokumentasi](https://docs.kali.org/downloading/kali-linux-live-usb-install) kali linux juga dalam bahasa inggris.
 
-## 1. Cek Disk Instalasi
+### Cek Disk Instalasi
 
 Cek disk anda dengan perintah berikut:
 
@@ -53,8 +53,6 @@ Perangkat       Start      Akhir    Sektor   Size Tipe
 /dev/sda8  1853218816 1953523711 100304896  47,8G Linux LVM
 
 
-
-
 Disk /dev/mapper/fedora-root: 30 GiB, 32212254720 bytes, 62914560 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 4096 bytes
@@ -73,7 +71,7 @@ Sector size (logical/physical): 512 bytes / 4096 bytes
 I/O size (minimum/optimal): 4096 bytes / 4096 bytes
 ```
 
-## 2. Colokan Flashdisk Untuk Live Kali Linux
+## Colokan Flashdisk Untuk Live Kali Linux
 
 Setelah melakukan pengecekan, masukan flashdisk untuk boot kali linuxnya.
 
@@ -137,7 +135,7 @@ Terlihat kan perbedaannya?
 
 Ada tambahan <mark>`Disk /dev/sdb: 7,2 GiB, 7748448256 bytes, 15133688 sectors ...`</mark> tepat seperti size dari flashdisk yang saya masukan.
 
-## 3. Menyalin File Instalasi Kali Linux
+### Menyalin File Instalasi Kali Linux
 
 Kita telah mengetahui lokasi flashdisk yang baru saja kita masukan. Yaitu di `/dev/sdb`.
 
@@ -165,6 +163,6 @@ Jika sudah selesai semua, akan muncul seperti ini (atau mirip):
 
 >**Catatan:** Linux saya menggunakan bahasa Indonesia sehingga menampilkan output bahasa Indonesia seperti terlihat di atas.
 
-# Penutup
+## Penutup
 
 Anda sekarang sudah bisa menggunakan flashdisk tersebut untuk live maupun instal kali linux di laptop lainnya. Sangat mudah sebenarnya, tapi perlu kehati-hatian. Sama saja ketika kita menggunakan uNetbootin atau Rufus.

@@ -1,14 +1,39 @@
-+++
-title = "About"
-date = 2015-04-03T02:13:50Z
-author = "My Name"
-description = "Things about me."
-+++
+---
+title: Selamat Datang di Hobikoding 😃
+description: Tentang Hobikoding adalah blog yang dirintis pada 13 Maret 2019. Blog ini fokus pada konten pemrograman baik di Windows, Linux dan Mac. Awal mula pembuatan Hobikoding karena ingin menyajikan konten pemrograman yang runtut step demi stepnya dalam bahasa Indonesia sehingga pembaca dapat memulainya dari dasar
+keywords: about tentang hobikoding
+draft: false
+slug: about
+---
 
-## About
+Hobikoding adalah blog yang dirintis pada 13 Maret 2019. Blog ini fokus pada konten pemrograman baik di Windows, Linux dan Mac.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas. Suspendisse eu erat tempor, tristique neque eu, convallis nulla. Curabitur vel bibendum lacus, at semper mauris. Suspendisse aliquet commodo ex, sed sagittis metus aliquam id. Maecenas feugiat rutrum lorem vel imperdiet. Nullam ornare lectus ut enim finibus, et porttitor mi tincidunt. Aenean lacinia, leo quis vehicula eleifend, quam libero sagittis erat, at euismod augue mauris et sapien. Sed id vehicula lectus, sit amet auctor ipsum. Nunc sed massa vel ex condimentum aliquam in a enim. Cras enim sem, tristique eu enim ac, congue commodo mi. Integer quis orci at dolor blandit eleifend.
+Awal mula pembuatan Hobikoding karena ingin menyajikan konten pemrograman yang runtut step demi stepnya dalam bahasa Indonesia sehingga pembaca dapat memulainya dari dasar.
 
-## School
+Hobikoding menggunakan Hugo sebagai mesin pembuat blognya. Sebelumnya kita mempunyai blog lain yaitu [Kopianget](https://www.kopianget.net) dengan CMS Blogger. Namun karena satu dan lain hal, Saya (Saefulloh Maslul) memutuskan untuk [beralih ke Hugo](https://www.hobikoding.com/alasan-saya-menggunakan-hugo/) sekaligus memakai domain baru.
 
-Sed quis pulvinar nisi, sed dapibus lacus. Mauris tempus ex ut ipsum facilisis interdum. Integer feugiat urna sed feugiat tempor. Quisque dictum vestibulum feugiat. Nunc nec est volutpat lorem imperdiet egestas sit amet ut orci. Aliquam venenatis neque ipsum, a placerat lectus cursus at. Donec pellentesque tellus hendrerit faucibus posuere. Etiam gravida consequat lectus, volutpat consectetur velit convallis nec. Praesent sagittis luctus dignissim.
+## Pengelola Hobikoding
+
+Pengelola blog Hobikoding hanya satu orang, yaitu saya sendiri [Saefulloh Maslul](https://maslul.kopianget.net). Untuk sekarang dan kedepannya mungkin hanya saya yang akan mengelola blog ini.
+
+Blog ini akan saya jadikan tempat salah dua hobi saya, yaitu menulis dan koding.
+
+## Langkah Ke Depan
+
+Untuk ke depannya, blog ini saya harapkan bisa dijadikan referensi belajar siswa-siswi maupun mahasiswa di Indonesia yang ingin belajar pemrograman dari dasar maupun beberapa topik yang belum dikuasai.
+
+Semoga dengan di buatnya blog ini, semakin banyak programmer Indonesia yang berinovasi menciptakan berbagai teknologi masa depan.
+
+## Sumber Dana
+
+Pengelolaan blog ini tentunya membutuhkan beberapa dana, baik untuk menyewa domain, akses internet dan pembuatan konten.
+
+Saat ini sumber dana pada Hobikoding dari Penulis sendiri. Kedepannya penulis berharap mendapatkan adsense dan banyak yang mensupportnya sehingga paling tidak penulis tidak perlu mengeluarkan dana untuk menyewa domain.
+
+## Pesan Untuk Pembaca
+
+Silakan manfaatkan konten di blog ini sebagai sarana pembelajaran. Konten pada blog ini boleh untuk disebarluaskan baik di blog pribadi, sekolah, maupun pembuatan buku dengan catatan untuk **_menyertakan sumber ke blog ini_**.
+
+Hal tersebut sangat penting dan perlu untuk menghargai karya yang dibuat oleh penulis sekaligus menjadi salah satu sifat yang harus dimiliki kaum akademis.
+
+Terimakasih telah membaca halaman ini, salam Hobi Koding.

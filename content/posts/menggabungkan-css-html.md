@@ -1,13 +1,13 @@
 ---
-title: "Tiga Cara Menggabungkan CSS Dengan HTML"
+title: Tiga Cara Menggabungkan CSS Dengan HTML
 date: 2019-03-19T13:31:21+07:00
-description: "bagaimana cara menggabungkan css dengan html, terdapat tiga cara untuk menggabungkan css dengan html yaitu inline style, inline style sheets dan external style sheets, ketiga cara tersebut memiliki kelebihannya masing-masing yaitu, beberapa cara mudah untuk memasang css ke dalam html project kita,"
-keywords: "html css"
+description: bagaimana cara menggabungkan css dengan html, terdapat tiga cara untuk menggabungkan css dengan html yaitu inline style, inline style sheets dan external style sheets, ketiga cara tersebut memiliki kelebihannya masing-masing yaitu, beberapa cara mudah untuk memasang css ke dalam html project kita
+keywords: html css
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg"
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg
 topik: [html, css]
 slug: menghubungkan-css-dan-html
-gitlab: 'html/menggabungkan-css-html.md'
+github: posts/menghubungkan-css-dan-html.md
 ---
 
 Untuk membuat halaman html menjadi lebih elegan dan dinamis, harus dilengkapi dengan css.

@@ -1,13 +1,13 @@
 ---
-title: "Cara Instal Visual Basic 6.0 Enterprise di Windows 10"
+title: Cara Instal Visual Basic 6.0 Enterprise di Windows 10
 date: 2019-03-19T19:30:32+07:00
-description: "cara instal visual basic 6.0 di windows 10, cara menginstall vb 6.0 di win 10 dengan benar, mengatasi eror mengintal visual basic di windows 10, bagaimana cara instalasi visual basic 6.0 di windows 10 yang eror, vb6 in windows 10, how to install vb 6 on windows 10, error instalasi vb di windows 10"
-keywords: "instal visual basic 6.0 di windows 10"
+description: cara instal visual basic 6.0 di windows 10, cara menginstall vb 6.0 di win 10 dengan benar, mengatasi eror mengintal visual basic di windows 10, bagaimana cara instalasi visual basic 6.0 di windows 10 yang eror, vb6 in windows 10, how to install vb 6 on windows 10, error instalasi vb di windows 10
+keywords: instal visual basic 6.0 di windows 10
 draft: false
-thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1553005144/vb/vb.jpg"
+thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1553005144/vb/vb.jpg
 topik: [vb]
 slug: instal-visual-basic
-gitlab: artikel/cara-instal-visual-basic.md'
+github: posts/cara-instal-visual-basic.md
 ---
 
 Visual Basic dinilai lebih memudahkan untuk pembelajaran pemrograman walaupun oleh user yang masih awam akan pemrograman, oleh karena itulah beberapa Universitas masih setia menggunakan kurikulum VB 6.0 dibandingkan VB.NET.
