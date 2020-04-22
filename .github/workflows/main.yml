@@ -17,16 +17,9 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.68.3"
-      
-      - name: Preparation
-        run: |
-          git submodule sync && git submodule update --init
 
       - name: Build
         run: make build
-      
-      - name: Add .nojekyll
-        run: touch ./public/.nojekyll
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -36,3 +29,6 @@ jobs:
           publish_branch: master
           user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
+          cname: hobikoding.com
+          disable_nojekyll: true
+          commit_message: ${{ github.event.head_commit.message }}
