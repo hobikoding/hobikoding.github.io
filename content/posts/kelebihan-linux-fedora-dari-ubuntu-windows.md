@@ -5,7 +5,7 @@ description: Kelebihan linux fedora dari ubuntu dan windows, kelebihan linux fed
 keywords: fedora linux ubuntu
 draft: false
 thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552861569/Fedora/fedora.jpg
-topik: [linux, fedora]
+topic: [linux, fedora]
 slug: kelebihan-linux-fedora-dari-ubuntu-windows
 github: posts/kelebihan-linux-fedora-dari-ubuntu-windows.md
 ---

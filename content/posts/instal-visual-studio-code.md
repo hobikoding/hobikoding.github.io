@@ -4,7 +4,7 @@ date: 2019-03-17T08:45:15+07:00
 description: step demi step cara menginstal visual studio code terbaru di windows, linux dan macOS dengan mudah. Visual Studio Code merupakan IDE Pemrograman yang bisa digunakan untuk banyak sekali bahasa pemrograman. download visual studio code untuk windows, linux, dan macOS
 keywords: instal visual studio code windows linux macOS
 draft: false
-topik: [download]
+topic: [download]
 thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552798965/Download/vscode.png
 slug: instal-visual-studio-code
 github: posts/instal-visual-studio-code.md

@@ -27,5 +27,5 @@ linenos=false
     posts = "/:slug"
     page = "/:slug"
 
-[taxonomiex]
+[taxonomies]
     topic = "topic"

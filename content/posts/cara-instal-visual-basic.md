@@ -5,7 +5,7 @@ description: cara instal visual basic 6.0 di windows 10, cara menginstall vb 6.0
 keywords: instal visual basic 6.0 di windows 10
 draft: false
 thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1553005144/vb/vb.jpg
-topik: [vb]
+topic: [vb]
 slug: instal-visual-basic
 github: posts/cara-instal-visual-basic.md
 ---

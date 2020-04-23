@@ -5,7 +5,7 @@ description: download visual basic full serial number, download serial number vi
 keywords: download visual basic
 draft: false
 thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1553005144/vb/vb.jpg
-topik: [download]
+topic: [download]
 slug: download-visual-basic
 github: posts/download-visual-basic.md
 ---

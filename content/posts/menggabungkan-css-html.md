@@ -5,7 +5,7 @@ description: bagaimana cara menggabungkan css dengan html, terdapat tiga cara un
 keywords: html css
 draft: false
 thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg
-topik: [html, css]
+topic: [html, css]
 slug: menghubungkan-css-dan-html
 github: posts/menghubungkan-css-dan-html.md
 ---
