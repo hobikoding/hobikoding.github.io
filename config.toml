@@ -29,3 +29,7 @@ linenos=false
 
 [taxonomies]
     topic = "topic"
+
+[outputs]
+    home = ["JSON", "HTML", "RSS"]
+    blog = ["JSON", "HTML", "RSS"]
