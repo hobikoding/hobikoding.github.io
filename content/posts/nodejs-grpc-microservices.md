@@ -305,7 +305,7 @@ npm run server
 > grpc-nodejs-example@1.0.0 server /grpc-nodejs-example
 > node grpc/notes/server
 
-Server running at http://localhost:50051
+{{< code/quote >}}Server running at http://localhost:50051{{< /code/quote >}}
 ```
 
 Dan terminal kedua mengonsumsi data dari server:
@@ -317,12 +317,12 @@ npm run notes:get
 > grpc-nodejs-example@1.0.0 notes:get /grpc-nodejs-example
 > node grpc/notes/client/get-notes.js
 
-{
+{{< code/quote >}}{
   notes: [
     { id: '1', title: 'Note 1', content: 'Content 1' },
     { id: '2', title: 'Note 2', content: 'Content 2' }
   ]
-}
+}{{< /code/quote >}}
 ```
 
 ## Penutup
