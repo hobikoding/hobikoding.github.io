@@ -108,6 +108,14 @@ Pertama kita buat terlebih dahulu loader untuk file proto. Sebenarnya ada 2 cara
 
 Yang akan kita gunakan di artikel ini adalah load langsung dari proto file.
 
+Pertama install seluruh library yang kita perlukan dalam project
+
+```bash
+npm i grpc @grpc/proto-loader
+```
+
+Selanjutnya pada ```grpc/index.js```
+
 {{< code/title >}}
 
 ```title
