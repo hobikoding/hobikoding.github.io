@@ -87,7 +87,7 @@ message NoteList {
 }
 ```
 
-{{< /code/title >}}
+{{< code/title-end >}}
 
 Keterangan:
 
@@ -137,7 +137,7 @@ module.exports = {
 }
 ```
 
-{{< /code/title >}}
+{{< code/title-end >}}
 
 Pada kode di atas kita membuat package definition untuk service notes dan meng-_export_-nya untuk digunakan file lain.
 
@@ -202,7 +202,7 @@ server.start()
 console.log('Server running at http://localhost:50051')
 ```
 
-{{< /code/title >}}
+{{< code/title-end >}}
 
 ## Membuat Notes Client
 
@@ -233,7 +233,7 @@ const client = new notesPackageDefinition.NoteService(
 module.exports = client
 ```
 
-{{< /code/title >}}
+{{< code/title-end >}}
 
 Pada kode di atas, kita membuat sebuah client dari notes server. Client ini akan digunakan pada setiap method yang dipanggil.
 
@@ -270,7 +270,7 @@ const getNotes = async () => {
 getNotes()
 ```
 
-{{< /code/title >}}
+{{< code/title-end >}}
 
 Pada kode di atas, kita membuat method dengan nama ```getNotes```. Method tersebut akan menghasilkan nilai balik berupa notes yang di dapatkan dengan memanggil method list dari client.
 
@@ -288,13 +288,13 @@ package.json
 ...
 "scripts": {
   ...
-  "server": "node grpc/notes/server",
-  "notes:get": "node grpc/notes/client/get-notes.js"
+{{< code/quote >}}  "server": "node grpc/notes/server",
+  "notes:get": "node grpc/notes/client/get-notes.js"{{< /code/quote >}}
 }
 ...
 ```
 
-{{< /code/title >}}
+{{< code/title-end >}}
 
 Selanjutnya kita buka dua terminal. Terminal pertama menjalankan server:
 
