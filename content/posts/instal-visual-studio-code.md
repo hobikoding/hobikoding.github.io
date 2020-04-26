@@ -24,11 +24,19 @@ Visual Studio Code terdapat beberapa fitur yang membantu para programmer, fitur 
 
 Pada Windows, terminal Visual Studio Code dapat menggunakan PowerShell maupun CMD. Sedangkan pada linux terminal yang digunakan adalah Bash.
 
-# Install VS Code Windows
+## Install VS Code Windows
 
 Untuk menginstall Visual Studio Code di Windows, Anda dapat mendownload master filenya melalui link di bawah.
 
-## Cara Instal Di Windows
+{{< download
+    os="windows"
+    nama="Visual Studio Code"
+    rating="90"
+    link="https://code.visualstudio.com/docs/?dv=win"
+    icon="https://1.bp.blogspot.com/-9ZH5I3RrhZg/WqTDC_ddIeI/AAAAAAAAH1M/lqeHxniDY-IbHntpm_xqWG0W1FnkGznWwCLcBGAs/s1600/IconVS.png"
+>}}
+
+### Cara Instal Di Windows
 
 Cara instal Visual Studio Code di Windows sangat mudah, yaitu kita tinggal menekan tombol next saja.
 
@@ -38,13 +46,13 @@ Cara instal Visual Studio Code di Windows sangat mudah, yaitu kita tinggal menek
 
 1. Selanjutnya tekan next hingga instalasi selesai.
 
-# Install VS Code Linux
+## Install VS Code Linux
 
 Terdapat tiga versi untuk menginstal Visual Studio Code di linux. Mana yang Anda pilih?
 
 Tergantung distro linux apa yang Anda gunakan.
 
-## 1. Ubuntu, Debian
+### 1. Ubuntu, Debian
 
 Untuk melakukan instalasi pada Ubuntu, langkah pertama yaitu dengan menambahkan repositori dan key.
 
@@ -61,7 +69,7 @@ sudo apt-get update
 sudo apt-get install code # or code-insiders
 ```
 
-## 2. RHEL, Fedora, dan CentOS
+### 2. RHEL, Fedora, dan CentOS
 
 Untuk melakukan instalasi, langkah pertama yaitu dengan menambahkan repositori dan key.
 
@@ -77,7 +85,7 @@ dnf check-update
 sudo dnf install code
 ```
 
-## 3. openSUSE dan SLE
+### 3. openSUSE dan SLE
 
 Untuk melakukan instalasi, langkah pertama yaitu dengan menambahkan repositori dan key.
 
@@ -93,16 +101,24 @@ sudo zypper refresh
 sudo zypper install code
 ```
 
-# Install VS Code MacOS
+## Install VS Code MacOS
 
 Untuk menginstall Visual Studio Code di Windows, Anda dapat mendownload master filenya melalui link di bawah.
 
-## Cara Instal Di Mac OS
+{{< download
+    os="osx"
+    nama="Visual Studio Code"
+    rating="90"
+    link="https://code.visualstudio.com/docs/?dv=osx"
+    icon="https://1.bp.blogspot.com/-9ZH5I3RrhZg/WqTDC_ddIeI/AAAAAAAAH1M/lqeHxniDY-IbHntpm_xqWG0W1FnkGznWwCLcBGAs/s1600/IconVS.png"
+>}}
+
+### Cara Instal Di Mac OS
 
 Ini adalah cara yang paling mudah. Pertama download terlebih dahulu Visual Studio Code pada link di atas.
 
 Setelah di download, langsung buka aplikasi tersebut. Visual Studio Code bisa langsung digunakan.
 
-# Penutup
+## Penutup
 
 Itulah beberapa cara instalasi visual studio code di Windows, Linux, dan Mac OS. Setelah penginstalan selesai, VS Code sudah dapat digunakan untuk menuliskan dan menjalankan kode Anda.

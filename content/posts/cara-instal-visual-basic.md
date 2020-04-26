@@ -18,11 +18,19 @@ Hanya saja pada Windows 10, terkadang terdapat beberapa ke-_eror_-an ketika peng
 
 Namun walaupun terdapat keeroran, Visual Basic 6.0 masih dapat dijalankan dengan lancar.
 
-# Download Visual Basic 6.0
+## Download Visual Basic 6.0
 
 Untuk cara penginstalannya sendiri, diperlukan file instalasi Visual Basic 6.0 yang sudah saya sediakan di bawah ini.
 
-# Cara Install Visual Basic 6.0
+{{< download
+    os="windows"
+    nama="Visual Basic 6.0"
+    rating="85"
+    link="https://drive.google.com/open?id=1DDIEl5eJp6h_CigZkFFtyknj_QIOjxtO"
+    icon="https://res.cloudinary.com/hobikoding/image/upload/v1553002532/vb/vb-icon.png"
+>}}
+
+## Cara Install Visual Basic 6.0
 
 Pertama ekstrak terlebih dahulu file instalasi VB 6.0, kemudian buka file bernama `setup.exe`
 
@@ -66,4 +74,4 @@ Jika sudah terlalu lama updating system, exit saja dari instalasi dan lakukan `r
 
 Jika sudah maka Visual Basic 6.0 sudah dapat digunakan dengan baik. Untuk pembuatan program dengan Visual Basic dapat Anda lihat artikelnya di blog ini dengan topik [Visual Basic](/topik/vb).
 
-Sekian tutorial penginstalan Visual Basic 6.0 ini, semoga bermanfaat. Salam!
+Sekian tutorial penginstalan Visual Basic 6.0 ini, semoga bermanfaat.

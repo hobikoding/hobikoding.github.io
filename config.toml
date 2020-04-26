@@ -33,3 +33,7 @@ linenos=false
 [outputs]
     home = ["JSON", "HTML", "RSS"]
     blog = ["JSON", "HTML", "RSS"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false

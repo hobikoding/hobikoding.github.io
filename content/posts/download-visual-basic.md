@@ -20,7 +20,7 @@ Selain itu Visual Basic juga menawarkan berbagai kemudahan dalam mengelola sebua
 
 Kemudahan ini masih Ditambah lagi dengan tersedianya sarana dan peranti yang lengkap.
 
-# Spesifikasi
+## Spesifikasi
 
 Adapun spesifikasi minimum untuk menjalankan Visual Basic 6.0 dengan baik adalah:
 
@@ -41,6 +41,14 @@ Additional components (if required):
 * MSDN (for documentation): 67 MB, Internet Explorer 4.x: approximately 66 MB.
 * CD-ROM (no MS-DOS support assumed).
 
-# Download
+## Download
 
 Untuk mendownloadnya bisa melalui link di bawah ini (**google drive**)
+
+{{< download
+    os="windows"
+    nama="Visual Basic 6.0"
+    rating="85"
+    link="https://drive.google.com/open?id=1DDIEl5eJp6h_CigZkFFtyknj_QIOjxtO"
+    icon="https://res.cloudinary.com/hobikoding/image/upload/v1553002532/vb/vb-icon.png"
+>}}

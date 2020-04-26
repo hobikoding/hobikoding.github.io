@@ -88,7 +88,7 @@ message NoteList {
 }
 ```
 
-{{< code/title-end >}}
+{{< /code/title >}}
 
 Keterangan:
 
@@ -138,7 +138,7 @@ module.exports = {
 }
 ```
 
-{{< code/title-end >}}
+{{< /code/title >}}
 
 Pada kode di atas kita membuat package definition untuk service notes dan meng-_export_-nya untuk digunakan file lain.
 
@@ -203,7 +203,7 @@ server.start()
 console.log('Server running at http://localhost:50051')
 ```
 
-{{< code/title-end >}}
+{{< /code/title >}}
 
 ## Membuat Notes Client
 
@@ -234,7 +234,7 @@ const client = new notesPackageDefinition.NoteService(
 module.exports = client
 ```
 
-{{< code/title-end >}}
+{{< /code/title >}}
 
 Pada kode di atas, kita membuat sebuah client dari notes server. Client ini akan digunakan pada setiap method yang dipanggil.
 
@@ -271,7 +271,7 @@ const getNotes = async () => {
 getNotes()
 ```
 
-{{< code/title-end >}}
+{{< /code/title >}}
 
 Pada kode di atas, kita membuat method dengan nama ```getNotes```. Method tersebut akan menghasilkan nilai balik berupa notes yang di dapatkan dengan memanggil method list dari client.
 
@@ -285,45 +285,45 @@ Untuk lebih memudahkan pemanggilan server, kita akan menambahkan script berikut 
 package.json
 ```
 
-```json
+```json {hl_lines=["4-5"]}
 ...
 "scripts": {
   ...
-{{< code/quote >}}  "server": "node grpc/notes/server",
-  "notes:get": "node grpc/notes/client/get-notes.js"{{< /code/quote >}}
+  "server": "node grpc/notes/server",
+  "notes:get": "node grpc/notes/client/get-notes.js"
 }
 ...
 ```
 
-{{< code/title-end >}}
+{{< /code/title >}}
 
 Selanjutnya kita buka dua terminal. Terminal pertama menjalankan server:
 
-```bash
+```bash {hl_lines=["7"]}
 npm run server
 
 # result
 > grpc-nodejs-example@1.0.0 server /grpc-nodejs-example
 > node grpc/notes/server
 
-{{< code/quote >}}Server running at http://localhost:50051{{< /code/quote >}}
+Server running at http://localhost:50051
 ```
 
 Dan terminal kedua mengonsumsi data dari server:
 
-```bash
+```bash {hl_lines=["7-12"]}
 npm run notes:get
 
 # result
 > grpc-nodejs-example@1.0.0 notes:get /grpc-nodejs-example
 > node grpc/notes/client/get-notes.js
 
-{{< code/quote >}}{
+{
   notes: [
     { id: '1', title: 'Note 1', content: 'Content 1' },
     { id: '2', title: 'Note 2', content: 'Content 2' }
   ]
-}{{< /code/quote >}}
+}
 ```
 
 ## Penutup

@@ -1,13 +1,13 @@
 ---
-title: Tiga Cara Menggabungkan CSS Dengan HTML
+title: "Tiga Cara Menggabungkan CSS Dengan HTML"
 date: 2019-03-19T13:31:21+07:00
-description: bagaimana cara menggabungkan css dengan html, terdapat tiga cara untuk menggabungkan css dengan html yaitu inline style, inline style sheets dan external style sheets, ketiga cara tersebut memiliki kelebihannya masing-masing yaitu, beberapa cara mudah untuk memasang css ke dalam html project kita
-keywords: html css
+description: "bagaimana cara menggabungkan css dengan html, terdapat tiga cara untuk menggabungkan css dengan html yaitu inline style, inline style sheets dan external style sheets, ketiga cara tersebut memiliki kelebihannya masing-masing yaitu, beberapa cara mudah untuk memasang css ke dalam html project kita,"
+keywords: "html css"
 draft: false
-thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg
+thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg"
 topic: [html, css]
 slug: menghubungkan-css-dan-html
-github: posts/menghubungkan-css-dan-html.md
+github: 'posts/html/menggabungkan-css-html.md'
 ---
 
 Untuk membuat halaman html menjadi lebih elegan dan dinamis, harus dilengkapi dengan css.
@@ -16,13 +16,13 @@ CSS berfungsi untuk mengatur tampilan html menjadi lebih baik. Contohnya antara 
 
 Terdapat 3 cara untuk menggabungkan file html dengan css, yaitu:
 
-1. **_Inline Style_**
-1. **Inline Style Sheets**
-1. **External Style Sheets**
+- **Inline Style**
+- **Inline Style Sheets**
+- **External Style Sheets**
 
 Kita bahas satu per satu...
 
-# Inline Style
+## Inline Style
 
 Cara ini merupakan cara yang paling mudah.
 
@@ -33,7 +33,7 @@ Kita bisa menyisipkan kode css pada elemen html secara langsung. Contoh:
 <p style="text-align:center; color:red">Ini elemen paragraf dengan rata tengah warna merah</p>
 ```
 
-# Inline Style Sheets
+## Inline Style Sheets
 
 Cara selanjutnya adalah dengan _inline style sheets_.
 
@@ -41,11 +41,11 @@ Untuk menggunakan _inline style sheets_ dan _external style sheets_, diperlukan 
 
 Terdapat tiga jenis selector:
 
-1. **Berdasarkan Elemen**
-1. **Berdasarkan ID**
-1. **Berdasarkan Class**
+- **Berdasarkan Elemen**
+- **Berdasarkan ID**
+- **Berdasarkan Class**
 
-## 1. Selector Elemen
+### 1. Selector Elemen
 
 Selector berdasarkan `elemen` akan mengubah style dari elemen yang diseleksi secara keseluruhan. Contoh:
 
@@ -71,11 +71,11 @@ Selector berdasarkan `elemen` akan mengubah style dari elemen yang diseleksi sec
 
 >**Catatan:** Penulisan css inline style sheets diletakan pada elemen `<style>` yang terletak pada elemen `<head>`
 
-## 2. Selector ID
+### 2. Selector ID
 
 Berbeda dengan selector elemen, kita perlu menambahkan `id` pada elemen tertentu yang akan diubah tampilannya.
 
-```html
+```html {hl_lines=["18"]}
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,13 +101,13 @@ Berbeda dengan selector elemen, kita perlu menambahkan `id` pada elemen tertentu
 
 >**Catatan:** Perlu diingat bahwa `id` pada elemen tertentu **tidak boleh sama** dengan elemen lainnya. `id` pada elemen paragraf A tidak boleh sama dengan ID elemen paragraf B
 
-## 3. Selector Class
+### 3. Selector Class
 
 Selector dengan `class` paling banyak digunakan. Hal ini karena dalam elemen html boleh menggunakan class yang sama.
 
 Meskipun begitu kita masih tetap dapat mengubah elemen yang mempunyai class sama dengan menambahkan class unik-nya.
 
-```html
+```html {hl_lines=["25-26"]}
 <!DOCTYPE html>
 <html>
 <head>
@@ -138,7 +138,7 @@ Meskipun begitu kita masih tetap dapat mengubah elemen yang mempunyai class sama
 </html>
 ```
 
-# External Style Sheets
+## External Style Sheets
 
 _External style sheets_ hampir mirip dengan _internal style sheets_. Hanya saja penulisan css terletak pada file yang berbeda.
 
@@ -152,6 +152,8 @@ external-css
 ```
 
 Seluruh kode css diletakan pada file `main.css`.
+
+{{< code/title >}}
 
 ```title
 src/main.css
@@ -174,13 +176,17 @@ p {
 }
 ```
 
+{{< /code/title >}}
+
 Kemudian di import oleh `index.html`
+
+{{< code/title >}}
 
 ```title
 src/index.html
 ```
 
-```html
+```html {hl_lines=["6"]}
 <!DOCTYPE html>
 <html>
 <head>
@@ -196,8 +202,10 @@ src/index.html
 </html>
 ```
 
-# Penutup
+{{< /code/title >}}
+
+## Penutup
 
 Itulah beberapa cara menggunakan css pada file html. Tentu masih banyak sekali _syntax_ css yang perlu dipahami untuk membuat website yang lebih dinamis.
 
-Oleh karena itu apabila teman-teman ingin belajar lebih lanjut materi css dan html, silakan menuju halaman [Materi HTML dan CSS](/topik/html)
+Oleh karena itu apabila teman-teman ingin belajar lebih lanjut materi css dan html, silakan menuju halaman [Materi HTML dan CSS](/topic/html)
