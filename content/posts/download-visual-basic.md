@@ -49,6 +49,6 @@ Untuk mendownloadnya bisa melalui link di bawah ini (**google drive**)
     os="windows"
     nama="Visual Basic 6.0"
     rating="85"
-    link="https://drive.google.com/open?id=1DDIEl5eJp6h_CigZkFFtyknj_QIOjxtO"
+    link="https://drive.google.com/open?id=1QGxwKop8etrHQuTcm8iv4HcUVdBNM9GY"
     icon="https://res.cloudinary.com/hobikoding/image/upload/v1553002532/vb/vb-icon.png"
 >}}
