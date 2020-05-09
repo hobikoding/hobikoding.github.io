@@ -76,6 +76,38 @@ message NoteList {
 
 ## Setup gRPC
 
+Install terlebih semua dahulu library yang kita butuhkan pada project ini
+
+```bash
+npm init -y
+npm i grpc @grpc/proto-loader express
+```
+
+Pada direktori grpc, buatlah file `index.js` yang berfungsi untuk load proto file ke dalam node js.
+
+{{< code/title >}}
+
+```title
+grpc/index.js
+```
+
+```js
+const path = require('path')
+const grpc = require('grpc')
+const protoLoader = require('@grpc/proto-loader')
+
+const notesProtoPath = path.join(__dirname, '..', 'proto', 'notes.proto')
+const notesProtoDefinition = protoLoader.loadSync(notesProtoPath)
+
+const notesPackageDefinition = grpc.loadPackageDefinition(notesProtoDefinition).notes
+
+module.exports = {
+  notesPackageDefinition
+}
+```
+
+{{< /code/title >}}
+
 Selanjutnya pada direktori grpc, buatlah folder notes. Folder grpc nantinya akan berisi beberapa sub folder sesuai dengan module yang ada pada **utility service**.
 
 {{< code/title >}}
@@ -116,43 +148,13 @@ module.exports = notesServer
 
 {{< /code/title >}}
 
-dan pada index grpc kita akan mengekspor semua service yang disediakan. Dalam hal ini hanya ada service notes.
-
-{{< code/title >}}
-
-```title
-grpc/index.js
-```
-
-```js
-const path = require('path')
-const grpc = require('grpc')
-const protoLoader = require('@grpc/proto-loader')
-
-const notesProtoPath = path.join(__dirname, '..', 'proto', 'notes.proto')
-const notesProtoDefinition = protoLoader.loadSync(notesProtoPath)
-
-const notesPackageDefinition = grpc.loadPackageDefinition(notesProtoDefinition).notes
-
-module.exports = {
-  notesPackageDefinition
-}
-```
-
-{{< /code/title >}}
+Pada kode di atas kita telah mengekspor notes server yang nantinya akan dijalankan oleh express server.
 
 ## Setup Express
 
 {{< image src="https://res.cloudinary.com/hobikoding/image/upload/v1588733374/Post/coffe-hobikoding.com.jpg" alt="coffe-first" source="https://unsplash.com/@harrybrewer" >}}
 
-Install express ke dalam project kita.
-
-```bash
-npm init -y
-npm i express
-```
-
-setelah itu pada app.js kita buat express app-nya
+Buat express app pada file `app.js`
 
 {{< code/title >}}
 
