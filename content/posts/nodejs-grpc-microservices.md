@@ -29,6 +29,11 @@ Di project ini, kita akan membuat sebuah service dengan nama ```notes```. Servic
 > - Membuat notes client
 > - Setup package.json
 
+Saya telah membuat repository untuk artikel ini di:
+
+
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Example/tree/grpc" name="Saefulloh Maslul" title="gRPC-Node-Example">}}
+
 ## Init Server
 
 Kita mulai dengan melakukan inisialisasi server nodejs. Buat folder baru dengan nama ```grpc-nodejs-example``` dan lakukan init npm

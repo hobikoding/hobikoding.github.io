@@ -1,5 +1,5 @@
 ---
-title: Integrasi gRPC Dengan Express Node.js
+title: Integrasi gRPC Server Dengan Express Node.js
 date: 2020-05-01T11:45:02+07:00
 draft: false
 description: cara integrasi grpc dengan express node js
@@ -11,13 +11,13 @@ slug: integrasi-grpc-dengan-express-nodejs
 github: posts/integrasi-grpc-dengan-express-nodejs.md
 ---
 
-Sebelumnya saya membuat tulisan yang membahas [cara membuat microservices grpc di nodejs](http://hobikoding.com/nodejs-grpc-microservices/). Di artikel ini kita akan mengintegrasikan microservices grpc tersebut dengan expressjs.
+Sebelumnya saya telah membuat artikel yang membahas [cara membuat microservices grpc di nodejs](http://hobikoding.com/nodejs-grpc-microservices/). Sekarang kita akan mengintegrasikan microservices grpc tersebut dengan expressjs.
+
+Bagi yang belum membaca artikel di atas dan bingung dengan pembahasan pada artikel ini, saya sarankan untuk membaca terlebih dahulu artikel [sebelumnya](http://hobikoding.com/nodejs-grpc-microservices/).
 
 ## Preparation
 
 Di project ini kita akan membuat server nodejs menggunakan express. Server tersebut disamping menjalankan express app, juga sekaligus menjalankan grpc server.
-
-Saya rekomendasikan untuk membaca artikel [cara membuat microservices grpc di nodejs](http://hobikoding.com/nodejs-grpc-microservices/) terlebih dahulu karena di tulisan ini saya hanya mengulas sedikit tentang project kemarin.
 
 Struktur project akan jadi seperti ini:
 
@@ -37,13 +37,29 @@ Struktur project akan jadi seperti ini:
 └── package-lock.json
 ```
 
-Struktur kali ini beda dengan sebelumnya. Saya menghapus grpc client. Karena grpc client hanya digunakan pada service yang membutuhkan (_service client_).
+Pada struktur tersebut, main app adalah `index.js`, sedangkan `app.js` berisi konfigurasi dari express.
 
-Sedangkan project ini adalah service server yang akan kita sepakati namanya adalah **utility service**. Service ini memiliki beragam module, salah satunya **notes**.
+Di index.js, kita akan menjalankan server express sekaligus server gRPC-nya.
+
+## Init Project
+
+Kita telah mengetahui struktur dan konsep dari aplikasi yang akan kita buat, selanjutnya adalah inisialisasi awal project kita.
+
+Install seluruh dependensi yang dibutuhkan. Karena kita akan berurusan dengan express, grpc, dan proto file maka kita memerlukan beberapa dependensi: `express, grpc dan @grpc/proto-loader`
+
+```bash
+mkdir grpc-nodejs-example && cd grpc-nodejs-example
+npm init -y
+npm i grpc @grpc/proto-loader express
+```
+
+Saya telah membuat repository untuk artikel ini:
+
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Example/" name="Saefulloh Maslul" title="gRPC-Node-Example">}}
 
 ## Setup Proto File
 
-Kita buat notes.proto terlebih dahulu. File proto ini yang nantinya akan digunakan sebagai skema transfer antar service.
+Sebelum membuat konfigurasi server, kita buat terlebih dahulu proto filenya. Proto file ini yang nantinya digunakan sebagai skema transfer data antar service.
 
 {{< code/title >}}
 
@@ -51,7 +67,7 @@ Kita buat notes.proto terlebih dahulu. File proto ini yang nantinya akan digunak
 proto/notes.proto
 ```
 
-```bash
+```bash {hl_lines=[5]}
 syntax = "proto3";
 package notes;
 
@@ -74,16 +90,22 @@ message NoteList {
 
 {{< /code/title >}}
 
+>Pada kode di atas perlu dipahami beberapa hal berikut:
+>
+>- Kita membuat package dengan nama `notes`
+>- Package tersebut memiliki method bernama `List`
+>- Method ini memiliki parameter `Empty` yaitu parameter kosong
+>- Memiliki return berupa `NoteList`
+>- NoteList adalah repeated `Note` atau array of note
+>- Note memiliki properti `id, title, dan content`.
+
 ## Setup gRPC
 
-Install terlebih semua dahulu library yang kita butuhkan pada project ini
+Setelah selesai membuat proto file, Kita lanjutkan dengan membuat gRPC server.
 
-```bash
-npm init -y
-npm i grpc @grpc/proto-loader express
-```
+Pada direktori grpc, buatlah file `index.js`. Fungsi dari file ini yaitu membaca semua proto file yang ada dan menjadikannya sebagai package definition sehingga RPC tinggal memakainya saja.
 
-Pada direktori grpc, buatlah file `index.js` yang berfungsi untuk load proto file ke dalam node js.
+Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupun package definition, kita hanya akan fokus ke file ini, tidak satu per satu service yang di cek.
 
 {{< code/title >}}
 
@@ -91,7 +113,7 @@ Pada direktori grpc, buatlah file `index.js` yang berfungsi untuk load proto fil
 grpc/index.js
 ```
 
-```js
+```js {hl_lines=[5,11]}
 const path = require('path')
 const grpc = require('grpc')
 const protoLoader = require('@grpc/proto-loader')
@@ -108,7 +130,9 @@ module.exports = {
 
 {{< /code/title >}}
 
-Selanjutnya pada direktori grpc, buatlah folder notes. Folder grpc nantinya akan berisi beberapa sub folder sesuai dengan module yang ada pada **utility service**.
+Selanjutnya pada direktori grpc, buatlah folder notes. Apabila terdapat service lain selain notes, maka buatlah folder baru dengan nama service tersebut (jangan digabung di notes).
+
+Di dalam folder notes, buatlah `index.js`
 
 {{< code/title >}}
 
@@ -116,7 +140,7 @@ Selanjutnya pada direktori grpc, buatlah folder notes. Folder grpc nantinya akan
 grpc/notes/index.js
 ```
 
-```js
+```js {hl_lines=["4-14", 18, 26]}
 const grpc = require('grpc')
 const { notesPackageDefinition } = require('..')
 
@@ -131,7 +155,6 @@ const list = (call, callback) => {
     return callback(error, null)
   }
 }
-
 
 const notesServer = new grpc.Server()
 notesServer.addService(notesPackageDefinition.NoteService.service, {
@@ -148,13 +171,23 @@ module.exports = notesServer
 
 {{< /code/title >}}
 
-Pada kode di atas kita telah mengekspor notes server yang nantinya akan dijalankan oleh express server.
+Sesuai dengan proto file tadi, bahwa service ini memiliki method bernama List. Penulisan method tidak menggunakan format Capitalize, namun lowercase.
+
+Apabila terdapat method lain selain List, maka harus dideklarasikan juga dalam `addService`
+
+```js {hl_lines=[4]}
+....
+notesServer.addService(notesPackageDefinition.NoteService.service, {
+  list,
+  // masukan method lain di sini
+  ....
+})
+....
+```
 
 ## Setup Express
 
-{{< image src="https://res.cloudinary.com/hobikoding/image/upload/v1588733374/Post/coffe-hobikoding.com.jpg" alt="coffe-first" source="https://unsplash.com/@harrybrewer" >}}
-
-Buat express app pada file `app.js`
+Para root project, buatlah file `app.js`, file ini akan berisi seluruh konfigurasi express secara global.
 
 {{< code/title >}}
 
@@ -175,7 +208,7 @@ module.exports = app
 
 {{< /code/title >}}
 
-Pada kode di atas, kita membuat app dan memasukan konfigurasi routes yang berasal dari `routes/index.js`
+Selanjutnya pada `routes/index.js`, masukan seluruh controller dari express app ini.
 
 {{< code/title >}}
 
@@ -186,18 +219,26 @@ routes/index.js
 ```js
 const { Router } = require('express')
 
+/**
+ * import seluruh controller disini
+ */
+
 const router = Router()
+
+/**
+ * Masukan seluruh routing ke controller di sini
+ * contoh:
+ * router.get('/user', userController.profile)
+ */
 
 module.exports = router
 ```
 
 {{< /code/title >}}
 
-Sedangkan di file `routes/index.js` kita belum memasukan satupun route ke dalam app. Kita hanya membuat inisialisasinya terlebih dahulu.
-
 ## Inisialisasi Express dan gRPC
 
-Kemudian pada file `index.js` kita listen express app maupun service gRPC-nya.
+Kita telah selesai membuat gRPC server maupun Express server. Selanjutnya kita binding kedua service tersebut pada address masing-masing.
 
 {{< code/title >}}
 
@@ -219,11 +260,11 @@ console.log('gRPC Server running at http://localhost:50051')
 
 {{< /code/title >}}
 
-Untuk menjalankannya, kita dapat mengatur pada file package.json.
+Pada contoh di atas, kita binding express server ke port 5000, sedangkan gRPC server pada port 50051 (sesuai dengan file `grpc/notes/index.js`).
 
 ## Setting Package.json
 
-Kita buat script untuk menjalankan express sekaligus service gRPC-nya.
+Di package.json, kita buat script untuk menjalankan microservice ini. Karena semua bertumpu pada satu file, yaitu _index.js_ pada root project, kita hanya perlu menjalankannya dengan `node index.js`
 
 {{< code/title >}}
 
@@ -257,6 +298,10 @@ gRPC Server running at http://localhost:50051
 App running on port: 5000
 ```
 
+Jika sesuai dengan keterangan di atas, maka kita telah berhasil menjalankan kedua service tersebut yaitu express server dan gRPC server.
+
 ## Penutup
 
-Demikian cara mengintegrasikan gRPC server dengan express. Di artikel berikutnya kita akan membuat express dengan gRPC client untuk mengkonsumsi service dari project ini.
+Demikian cara mengintegrasikan gRPC server dengan express. Di artikel berikutnya kita akan integrasi antar service dengan membuat gRPC client untuk mengkonsumsi service dari project ini.
+
+Artikel sudah terbit di [Transfer Data Antar Service Menggunakan gRPC](https://hobikoding.com/transfer-data-antar-service-grpc/)
