@@ -32,7 +32,7 @@ Di project ini, kita akan membuat sebuah service dengan nama ```notes```. Servic
 Saya telah membuat repository untuk artikel ini di:
 
 
-{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Example/tree/grpc" name="Saefulloh Maslul" title="gRPC-Node-Example">}}
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Utility/tree/grpc" name="Saefulloh Maslul" title="gRPC-Node-Utility" description="Example of gRPC Microservices with Node.js">}}
 
 ## Init Server
 

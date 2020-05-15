@@ -48,14 +48,14 @@ Kita telah mengetahui struktur dan konsep dari aplikasi yang akan kita buat, sel
 Install seluruh dependensi yang dibutuhkan. Karena kita akan berurusan dengan express, grpc, dan proto file maka kita memerlukan beberapa dependensi: `express, grpc dan @grpc/proto-loader`
 
 ```bash
-mkdir grpc-nodejs-example && cd grpc-nodejs-example
+mkdir service-utility && cd service-utility
 npm init -y
 npm i grpc @grpc/proto-loader express
 ```
 
 Saya telah membuat repository untuk artikel ini:
 
-{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Example/" name="Saefulloh Maslul" title="gRPC-Node-Example">}}
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Utility/" name="Saefulloh Maslul" title="gRPC-Node-Utility" description="Utility service of gRPC Microservices with Node.js">}}
 
 ## Setup Proto File
 
@@ -291,7 +291,7 @@ Untuk menjalankannya, di terminal masukan perintah `npm run start`
 ```bash {hl_lines=[1,"6-7"]}
 npm run start
 
-> grpc-nodejs-example@0.0.1 start /grpc-nodejs-example
+> service-utility@0.0.1 start /service-utility
 > node .
 
 gRPC Server running at http://localhost:50051

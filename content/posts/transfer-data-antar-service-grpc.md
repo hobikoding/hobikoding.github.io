@@ -13,13 +13,15 @@ github: posts/transfer-data-antar-service-grpc.md
 
 Sebelumnya kita telah membahas cara [membuat microservices grpc](https://hobikoding.com/nodejs-grpc-microservices/) dengan nodejs. Kita juga telah mengetahui cara [integrasi service](https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/) dengan framework express.js.
 
-Pada artikel kali ini, kita akan menghubungkan service user dengan [service utility](https://hobikoding.com/nodejs-grpc-microservices/) yang telah kita buat sebelumnya.
+Pada artikel kali ini, kita akan membahas transfer data dari service satu ke service lain melalui protokol gRPC.
 
 ## Preparation
 
-Service user akan mengkonsumsi data notes dari service utility yang telah kita buat sebelumnya.
+>Project sebelumnya, kita namakan sebagai `service utility`. Sedangkan **project pada artikel ini** kita namakan sebagai `service user`.
 
-Service user sendiri akan berbentuk seperti ini:
+Service user membutuhkan data catatan yang diambil dari service utility. Untuk meminta datanya, service user melakukan panggilan (_call_) ke service utility dengan gRPC.
+
+__Service user__ sendiri akan berbentuk seperti ini:
 
 ```bash
 .
@@ -44,9 +46,83 @@ Service user sendiri akan berbentuk seperti ini:
     └── response.js
 ```
 
+Sedangkan __service utility__ seperti ini:
+
+```bash
+.
+├── app.js
+├── grpc
+│   ├── index.js
+│   └── notes
+│       └── index.js
+├── index.js
+├── package.json
+├── package-lock.json
+├── proto
+│   └── notes.proto
+└── routes
+    └── index.js
+```
+
+Keseluruhan struktur project seperti ini:
+
+```bash
+.
+├── service-user
+│   ├── app.js
+│   ├── controllers
+│   │   └── user.controller.js
+│   ├── grpc
+│   │   ├── index.js
+│   │   └── notes
+│   │       └── client
+│   │           ├── get-notes.grpc.js
+│   │           └── index.js
+│   ├── index.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── proto
+│   │   └── notes.proto
+│   ├── routes
+│   │   └── index.js
+│   └── utils
+│       └── response.js
+└── service-utility
+    ├── app.js
+    ├── grpc
+    │   ├── index.js
+    │   └── notes
+    │       └── index.js
+    ├── index.js
+    ├── package.json
+    ├── package-lock.json
+    ├── proto
+    │   └── notes.proto
+    └── routes
+        └── index.js
+```
+
+Saya telah membuat repositorynya di sini:
+
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-User" name="Saefulloh Maslul" title="gRPC-Node-User" description="User service of gRPC Microservices with Node.js">}}
+
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Utility" name="Saefulloh Maslul" title="gRPC-Node-Utility" description="Utility service of gRPC Microservices with Node.js">}}
+
+{{<github url="https://github.com/saefullohmaslul/gRPC-Node-Microservices" name="Saefulloh Maslul" title="gRPC-Node-Microservices" description="gRPC Microservices with Node.js">}}
+
+## Init Project
+
+Oke, pada artikel ini kita akan membuat service user, sehingga kita perlu setup beberapa dependensi yang diperlukan.
+
+```bash
+mkdir service-user && cd service-user
+npm init -y
+npm i grpc @grpc/proto-loader express
+```
+
 ## Setup Proto File
 
-Pada dasarnya proto file baik untuk server maupun client adalah sama. Sehingga kita samakan dengan project server kita sebelumnya yaitu:
+Pada dasarnya proto file baik untuk server maupun client adalah sama. Sehingga harus disamakan isi file dari `service-utility/proto/notes.proto` dengan `service-user/proto/notes.proto`:
 
 {{< code/title >}}
 
@@ -77,16 +153,13 @@ message NoteList {
 
 {{< /code/title >}}
 
+Pada proto file di atas, kita memiliki sebuah method pada [gRPC server](https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/) bernama List. List ini memiliki parameter Empty yaitu kosong, dan return NoteList yaitu repeated Note atau array of Note.
+
 ## Setup gRPC
 
-Install terlebih semua dahulu library yang kita butuhkan pada project ini
+Pada direktori grpc, buatlah file `index.js`. Fungsi dari file ini yaitu membaca semua proto file yang ada dan menjadikannya sebagai package definition sehingga RPC tinggal memakainya saja.
 
-```bash
-npm init -y
-npm i grpc @grpc/proto-loader express
-```
-
-Pada direktori grpc, buatlah file `index.js` yang berfungsi untuk load proto file ke dalam node js.
+Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupun package definition, kita hanya akan fokus ke file ini, tidak satu per satu service yang di cek.
 
 {{< code/title >}}
 
@@ -94,7 +167,7 @@ Pada direktori grpc, buatlah file `index.js` yang berfungsi untuk load proto fil
 grpc/index.js
 ```
 
-```js
+```js {hl_lines=[5,11]}
 const path = require('path')
 const grpc = require('grpc')
 const protoLoader = require('@grpc/proto-loader')
@@ -119,7 +192,7 @@ Kemudian buatlah folder notes di dalam folder grpc. Folder grpc nantinya akan be
 grpc/notes/client/index.js
 ```
 
-```js
+```js {hl_lines=[8]}
 const grpc = require('grpc')
 const { notesPackageDefinition } = require('../..')
 
@@ -134,7 +207,7 @@ module.exports = client
 
 Pada kode di atas, kita mengekspor client yang mana mengonsumsi server grpc dengan alamat `0.0.0.0:50051`.
 
-Selanjutnya buat method untuk mengambil notes
+Selanjutnya buat method untuk mengambil notes:
 
 {{< code/title >}}
 
@@ -142,7 +215,7 @@ Selanjutnya buat method untuk mengambil notes
 grpc/notes/client/get-notes.grpc.js
 ```
 
-```js {hl_lines=["6-9"]}
+```js {hl_lines=["6-9",18]}
 const client = require('.')
 
 const getNotes = async () => {
@@ -165,11 +238,11 @@ module.exports = getNotes
 
 {{< /code/title >}}
 
+Method tersebut kita export agar bisa digunakan di banyak tempat.
+
 ## Setup Express
 
-{{< image src="https://res.cloudinary.com/hobikoding/image/upload/v1588733374/Post/coffe-hobikoding.com.jpg" alt="coffe-first" source="https://unsplash.com/@harrybrewer" >}}
-
-Buat express app pada file `app.js`
+Selanjutnya kita setup express server untuk service user ini. Seperti biasanya pada root project, buatlah file `app.js`. File ini akan berisi semua konfigurasi express app secara global.
 
 {{< code/title >}}
 
@@ -190,7 +263,7 @@ module.exports = app
 
 {{< /code/title >}}
 
-Pada kode di atas, kita membuat app dan memasukan konfigurasi routes yang berasal dari `routes/index.js`
+Selanjutnya pada `routes/index.js`, masukan seluruh controller dari express app ini.
 
 {{< code/title >}}
 
@@ -239,7 +312,7 @@ exports.userNotes = async (req, res, next) => {
 
 {{< /code/title >}}
 
-Pada user controller, kita menggunakan method getNotes yang sebelumnya telah kita buat, untuk mengambil semua notes yang ada pada **service utility**.
+Pada user controller, kita menggunakan method `getNotes` yang sebelumnya telah kita buat, untuk mengambil semua notes yang ada pada **service utility**.
 
 Apabila tidak terdapat error, maka akan mereturn success namun ketika gagal akan mereturn error.
 
@@ -273,9 +346,7 @@ module.exports = {
 
 {{< /code/title >}}
 
-## Inisialisasi gRPC Client
-
-Kemudian pada file `index.js` kita listen express app maupun service gRPC-nya.
+Kemudian pada file `index.js` kita listen express app ke dalam port 5050.
 
 {{< code/title >}}
 
@@ -293,11 +364,9 @@ app.listen(5050, () => {
 
 {{< /code/title >}}
 
-Untuk menjalankannya, kita dapat mengatur pada file package.json.
-
 ## Setting Package.json
 
-Kita buat script untuk menjalankan express sekaligus service gRPC-nya.
+Selanjutnya, kita buat script untuk menjalankan express app ini. Karena main projectnya adalah index.js, maka kita jalankan aplikasi ini dengan perintah `node index.js`
 
 {{< code/title >}}
 
@@ -324,7 +393,7 @@ Untuk menjalankannya, di terminal masukan perintah `npm run start`
 ```bash {hl_lines=[1,6]}
 npm run start
 
-> grpc-nodejs-example@0.0.1 start /grpc-nodejs-example
+> service-user@0.0.1 start /service-user
 > node .
 
 App running on port: 5050
@@ -332,7 +401,7 @@ App running on port: 5050
 
 ## Testing
 
-Buka url [localhost:5050/user/notes](localhost:5050/user/notes) untuk melihat hasil dari microservices ini.
+Jangan lupa jalankan kedua service, baik service user maupun service utility. Kemudian buka url [localhost:5050/user/notes](localhost:5050/user/notes) untuk melihat hasil dari microservices ini.
 
 ```json
 {
@@ -353,6 +422,8 @@ Buka url [localhost:5050/user/notes](localhost:5050/user/notes) untuk melihat ha
 }
 ```
 
+Pada hasil di atas, kita telah berhasil mengambil data dari service utility melalui service user menggunakan protokol gRPC.
+
 ## Penutup
 
-Demikian cara transfer data antar service menggunakan grpc pada node js.
+Demikian cara transfer data antar service menggunakan grpc pada node js. Jika membutuhkan referensi bacaan, silakan baca artikel sebelumnya mengenai cara [membuat microservices gRPC dengan nodejs](https://hobikoding.com/nodejs-grpc-microservices/) dan [integrasi gRPC server dengan expressjs](https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/)
