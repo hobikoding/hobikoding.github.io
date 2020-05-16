@@ -90,14 +90,14 @@ Apabila kode di atas kita integrasikan dengan inversify maka akan jadi seperti i
 ```typescript
 @injectable()
 class SomeClass {
-  @inject(DependencySatu) private dependencySatu: DependencySatu
-  @inject(DependencyDua) private dependencyDua: DependencyDua
-  @inject(DependencyTiga) private dependencyTiga: DependencyTiga
+  private dependencySatu: DependencySatu
+  private dependencyDua: DependencyDua
+  private dependencyTiga: DependencyTiga
 
   constructor(
-    dependencySatu: DependencySatu,
-    dependencyDua: DependencyDua,
-    dependencyTiga: DependencyTiga
+    @inject(DependencySatu) dependencySatu: DependencySatu,
+    @inject(DependencyDua) dependencyDua: DependencyDua,
+    @inject(DependencyTiga) dependencyTiga: DependencyTiga
   ) {
     this.dependencySatu = dependencySatu
     this.dependencyDua = dependencyDua
