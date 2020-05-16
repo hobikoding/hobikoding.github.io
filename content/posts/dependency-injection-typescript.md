@@ -79,7 +79,7 @@ Oke cukup! ini pusing.
 
 ## Containerization Dependency
 
-Terdapat pemikiran menarik, bagaimana jika kita kelompokan saja seluruh dependency yang dibutuhkan dalam sebuat '`container`', sehingga ketika ada class yang membutuhkan dia hanya akan menghubungi container saja.
+Terdapat pemikiran menarik, bagaimana jika kita kelompokan saja seluruh dependency yang dibutuhkan dalam sebuah '`container`', sehingga ketika ada class yang membutuhkan dia hanya akan menghubungi container saja.
 
 Sayangnya sudah ada library yang powerfull untuk menangani masalah ini, ya [`inversify`](http://inversify.io/).
 
