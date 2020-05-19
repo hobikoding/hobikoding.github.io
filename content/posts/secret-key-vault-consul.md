@@ -1,11 +1,12 @@
 ---
-title: Store Secret Key with Vault and Consul
+title: Management Secret Key with Vault and Consul
 date: 2020-05-19T13:44:40+07:00
-draft: true
-description: 
-keywords: 
-thumbnail: 
-topic: [vault, consul]
+draft: false
+description: manajemen secret key with consul and vault, cara integrasi vault dengan consul, menghubungkan vault dengan consul
+keywords: vault, consul, infrastructure
+thumbnail: /img/secret-key-vault-consul/thumbnail.jpg
+source: https://unsplash.com/@claybanks
+topic: [vault, consul, infrastructure]
 slug: secret-key-vault-consul
 github: posts/secret-key-vault-consul.md
 ---
@@ -14,7 +15,7 @@ Ketika develop aplikasi, pasti tidak lepas dari beberapa konfigurasi. Misalnya d
 
 Cara termudah untuk menaruh konfigurasi tersebut biasanya di file kusus bernama `.env`.
 
-Namun hal ini menjadi kendala ketika misalnya mobile apps atau web frontend kita mengalami perubahan konfigurasi, tentu kita harus menggantinya kembali konfigurasi tersebut di file `.env` kemudian mendeploy ulang aplikasi kita dan merilisnya di playstore/appstore.
+Namun hal ini menjadi kendala ketika misalnya mobile apps kita mengalami perubahan konfigurasi, tentu kita harus menggantinya kembali konfigurasi tersebut di file `.env` kemudian mendeploy ulang aplikasi kita dan merilisnya di playstore/appstore.
 
 Kemudian user harus mendownload untuk mendapatkan update dari konfigurasi terbarunya.
 
@@ -137,6 +138,10 @@ vault/config/vault-config.json
 
 {{< /code/title >}}
 
+Pada konfigurasi di atas, kita menyimpan storage vault pada alamat consul kita.
+
+Sebenarnya bisa saja kita hanya menggunakan vault tanpa consul, namun storage harus diubah ke folder lokal. Hal itu tidak akan kita bahas disini.
+
 Jika sudah, pada root folder kita buat `docker-compose.yml` dan masukan konfigurasi vault.
 
 {{< code/title >}}
@@ -182,7 +187,7 @@ services:
 
 {{< /code/title >}}
 
-Sampai sini kita sudah mensetup konfigurasi vault. Namun belum bisa dijalankan karena vault depends_on consul, sehingga menjalankan consul sebelum menjalankan vault ini.
+Sampai sini kita sudah mensetup konfigurasi vault. Namun belum bisa dijalankan karena _vault depends_on consul_, sehingga menjalankan consul sebelum menjalankan vault ini.
 
 ## Setup Consul
 
@@ -311,70 +316,74 @@ services:
 
 Oke jika semua sudah selesai, sekarang kita integrasikan consul ini dengan vault.
 
+Oya kalian bisa clone repository ini kalau malas ngoding:
+
+{{<github url="https://github.com/saefullohmaslul/secret-store/" name="Saefulloh Maslul" title="secret-store" description="Storing secret key with vault and consul ">}}
+
 Pertama jalankan terlebih dahulu docker-composenya dengan cara,
 
 ```bash
 docker-compose up --build
 ```
 
-Apabila semua container telah running, selanjutnya masuk ke [localhost:8200](localhost:8200).
+- Apabila semua container telah running, selanjutnya masuk ke [localhost:8200](localhost:8200).
 
-![init-vault](/img/secret-key-vault-consul/init-vault.png)
+  ![init-vault](/img/secret-key-vault-consul/init-vault.png)
 
-Pada key shares dan key threshold isikan dengan angka 1, kemudian klik initialize.
+- Pada key shares dan key threshold isikan dengan angka 1, kemudian klik initialize.
 
-Simpan `initial root token` and `Key 1`.
+  >Simpan **initial root token** and **Key 1**. Kemudian klik **continue to unseal**.
 
-Kemudian klik `continue to unseal`.
+  ![init-vault](/img/secret-key-vault-consul/unseal-vault.png)
 
-![init-vault](/img/secret-key-vault-consul/unseal-vault.png)
+- Masukkan key 1 ke kolom `master key portion` dan klik unseal.
 
-Masukkan key 1 ke kolom `master key portion` dan klik unseal.
+  ![init-vault](/img/secret-key-vault-consul/sign-vault.png)
 
-![init-vault](/img/secret-key-vault-consul/sign-vault.png)
+- Kemudian masukan `initial root token` dan klik sign.
 
-Kemudian masukan `initial root token` dan klik sign.
-
-![init-vault](/img/secret-key-vault-consul/consul-kv.png)
+  ![init-vault](/img/secret-key-vault-consul/consul-kv.png)
 
 Buka link ini [localhost:8500/ui/localhost/kv](http://localhost:8500/ui/localhost/kv), Apabila pada menu Key/Value sudah terdapat folder vault, maka integrasi vault dan consul sudah berhasil.
 
-Integrasi ini bertujuan agar vault menyimpan semua data pada consul, tidak pada storage terpisah.
+Integrasi ini bertujuan agar vault menyimpan semua data pada consul, tidak pada storage lokal.
 
 ## Testing Vault
 
-Buka dashboard vault, kemudian tambahkan `Enable a Secrets Engine`, beri nama sesuai selera kalian, saya sendiri memberi nama `kv`.
+Pada testing ini kita akan menyimpan secret key dan mengambilnya dengan perintah GET.
 
-Setelah itu masukan path dan konfigurasi datanya. Saya memberi nama path `db-config` dan data seperti gambar di bawah.
+- Buka dashboard vault, kemudian tambahkan `Enable a Secrets Engine`, beri nama sesuai selera kalian, saya sendiri memberi nama `kv`.
 
-![init-vault](/img/secret-key-vault-consul/create-secret-vault.png)
+- Masukan path dan konfigurasi datanya. Saya memberi nama path `db-config` dan data seperti gambar di bawah. Kemudian klik save.
 
-Jika sudah klik save.
+  ![init-vault](/img/secret-key-vault-consul/create-secret-vault.png)
 
-Selanjutnya buka terminal dan masukan perintah berikut (ubah `s.8ULvB7xH2ayA9lRSFMLVR2Kz` sesuai initial root token kalian dan `db-config` sesuai path yang akan diambil)
+- Buka terminal dan masukan perintah berikut (ubah `s.8ULvB7xH2ayA9lRSFMLVR2Kz` sesuai initial root token kalian dan `db-config` sesuai path yang akan diambil)
 
-```bash
-curl \
-  --header "X-Vault-Token: s.8ULvB7xH2ayA9lRSFMLVR2Kz" \
-  --request GET \
-  http://127.0.0.1:8200/v1/kv/db-config
-```
+  ```bash
+  curl \
+    --header "X-Vault-Token: s.8ULvB7xH2ayA9lRSFMLVR2Kz" \
+    --request GET \
+    http://127.0.0.1:8200/v1/kv/db-config
+  ```
 
-Maka akan memperoleh response seperti ini:
+  Maka akan memperoleh response seperti ini:
 
-```json {hl_lines=["6-8"]}
-{
-  "request_id": "b7a0393f-a929-b14c-2017-8a711f08911b",
-  "lease_id": "",
-  "renewable": false,
-  "lease_duration": 2764800,
-  "data": {
-    "host": "127.0.0.1"
-  },
-  "wrap_info": null,
-  "warnings": null,
-  "auth": null
-}
-```
+  ```json {hl_lines=["6-8"]}
+  {
+    "request_id": "b7a0393f-a929-b14c-2017-8a711f08911b",
+    "lease_id": "",
+    "renewable": false,
+    "lease_duration": 2764800,
+    "data": {
+      "host": "127.0.0.1"
+    },
+    "wrap_info": null,
+    "warnings": null,
+    "auth": null
+  }
+  ```
 
 Nah bisa dilihat kita telah mendapatkan data yang kita store sebelumnya pada vault.
+
+Jika ingin mengintegrasikannya dengan mobile apps, ketika initialize app, sebelum masuk main app, GET terlebih dahulu secret key sehingga apabila ada perubahan akan update ke perubahan terbarunya.
