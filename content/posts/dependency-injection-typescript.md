@@ -4,7 +4,7 @@ date: 2020-05-16T11:06:56+07:00
 draft: false
 description: membuat dependency injection pada typescript dengan inversify nodejs
 keywords: typescript nodejs inversify dependency injection
-thumbnail: /img/dependency-injection-typescript.jpg
+thumbnail: /img/dependency-injection-typescript/thumbnail.jpg
 source: https://unsplash.com/@jstrippa
 topic: [nodejs, typescript, pattern, oop]
 slug: dependency-injection-typescript

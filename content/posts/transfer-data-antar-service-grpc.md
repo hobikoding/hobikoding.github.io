@@ -4,7 +4,7 @@ date: 2020-05-09T20:53:58+07:00
 draft: false
 description: 
 keywords: microservices nodejs grpc
-thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1589033088/Post/menghubungkan-service-dengan-grpc-nodejs.jpg
+thumbnail: /img/transfer-data-antar-service-grpc/thumbnail.jpg
 source: https://unsplash.com/@blakeconnally
 topic: [microservices, nodejs]
 slug: transfer-data-antar-service-grpc

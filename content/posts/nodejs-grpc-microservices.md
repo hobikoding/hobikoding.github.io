@@ -4,7 +4,7 @@ date: 2020-04-24T11:40:19+07:00
 draft: false
 description: cara membuat microservices di node.js dengan grpc, microservices di node.js, membangun microservices node.js
 keywords: microservices node.js grpc
-thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1587705979/Post/nodejs-grpc-microservices-hobikoding.com.jpg
+thumbnail: /img/nodejs-grpc-microservices/thumbnail.jpg
 source: https://unsplash.com/photos/XMFZqrGyV-Q
 topic: [nodejs]
 slug: nodejs-grpc-microservices

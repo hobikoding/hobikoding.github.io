@@ -4,7 +4,7 @@ date: 2020-05-01T11:45:02+07:00
 draft: false
 description: cara integrasi grpc dengan express node js
 keywords: grpc microservices nodejs express
-thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1588309906/Post/integrasi-grpc-rest-api-nodejs-hobikoding.com.jpg
+thumbnail: /img/integrasi-grpc-dengan-express-nodejs/thumbnail.jpg
 source: https://unsplash.com/@jefflssantos
 topic: [microservices, nodejs]
 slug: integrasi-grpc-dengan-express-nodejs
