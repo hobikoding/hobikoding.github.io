@@ -63,7 +63,7 @@ Sebelum membuat konfigurasi server, kita buat terlebih dahulu proto filenya. Pro
 
 {{< code/title >}}
 
-```title
+```ini
 proto/notes.proto
 ```
 
@@ -109,7 +109,7 @@ Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupu
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/index.js
 ```
 
@@ -136,7 +136,7 @@ Di dalam folder notes, buatlah `index.js`
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/notes/index.js
 ```
 
@@ -191,7 +191,7 @@ Para root project, buatlah file `app.js`, file ini akan berisi seluruh konfigura
 
 {{< code/title >}}
 
-```title
+```ini
 app.js
 ```
 
@@ -212,7 +212,7 @@ Selanjutnya pada `routes/index.js`, masukan seluruh controller dari express app 
 
 {{< code/title >}}
 
-```title
+```ini
 routes/index.js
 ```
 
@@ -242,7 +242,7 @@ Kita telah selesai membuat gRPC server maupun Express server. Selanjutnya kita b
 
 {{< code/title >}}
 
-```title
+```ini
 index.js
 ```
 
@@ -268,7 +268,7 @@ Di package.json, kita buat script untuk menjalankan microservice ini. Karena sem
 
 {{< code/title >}}
 
-```title
+```ini
 package.json
 ```
 

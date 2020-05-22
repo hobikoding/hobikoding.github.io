@@ -126,7 +126,7 @@ Pada dasarnya proto file baik untuk server maupun client adalah sama. Sehingga h
 
 {{< code/title >}}
 
-```title
+```ini
 proto/notes.proto
 ```
 
@@ -163,7 +163,7 @@ Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupu
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/index.js
 ```
 
@@ -188,7 +188,7 @@ Kemudian buatlah folder notes di dalam folder grpc. Folder grpc nantinya akan be
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/notes/client/index.js
 ```
 
@@ -211,7 +211,7 @@ Selanjutnya buat method untuk mengambil notes:
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/notes/client/get-notes.grpc.js
 ```
 
@@ -246,7 +246,7 @@ Selanjutnya kita setup express server untuk service user ini. Seperti biasanya p
 
 {{< code/title >}}
 
-```title
+```ini
 app.js
 ```
 
@@ -267,7 +267,7 @@ Selanjutnya pada `routes/index.js`, masukan seluruh controller dari express app 
 
 {{< code/title >}}
 
-```title
+```ini
 routes/index.js
 ```
 
@@ -288,7 +288,7 @@ Pada kode diatas kita membuat sebuah endpoint dengan method `GET /user/notes` ya
 
 {{< code/title >}}
 
-```title
+```ini
 controllers/user.controller.js
 ```
 
@@ -318,7 +318,7 @@ Apabila tidak terdapat error, maka akan mereturn success namun ketika gagal akan
 
 {{< code/title >}}
 
-```title
+```ini
 utils/response.js
 ```
 
@@ -350,7 +350,7 @@ Kemudian pada file `index.js` kita listen express app ke dalam port 5050.
 
 {{< code/title >}}
 
-```title
+```ini
 index.js
 ```
 
@@ -370,7 +370,7 @@ Selanjutnya, kita buat script untuk menjalankan express app ini. Karena main pro
 
 {{< code/title >}}
 
-```title
+```ini
 package.json
 ```
 

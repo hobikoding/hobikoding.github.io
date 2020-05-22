@@ -155,7 +155,7 @@ Seluruh kode css diletakan pada file `main.css`.
 
 {{< code/title >}}
 
-```title
+```ini
 src/main.css
 ```
 
@@ -182,7 +182,7 @@ Kemudian di import oleh `index.html`
 
 {{< code/title >}}
 
-```title
+```ini
 src/index.html
 ```
 

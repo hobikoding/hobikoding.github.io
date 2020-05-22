@@ -68,7 +68,7 @@ Proto file digunakan sebagai format transfer data, seperti layaknya json di REST
 
 {{< code/title >}}
 
-```title
+```ini
 proto/notes.proto
 ```
 
@@ -124,7 +124,7 @@ Selanjutnya pada ```grpc/index.js```
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/index.js
 ```
 
@@ -151,7 +151,7 @@ Kemudian:
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/notes/server/index.js
 ```
 
@@ -224,7 +224,7 @@ Notes server adalah service producer, dalam hal ini service yang menyediakan dat
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/notes/client/index.js
 ```
 
@@ -245,7 +245,7 @@ Pada kode di atas, kita membuat sebuah client dari notes server. Client ini akan
 
 {{< code/title >}}
 
-```title
+```ini
 grpc/notes/client/get-notes.js
 ```
 
@@ -286,7 +286,7 @@ Untuk lebih memudahkan pemanggilan server, kita akan menambahkan script berikut 
 
 {{< code/title >}}
 
-```title
+```ini
 package.json
 ```
 

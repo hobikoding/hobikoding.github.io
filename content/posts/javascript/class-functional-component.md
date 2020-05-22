@@ -166,7 +166,7 @@ Kita buat terlebih dahulu file dari masing-masing komponen. Buat file `Header.js
 
 {{< code/title >}}
 
-```title
+```ini
 src/Header.js
 ```
 
@@ -190,7 +190,7 @@ Kemudian buat file `Body.js` dan masukan kode berikut:
 
 {{< code/title >}}
 
-```title
+```ini
 src/Body.js
 ```
 
@@ -214,7 +214,7 @@ Buat file `Footer.js` dan masukan kode berikut:
 
 {{< code/title >}}
 
-```title
+```ini
 src/Footer.js
 ```
 
@@ -244,7 +244,7 @@ Selanjutnya pada file `App.js` tuliskan kode berikut:
 
 {{< code/title >}}
 
-```title
+```ini
 src/App.js
 ```
 

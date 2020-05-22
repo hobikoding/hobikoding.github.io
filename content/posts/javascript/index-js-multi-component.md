@@ -82,7 +82,7 @@ Kemudian kita masukkan kode berikut ke komponennnya.
 
 {{< code/title >}}
 
-```title
+```ini
 src/Page/About.js
 ```
 
@@ -106,7 +106,7 @@ export default About;
 
 {{< code/title >}}
 
-```title
+```ini
 src/Page/Blog.js
 ```
 
@@ -130,7 +130,7 @@ export default Blog;
 
 {{< code/title >}}
 
-```title
+```ini
 src/Page/Kontak.js
 ```
 
@@ -154,7 +154,7 @@ export default Kontak;
 
 {{< code/title >}}
 
-```title
+```ini
 src/Page/MenuUtama.js
 ```
 
@@ -184,7 +184,7 @@ Selanjutnya kita _export_ seluruh komponen tersebut dengan `index.js`
 
 {{< code/title >}}
 
-```title
+```ini
 src/Page/index.js
 ```
 
@@ -205,7 +205,7 @@ Setelah membuat komponen yang diperlukan dan di _export_ melalui `index.js`, kit
 
 {{< code/title >}}
 
-```title
+```ini
 src/App.js
 ```
 

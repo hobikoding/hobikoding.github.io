@@ -71,7 +71,7 @@ Pertama buat Dockerfile pada folder vault dan isi dengan kode berikut:
 
 {{< code/title >}}
 
-```title
+```ini
 vault/Dockerfile
 ```
 
@@ -114,7 +114,7 @@ Kemudian pada `vault/config/vault-config.json` masukkan konfigurasi berikut:
 
 {{< code/title >}}
 
-```title
+```ini
 vault/config/vault-config.json
 ```
 
@@ -146,7 +146,7 @@ Jika sudah, pada root folder kita buat `docker-compose.yml` dan masukan konfigur
 
 {{< code/title >}}
 
-```title
+```ini
 docker-compose.yml
 ```
 
@@ -195,7 +195,7 @@ Selanjutnya hampir sama seperti vault, buat file pada `consul/Dockerfile` kemudi
 
 {{< code/title >}}
 
-```title
+```ini
 consul/Dockerfile
 ```
 
@@ -238,7 +238,7 @@ Kemudian buat juga konfigurasi consulnya pada `consul/config/consul-config.json`
 
 {{< code/title >}}
 
-```title
+```ini
 consul/config/consul-config.json
 ```
 
@@ -261,7 +261,7 @@ Kemudian edit kembali file docker-compose.yml menjadi seperti ini:
 
 {{< code/title >}}
 
-```title
+```ini
 docker-compose.yml
 ```
 
