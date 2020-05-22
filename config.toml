@@ -19,7 +19,7 @@ linenos=false
     web = "https://linkedin.com/in/saefullohmaslul"
 
 [params]
-    description = "hobikoding - mari ngoding sambil tidur"
+    description = "Hobikoding - Mari ngoding sambil tidur"
     SiteDescription = "Mari ngoding sambil tidur. Hobikode adalah blog yang akan membantumu belajar pemrograman dengan konten-konten berkualitas yang mudah dipahami"
     DefaultKeywords = "ReactJS, Node.js, React Native, JavaScript, Typescript"
 
