@@ -27,7 +27,7 @@ jobs:
           personal_token: ${{ secrets.TOKEN }}
           publish_dir: ./public
           publish_branch: master
-          user_name: hobikoding
+          user_name: saefullohmaslul
           user_email: maslulsaefulloh@gmail.com
           cname: hobikoding.com
           disable_nojekyll: true
