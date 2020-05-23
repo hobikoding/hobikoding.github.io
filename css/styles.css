@@ -96,3 +96,6 @@ blockquote{padding: 10px 15px;border-left: 0.35em solid #556f7f;background: #eff
 .code-play img {margin: 7px 1px;box-shadow: none;}
 
 body p img{max-width: 100%;}
+
+/* post */
+.author-follow{font-weight: normal;color: rgba(115, 113, 113, 1);border: 1px rgba(115, 113, 113, 1) solid;}
