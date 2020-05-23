@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/
 topic: [html, css]
 slug: menghubungkan-css-dan-html
 github: 'posts/html/menggabungkan-css-html.md'
+author: maslul
 ---
 
 Untuk membuat halaman html menjadi lebih elegan dan dinamis, harus dilengkapi dengan css.

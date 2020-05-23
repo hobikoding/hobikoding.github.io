@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1553005048/HTML/
 topic: [html]
 slug: membuat-file-html
 github: 'posts/html/membuat-file-html.md'
+author: maslul
 ---
 
 Mau jadi programmer front end?

@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1554632946/js/Ja
 topic: [javascript]
 slug: operator-perbandingan
 github: 'posts/javascript/operator-perbandingan.md'
+author: maslul
 ---
 
 Operator perbandingan merupakan operator yang membandingkan antara dua operand, serta mengembalikan return dalam bentuk bolean (`true` / `else`).

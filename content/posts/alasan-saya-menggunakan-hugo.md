@@ -8,6 +8,7 @@ thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552640822/Hugo/h
 topic: [hugo]
 slug: alasan-saya-menggunakan-hugo
 github: posts/alasan-saya-menggunakan-hugo.md
+author: maslul
 ---
 
 Saya memiliki blog baru. Tapi tidak menggunakan Blogger ataupun Wordpress. Saya ingin mencoba sesuatu yang baru, yaitu menggunakan _Static Site Generator_ (SSG).

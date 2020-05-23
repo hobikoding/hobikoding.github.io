@@ -9,6 +9,7 @@ source: https://unsplash.com/photos/XMFZqrGyV-Q
 topic: [nodejs]
 slug: nodejs-grpc-microservices
 github: posts/nodejs-grpc-microservices.md
+author: maslul
 ---
 
 Akhir-akhir ini arsitektur microservices semakin dilirik banyak company.

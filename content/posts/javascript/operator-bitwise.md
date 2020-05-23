@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1554473889/js/Ja
 topic: [javascript]
 slug: operator-bitwise
 github: 'posts/javascript/operator-bitwise.md'
+author: maslul
 ---
 
 Seperti halnya bahasa C dan turunannya, termasuk C++ dan Javascript mendukung penuh operator bitwise.

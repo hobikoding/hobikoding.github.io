@@ -8,6 +8,7 @@ topic: [download]
 thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552798965/Download/vscode.png
 slug: instal-visual-studio-code
 github: posts/instal-visual-studio-code.md
+author: maslul
 ---
 
 Visual Studio Code merupakan IDE Pemrograman yang bisa digunakan untuk [banyak sekali](https://code.visualstudio.com/docs/languages/overview) bahasa pemrograman.

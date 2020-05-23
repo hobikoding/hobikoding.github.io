@@ -9,6 +9,7 @@ source: https://unsplash.com/@andrewtneel
 topic: [golang]
 slug: hello-world-golang
 github: /posts/golang/hello-world.md
+author: maslul
 ---
 
 Halo semua, terimakasih telah berkunjung di Hobi Koding. Saat ini teman-teman sedang berada di series belajar golang.

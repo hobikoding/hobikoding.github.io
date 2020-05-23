@@ -9,6 +9,7 @@ source: https://unsplash.com/@jefflssantos
 topic: [microservices, nodejs]
 slug: integrasi-grpc-dengan-express-nodejs
 github: posts/integrasi-grpc-dengan-express-nodejs.md
+author: maslul
 ---
 
 Sebelumnya saya telah membuat artikel yang membahas [cara membuat microservices grpc di nodejs](http://hobikoding.com/nodejs-grpc-microservices/). Sekarang kita akan mengintegrasikan microservices grpc tersebut dengan expressjs.

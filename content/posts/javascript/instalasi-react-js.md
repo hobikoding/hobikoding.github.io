@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552640858/React
 slug: instalasi-react-js
 topic: ["reactjs","javascript","framework"]
 github: 'posts/javascript/instalasi-react-js.md'
+author: maslul
 ---
 
 Kali ini kita akan membahas topik baru yang masih cukup hangat, ya `react js`.

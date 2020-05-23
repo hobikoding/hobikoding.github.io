@@ -9,6 +9,7 @@ source: https://unsplash.com/@blakeconnally
 topic: [microservices, nodejs]
 slug: transfer-data-antar-service-grpc
 github: posts/transfer-data-antar-service-grpc.md
+author: maslul
 ---
 
 Sebelumnya kita telah membahas cara [membuat microservices grpc](https://hobikoding.com/nodejs-grpc-microservices/) dengan nodejs. Kita juga telah mengetahui cara [integrasi service](https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/) dengan framework express.js.

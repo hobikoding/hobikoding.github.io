@@ -8,6 +8,7 @@ thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552895931/Kali/k
 topic: [linux]
 slug: live-boot-kali-linux
 github: posts/boot-kali-linux.md
+author: maslul
 ---
 
 Kita biasa membuat bootable linux via Windows. Bahkan ketika mencari artikel membuat bootable linux melalui linux sendiri sangat susah ditemukan.

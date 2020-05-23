@@ -9,6 +9,7 @@ source: https://unsplash.com/@claybanks
 topic: [vault, consul, infrastructure]
 slug: secret-key-vault-consul
 github: posts/secret-key-vault-consul.md
+author: maslul
 ---
 
 Ketika develop aplikasi, pasti tidak lepas dari beberapa konfigurasi. Misalnya database, redis, api-key, dan secret key lainnya.

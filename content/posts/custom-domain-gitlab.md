@@ -8,6 +8,7 @@ thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1553449712/Artike
 topic: [hugo, gitlab, cloudflare, idwebhost]
 slug: custom-domain-gitlab
 github: posts/custom-domain-gitlab.md
+author: maslul
 ---
 
 Punya Gitlab Pages? dan mau custom domain gitlab pages agar terlihat lebih profesional?

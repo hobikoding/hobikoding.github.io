@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1556080880/React
 topic: [reactjs]
 slug: index-js-multi-component
 github: 'posts/javascript/index-js-multi-component.md'
+author: maslul
 ---
 
 Membuat komponen pada react js bisa melalui dua cara, yaitu _class component_ dan _functional component_. Pada [artikel sebelumnya](/component-react/) sudah kita bahas detail kedua hal tersebut.

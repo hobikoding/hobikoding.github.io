@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1554204189/js/js
 topic: [javascript]
 slug: variabel-javascript
 github: 'posts/javascript/variabel-javascript.md'
+author: maslul
 ---
 
 Ada tiga cara mendefinisikan variabel dalam javascript. Yaitu dengan:

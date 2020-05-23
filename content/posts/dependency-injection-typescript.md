@@ -9,6 +9,7 @@ source: https://unsplash.com/@jstrippa
 topic: [nodejs, typescript, pattern, oop]
 slug: dependency-injection-typescript
 github: posts/dependency-injection-typescript.md
+author: maslul
 ---
 
 Salah satu desain pattern yang banyak digunakan selain MVC adalah DDD (Domain Driven Design). DDD dipilih sebagai solusi untuk meminimalisir kompleksitas pada controller dalam MVC.

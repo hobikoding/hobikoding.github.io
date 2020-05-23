@@ -6,6 +6,7 @@ source: https://unsplash.com/@thomholmes
 keywords: about tentang hobikoding
 draft: false
 slug: about
+author: maslul
 ---
 
 Hobikoding adalah blog yang dirintis pada 13 Maret 2019. Blog ini fokus pada konten teknologi seperti pemrograman, infra, devops.

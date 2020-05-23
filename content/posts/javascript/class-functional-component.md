@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1552661417/React
 topic: [react]
 slug: component-react
 github: 'posts/javascript/class-functional-component.md'
+author: maslul
 ---
 
 React JS adalah library javascript yang menggunakan komponen untuk menyusunnya halamannya.

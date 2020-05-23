@@ -8,6 +8,7 @@ thumbnail: "https://res.cloudinary.com/hobikoding/image/upload/v1554250891/js/Ja
 topic: [javascript]
 slug: operator-javascript
 github: 'posts/javascript/operator-javascript.md'
+author: maslul
 ---
 
 Kita telah paham dengan beberapa operator matematika seperti tambah `+`, kurang `-`, kali `*`, dan bagi `/`.

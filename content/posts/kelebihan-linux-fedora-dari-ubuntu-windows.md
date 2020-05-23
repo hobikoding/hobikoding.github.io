@@ -8,6 +8,7 @@ thumbnail: https://res.cloudinary.com/hobikoding/image/upload/v1552861569/Fedora
 topic: [linux, fedora]
 slug: kelebihan-linux-fedora-dari-ubuntu-windows
 github: posts/kelebihan-linux-fedora-dari-ubuntu-windows.md
+author: maslul
 ---
 
 Tercatat pada hari ini saya menginstal kembali Linux di laptop saya.

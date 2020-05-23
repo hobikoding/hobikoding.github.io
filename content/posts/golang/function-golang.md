@@ -8,4 +8,5 @@ thumbnail:
 topic: []
 slug: function-golang
 github: /posts/golang/function-golang.md
+author: maslul
 ---
