@@ -12,7 +12,7 @@ github: /posts/golang/hello-world.md
 author: maslul
 ---
 
-Halo semua, terimakasih telah berkunjung di Hobi Koding. Saat ini teman-teman sedang berada di series belajar golang.
+Halo semua, terimakasih telah berkunjung di Hobi Koding. Saat ini teman-teman sedang berada di series [belajar golang](https://hobikoding.com/series/golang/).
 
 Di series ini kita akan belajar fundamental golang hingga advance golang.
 
@@ -107,4 +107,4 @@ Kemudian untuk menjalankannya, kita dapat menggunakan command `./main` di termin
 
 ## Penutup
 
-Itulah sedikit pengenalan hello world dan syntax golang. Kita akan melanjutkan pembahasannya pada series golang berikutnya.
+Itulah sedikit pengenalan hello world dan syntax golang. Kita akan melanjutkan pembahasannya pada [series golang](https://hobikoding.com/series/golang/) berikutnya.
