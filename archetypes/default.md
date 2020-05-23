@@ -5,7 +5,9 @@ draft: true
 description: 
 keywords: 
 thumbnail: 
+source: 
 topic: []
 slug: {{.File.TranslationBaseName}}
 github: {{ .File.Path }}
+author: 
 ---
