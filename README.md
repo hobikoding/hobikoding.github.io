@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://hobikoding.com/" target="blank"><img src="https://res.cloudinary.com/hobikoding/image/upload/v1552640812/icon.svg" width="120" alt="Hobikoding Logo" /></a>
+  <a href="http://hobikoding.com/" target="blank"><img src="https://raw.githubusercontent.com/hobikoding/hobikoding.github.io/blog/static/img/icon/icon.png" width="120" alt="Hobikoding Logo" /></a>
 </p>
 
 <p align="center">Hobikoding - Mari ngoding sambil tidur</p>
