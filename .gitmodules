@@ -1,3 +1,6 @@
 [submodule "themes/hobikoding-theme"]
 	path = themes/hobikoding-theme
 	url = https://github.com/hobikoding/hobikoding-theme.git
+[submodule "docs"]
+	path = docs
+	url = https://github.com/hobikoding/docs.git
