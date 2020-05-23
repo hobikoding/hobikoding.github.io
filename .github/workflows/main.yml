@@ -27,8 +27,6 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
           publish_branch: master
-          # user_name: saefullohmaslul
-          # user_email: maslulsaefulloh@gmail.com
           cname: hobikoding.com
           disable_nojekyll: true
           commit_message: ${{ github.event.head_commit.message }}
