@@ -26,7 +26,6 @@ linenos=false
 [permalinks]
     posts = "/:slug"
     page = "/:slug"
-    search = "/search"
 
 [taxonomies]
     topic = "topic"
