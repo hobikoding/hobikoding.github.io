@@ -1,0 +1,207 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Membuat Microservices Node.js dengan Arsitektur gRPC | Hobi Koding — Mari Ngoding Sambil Tidur</title><meta name=description content="Hobikoding - Mari ngoding sambil tidur | Membuat Microservices Node.js dengan Arsitektur gRPC"><meta property="og:title" content="Membuat Microservices Node.js dengan Arsitektur gRPC"><meta property="og:type" content="article"><meta property="article:published_time" content="2020-04-24"><meta property="og:description" content="Hobikoding - Mari ngoding sambil tidur | Membuat Microservices Node.js dengan Arsitektur gRPC"><meta property="og:url" content="https://hobikoding.com/nodejs-grpc-microservices/"><meta property="og:site_name" content="Hobi Koding — Mari Ngoding Sambil Tidur"><meta property="og:image" content="https://hobikoding.com/img/nodejs-grpc-microservices/thumbnail.jpg"><link rel=icon href=/favicon.png type=image/x-icon><link rel=canonical href=https://hobikoding.com/nodejs-grpc-microservices/><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous><link rel=stylesheet href=/css/styles.css><script>var m=document.createElement('meta');m.name='theme-color';m.content='#204d7b';document.head.appendChild(m);</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136352097-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-136352097-1');</script><script data-ad-client=ca-pub-6815193783560317 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script><script src=https://unpkg.com/lunr/lunr.js></script></head><body><nav class="navbar navbar-expand-lg navbar-dark"><div class=container><a href=/ class="navbar-brand font-weight-bold d-lg-block"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/blog-icon.svg height=32 class="d-inline-block align-bottom" alt=Logo>
+<span class=d-inline>Hobikoding</span></a>
+<button id=btn-nav class=navbar-toggler type=button data-toggle=collapse>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><a href=#! class=nav-link>Node.js</a></li><li class=nav-item><a href=# class=nav-link>Golang</a></li><li class=nav-item><a href=# class=nav-link>React</a></li><li class=nav-item><a href=# class=nav-link>Java</a></li><li class=nav-item><a href=# class=nav-link><span aria-hidden=true>More »</span></a></li><li class="nav-item d-none d-lg-block disabled"><span class="nav-link disabled">⋮</span></li><li class=nav-item><a href=# class=nav-link>Ebook</a></li></ul><form action=/search/ class="form-inline my-2 my-lg-0"><div class=input-group><input type=search name=query class=form-control placeholder=Search aria-label=Search><div class=input-group-append><button class="btn btn-primary my-sm-0" type=submit>
+<img src=/img/icon-search.svg class=pb-1 height=20px alt=icon-cari></button></div></div></form></div></div></nav><div class="container my-4"><div class=row><div class=col-lg-2><aside class=position-fixed id=share-button></aside><script>$(document).scroll(function(){$('#share-button').toggle($(this).scrollTop()>300);})
+$(window).scroll(function(){const offsetTop=$("#share-page").offset()&&$("#share-page").offset().top;const scrollTop=$(window).scrollTop();const target=$("#share-button")
+if(target){scrollTop>offsetTop-700?target.empty():target.html(`
+      <div class="col-sm-12 col-lg-1 position-sticky ml-5 pl-5 mt-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <a href="http://www.facebook.com/sharer.php?u=https:\/\/hobikoding.com\/nodejs-grpc-microservices\/&t=Membuat Microservices Node.js dengan Arsitektur gRPC"
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Facebook">
+              <span><img class="share-btn" src="/img/icon-facebook.svg" alt="share-fb" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href='http://twitter.com/intent/tweet?url="https://hobikoding.com/nodejs-grpc-microservices/"&text="Membuat Microservices Node.js dengan Arsitektur gRPC"&tw_p=tweetbutton'
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Twitter">
+              <span><img class="share-btn" src="/img/icon-twitter.svg" alt="share-twitter" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href="https://github.com/saefullohmaslul/saefullohmaslul.github.io/blob/blog/content/posts\/nodejs-grpc-microservices.md"
+              onclick="window.open(this.href, 'PCwindow', 'width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Edit on Gitlab">
+              <span><img class="share-btn" src="/img/icon-github.svg" alt="share-github" /></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    `)}})</script></div><div class="col-sm-12 col-lg-8 post-outer"><article id=post-card class="card border-0"><div class="card-body pb-0"><div class=post-header><div class=mb-3><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/author-icon.png alt=author class="rounded-circle mr-1" width=32 height=32 alt=author>
+<a class="align-middle text-dark" href=https://linkedin.com/in/saefullohmaslul target=_blank>Saefulloh Maslul</a>
+<small class="align-middle text-muted">· update terakhir
+<time>24 Apr 2020</time></small></div><h1 class="card-title mb-3">Membuat Microservices Node.js dengan Arsitektur gRPC</h1><hr></div><div><span class="badge badge-primary">#<a href=https://hobikoding.com//topic/nodejs/ class=text-white>nodejs</a></span></div><section class="post-content mb-5 mt-3"><img src=/img/nodejs-grpc-microservices/thumbnail.jpg alt="Membuat Microservices Node.js dengan Arsitektur gRPC" class="mb-2 w-100"><p class="text-center text-secondary mb-4"><small>Source: https://unsplash.com/photos/XMFZqrGyV-Q</small></p><p>Akhir-akhir ini arsitektur microservices semakin dilirik banyak company.</p><p>Selain memudahkan ketika development, arsitektur microservice juga lebih mudah untuk scale, sehingga tidak akan terjadi masalah ketika company mulai besar dan mengharuskan scale aplikasi.</p><p>Di nodejs, salah satu arsitektur yang bisa digunakan untuk menangani request antar service yaitu gRPC.</p><h2 id=preparation>Preparation</h2><p>Di project ini, kita akan membuat sebuah service dengan nama <code>notes</code>. Service ini memiliki method <code>list</code> untuk menampilkan beberapa note <em>(array of note)</em>.</p><blockquote><p>Yang akan kita lakukan:</p><ul><li>Init server</li><li>Membuat proto file (notes.proto)</li><li>Membuat notes server</li><li>Membuat notes client</li><li>Setup package.json</li></ul></blockquote><p>Saya telah membuat repository untuk artikel ini di:</p><div class="p-4 m-2 my-4 dwd-container"><div class=media><div class="col-lg-2 col-sm-3 col-4 pr-0 pl-0"><img class="mt-0 mb-0 shadow-none" src=/img/icon-github.svg alt=icon-software></div><div class="col-lg-10 col-sm-9 ml-lg-2 pl-2"><div class=media-body><div class=dwd-title-container><h5 class="mb-0 mt-2 font-weight-bold dwd-title">gRPC-Node-Utility</h5></div><div class="d-flex mt-2"><img class="shadow-none m-0 mr-1" height=20px src=https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png title="Github Icon" alt=github-icon><div class="col-lg-10 col-md-10 col-sm-8 pl-1"><p>Example of gRPC Microservices with Node.js</p></div></div></div></div></div><div class="col-12 col-lg-4 pl-0 pr-0 mt-3"><a class="btn btn-primary text-white w-100" href=https://github.com/saefullohmaslul/gRPC-Node-Utility/tree/grpc target=_blank>Repository</a></div></div><h2 id=init-server>Init Server</h2><p>Kita mulai dengan melakukan inisialisasi server nodejs. Buat folder baru dengan nama <code>grpc-nodejs-example</code> dan lakukan init npm</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>mkdir grpc-nodejs-example
+npm init -y
+</code></pre></div><p>Kita tentukan terlebih dahulu struktur project yang akan dibuat. Struktur project yang saya buat seperti ini:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>.
+├── grpc
+│   ├── index.js
+│   └── notes
+│       ├── client
+│       │   ├── get-notes.js
+│       │   └── index.js
+│       └── server
+│           └── index.js
+├── node_modules
+├── package.json
+├── package-lock.json
+└── proto
+    └── notes.proto
+</code></pre></div><h2 id=membuat-proto-file>Membuat Proto File</h2><p>Proto file digunakan sebagai format transfer data, seperti layaknya json di REST. Kita akan membuat proto file untuk service notes.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>proto/notes.proto</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>syntax</span> <span class=o>=</span> <span class=s2>&#34;proto3&#34;</span><span class=p>;</span>
+package notes<span class=p>;</span>
+
+service NoteService <span class=o>{</span>
+  rpc List <span class=o>(</span>Empty<span class=o>)</span> returns <span class=o>(</span>NoteList<span class=o>)</span> <span class=o>{}</span>
+<span class=o>}</span>
+
+message Empty <span class=o>{}</span>
+
+message Note <span class=o>{</span>
+  string <span class=nv>id</span> <span class=o>=</span> 1<span class=p>;</span>
+  string <span class=nv>title</span> <span class=o>=</span> 2<span class=p>;</span>
+  string <span class=nv>content</span> <span class=o>=</span> 3<span class=p>;</span>
+<span class=o>}</span>
+
+message NoteList <span class=o>{</span>
+  repeated Note <span class=nv>notes</span> <span class=o>=</span> 1<span class=p>;</span>
+<span class=o>}</span>
+</code></pre></div></div><p>Keterangan:</p><ul><li>Kita membuat package dengan nama <code>notes</code></li><li>Membuat service dengan nama NoteService yang memiliki method <code>List</code></li><li>Method List memiliki parameter Empty dan return NoteList</li><li>Empty adalah object kosong</li><li>NoteList adalah object dengan key notes yang memiliki value berupa repeated Note (array of Note)</li><li>Note adalah object yang memiliki key id, title, dan content yang semuanya bertipe data string</li><li>Penomoran di Note dan NoteList merupakan unique id</li></ul><h2 id=membuat-notes-server>Membuat Notes Server</h2><p>Pertama kita buat terlebih dahulu loader untuk file proto. Sebenarnya ada 2 cara untuk load proto file:</p><ol><li>Load langsung dari proto file menggunakan library <code>@grpc/loader</code></li><li>Generate proto file dan menggunakannya sebagai loader static</li></ol><p>Yang akan kita gunakan di artikel ini adalah load langsung dari proto file.</p><p>Pertama install seluruh library yang kita perlukan dalam project</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>npm i grpc @grpc/proto-loader
+</code></pre></div><p>Selanjutnya pada <code>grpc/index.js</code></p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>grpc/index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kr>const</span> <span class=nx>path</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;path&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>grpc</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;grpc&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>protoLoader</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;@grpc/proto-loader&#39;</span><span class=p>)</span>
+
+<span class=kr>const</span> <span class=nx>notesProtoPath</span> <span class=o>=</span> <span class=nx>path</span><span class=p>.</span><span class=nx>join</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;..&#39;</span><span class=p>,</span> <span class=s1>&#39;proto&#39;</span><span class=p>,</span> <span class=s1>&#39;notes.proto&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>notesProtoDefinition</span> <span class=o>=</span> <span class=nx>protoLoader</span><span class=p>.</span><span class=nx>loadSync</span><span class=p>(</span><span class=nx>notesProtoPath</span><span class=p>)</span>
+
+<span class=kr>const</span> <span class=nx>notesPackageDefinition</span> <span class=o>=</span> <span class=nx>grpc</span><span class=p>.</span><span class=nx>loadPackageDefinition</span><span class=p>(</span><span class=nx>notesProtoDefinition</span><span class=p>).</span><span class=nx>notes</span>
+
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=nx>notesPackageDefinition</span>
+<span class=p>}</span>
+</code></pre></div></div><p>Pada kode di atas kita membuat package definition untuk service notes dan meng-<em>export</em>-nya untuk digunakan file lain.</p><p>Kemudian:</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>grpc/notes/server/index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kr>const</span> <span class=nx>grpc</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;grpc&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=p>{</span> <span class=nx>notesPackageDefinition</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;../..&#39;</span><span class=p>)</span>
+
+<span class=cm>/**
+</span><span class=cm> * nama method harus sesuai dengan method di proto file
+</span><span class=cm> * List -&gt; list
+</span><span class=cm> */</span>
+<span class=kr>const</span> <span class=nx>list</span> <span class=o>=</span> <span class=p>(</span><span class=nx>call</span><span class=p>,</span> <span class=nx>callback</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>try</span> <span class=p>{</span>
+    <span class=cm>/**
+</span><span class=cm>     * data yang akan di return harus sesuai dengan proto file
+</span><span class=cm>     * yaitu array of note
+</span><span class=cm>     */</span>
+    <span class=kr>const</span> <span class=nx>data</span> <span class=o>=</span> <span class=p>[</span>
+      <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=s1>&#39;1&#39;</span><span class=p>,</span> <span class=nx>title</span><span class=o>:</span> <span class=s1>&#39;Note 1&#39;</span><span class=p>,</span> <span class=nx>content</span><span class=o>:</span> <span class=s1>&#39;Content 1&#39;</span> <span class=p>},</span>
+      <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=s1>&#39;2&#39;</span><span class=p>,</span> <span class=nx>title</span><span class=o>:</span> <span class=s1>&#39;Note 2&#39;</span><span class=p>,</span> <span class=nx>content</span><span class=o>:</span> <span class=s1>&#39;Content 2&#39;</span> <span class=p>}</span>
+    <span class=p>]</span>
+
+    <span class=cm>/**
+</span><span class=cm>     * nilai return berupa object dengan key
+</span><span class=cm>     * sesuai dengan proto file
+</span><span class=cm>     * -&gt; notes
+</span><span class=cm>     */</span>
+    <span class=k>return</span> <span class=nx>callback</span><span class=p>(</span><span class=kc>null</span><span class=p>,</span> <span class=p>{</span> <span class=nx>notes</span><span class=o>:</span> <span class=nx>data</span> <span class=p>})</span>
+  <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+    <span class=cm>/**
+</span><span class=cm>     * parameter pertama callback adalah error
+</span><span class=cm>     * parameter kedua callback adalah result
+</span><span class=cm>     */</span>
+    <span class=k>return</span> <span class=nx>callback</span><span class=p>(</span><span class=nx>error</span><span class=p>,</span> <span class=kc>null</span><span class=p>)</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kr>const</span> <span class=nx>server</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>grpc</span><span class=p>.</span><span class=nx>Server</span><span class=p>()</span>
+<span class=nx>server</span><span class=p>.</span><span class=nx>addService</span><span class=p>(</span><span class=nx>notesPackageDefinition</span><span class=p>.</span><span class=nx>NoteService</span><span class=p>.</span><span class=nx>service</span><span class=p>,</span> <span class=p>{</span>
+  <span class=cm>/**
+</span><span class=cm>   * bind semua method dalam parameter kedua dari addService
+</span><span class=cm>   */</span>
+  <span class=nx>list</span>
+<span class=p>})</span>
+
+<span class=cm>/**
+</span><span class=cm> * listen notes grpc server pada localhost:50051
+</span><span class=cm> */</span>
+<span class=nx>server</span><span class=p>.</span><span class=nx>bind</span><span class=p>(</span>
+  <span class=s1>&#39;0.0.0.0:50051&#39;</span><span class=p>,</span>
+  <span class=nx>grpc</span><span class=p>.</span><span class=nx>ServerCredentials</span><span class=p>.</span><span class=nx>createInsecure</span><span class=p>()</span>
+<span class=p>)</span>
+<span class=nx>server</span><span class=p>.</span><span class=nx>start</span><span class=p>()</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Server running at http://localhost:50051&#39;</span><span class=p>)</span>
+</code></pre></div></div><h2 id=membuat-notes-client>Membuat Notes Client</h2><p>Setelah selesai membuat notes server, kita lanjutkan dengan membuat notes client.</p><p>Notes server adalah service producer, dalam hal ini service yang menyediakan data. Sedangkan notes client adalah service client, yaitu service yang mengkonsumsi data dari producer.</p><blockquote><p>Saya ibaratkan ketika proses order. Order memerlukan data user, sehingga user menjadi producer dan order menjadi client (order mengkonsumsi data user)</p><p>Atau ketika proses membuat status pada social media, service status memerlukan data dari service user. Maka service status adalah client dari service user.</p><p><strong>Method dari client akan dipanggil pada setiap service yang membutuhkannya.</strong></p></blockquote><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>grpc/notes/client/index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kr>const</span> <span class=nx>grpc</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;grpc&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=p>{</span> <span class=nx>notesPackageDefinition</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;../..&#39;</span><span class=p>)</span>
+
+<span class=kr>const</span> <span class=nx>client</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>notesPackageDefinition</span><span class=p>.</span><span class=nx>NoteService</span><span class=p>(</span>
+  <span class=s1>&#39;0.0.0.0:50051&#39;</span><span class=p>,</span> <span class=nx>grpc</span><span class=p>.</span><span class=nx>credentials</span><span class=p>.</span><span class=nx>createInsecure</span><span class=p>()</span>
+<span class=p>)</span>
+
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>client</span>
+</code></pre></div></div><p>Pada kode di atas, kita membuat sebuah client dari notes server. Client ini akan digunakan pada setiap method yang dipanggil.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>grpc/notes/client/get-notes.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kr>const</span> <span class=nx>client</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;.&#39;</span><span class=p>)</span>
+
+<span class=kr>const</span> <span class=nx>getNotes</span> <span class=o>=</span> <span class=nx>async</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>try</span> <span class=p>{</span>
+    <span class=kr>const</span> <span class=nx>notes</span> <span class=o>=</span> <span class=nx>await</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+      <span class=cm>/**
+</span><span class=cm>       * memanggil method list dari notes client
+</span><span class=cm>       */</span>
+      <span class=nx>client</span><span class=p>.</span><span class=nx>list</span><span class=p>({},</span> <span class=p>(</span><span class=nx>error</span><span class=p>,</span> <span class=nx>notes</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>error</span><span class=p>)</span> <span class=nx>resolve</span><span class=p>(</span><span class=nx>notes</span><span class=p>)</span>
+        <span class=nx>reject</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span>
+      <span class=p>})</span>
+    <span class=p>})</span>
+
+    <span class=cm>/**
+</span><span class=cm>     * notes ditampilkan dalam log
+</span><span class=cm>     */</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>notes</span><span class=p>)</span>
+  <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=nx>getNotes</span><span class=p>()</span>
+</code></pre></div></div><p>Pada kode di atas, kita membuat method dengan nama <code>getNotes</code>. Method tersebut akan menghasilkan nilai balik berupa notes yang di dapatkan dengan memanggil method list dari client.</p><h2 id=setup-packagejson>Setup Package.json</h2><p>Untuk lebih memudahkan pemanggilan server, kita akan menambahkan script berikut dalam package.json</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>package.json</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=err>...</span>
+<span class=s2>&#34;scripts&#34;</span><span class=err>:</span> <span class=p>{</span>
+  <span class=err>...</span>
+<span class=hl>  <span class=nt>&#34;server&#34;</span><span class=p>:</span> <span class=s2>&#34;node grpc/notes/server&#34;</span><span class=p>,</span>
+</span><span class=hl>  <span class=nt>&#34;notes:get&#34;</span><span class=p>:</span> <span class=s2>&#34;node grpc/notes/client/get-notes.js&#34;</span>
+</span><span class=p>}</span>
+<span class=err>...</span>
+</code></pre></div></div><p>Selanjutnya kita buka dua terminal. Terminal pertama menjalankan server:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>npm run server
+
+<span class=c1># result</span>
+&gt; grpc-nodejs-example@1.0.0 server /grpc-nodejs-example
+&gt; node grpc/notes/server
+
+<span class=hl>Server running at http://localhost:50051
+</span></code></pre></div><p>Dan terminal kedua mengonsumsi data dari server:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>npm run notes:get
+
+<span class=c1># result</span>
+&gt; grpc-nodejs-example@1.0.0 notes:get /grpc-nodejs-example
+&gt; node grpc/notes/client/get-notes.js
+
+<span class=hl><span class=o>{</span>
+</span><span class=hl>  notes: <span class=o>[</span>
+</span><span class=hl>    <span class=o>{</span> id: <span class=s1>&#39;1&#39;</span>, title: <span class=s1>&#39;Note 1&#39;</span>, content: <span class=s1>&#39;Content 1&#39;</span> <span class=o>}</span>,
+</span><span class=hl>    <span class=o>{</span> id: <span class=s1>&#39;2&#39;</span>, title: <span class=s1>&#39;Note 2&#39;</span>, content: <span class=s1>&#39;Content 2&#39;</span> <span class=o>}</span>
+</span><span class=hl>  <span class=o>]</span>
+</span><span class=hl><span class=o>}</span>
+</span></code></pre></div><h2 id=penutup>Penutup</h2><p>Demikianlah cara transfer data antar service dalam microservices. Pada artikel selanjutnya kita akan mengintegrasikan gRPC ke dalam REST Api menggunakan framework express.</p></section><section class="card-footer p-md-4 bg-white"><div id=share-page class=share><a href=https://gitlab.com/saefullohmaslul/content/blob/master/ title="Edit on Gitlab" onclick="window.open(this.href,'PCwindow','width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="float-left github-post" src=/img/icon-github.svg alt=share-github></a><div class="float-right mt-2"><a class=ml-2 href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fhobikoding.com%2fnodejs-grpc-microservices%2f&t=Membuat%20Microservices%20Node.js%20dengan%20Arsitektur%20gRPC" title="Share on Facebook" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-facebook.svg alt=share-fb></a>
+<a class=ml-2 href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhobikoding.com%2fnodejs-grpc-microservices%2f&text=Membuat%20Microservices%20Node.js%20dengan%20Arsitektur%20gRPC&tw_p=tweetbutton" title="Share on Twitter" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-twitter.svg alt=share-twitter></a></div></div></section></div></article><div class="card px-4 pb-4 border-0"><div class=post-comment><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"hobikode"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class=col-lg-2></div></div></div><footer class="border bg-white border-bottom-0 border-left-0 border-right-0"><div class="container pt-3 pb-3 pt-md-5 pb-md-5"><div class=row><div class="col-md-6 col-sm-12 mb-0 mb-sm-3"><ul class="nav justify-content-center justify-content-lg-start"><li class=nav-item><a href=/ class=nav-link>Home</a></li><li class=nav-item><a href=/about class=nav-link>About</a></li></ul></div><div class="col-md-6 col-sm-12 text-center text-md-right pt-2">© <span>2020</span>
+<a href=https://hobikoding.com/>Hobikoding</a>
+<span class="d-none d-lg-inline">| Made with
+<img class=emoji draggable=false alt=❤️ height=15rem width=15rem src=/img/made-with.svg>
+using
+<a href=https://gohugo.io rel=noopener target=_blank>Hugo</a></span></div></div></div></footer><link href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css rel=stylesheet><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script><script src=/js/site.js></script></body></html>

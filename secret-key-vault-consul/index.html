@@ -1,0 +1,242 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Management Secret Key with Vault and Consul | Hobi Koding — Mari Ngoding Sambil Tidur</title><meta name=description content="Hobikoding - Mari ngoding sambil tidur | Management Secret Key with Vault and Consul"><meta property="og:title" content="Management Secret Key with Vault and Consul"><meta property="og:type" content="article"><meta property="article:published_time" content="2020-05-19"><meta property="og:description" content="Hobikoding - Mari ngoding sambil tidur | Management Secret Key with Vault and Consul"><meta property="og:url" content="https://hobikoding.com/secret-key-vault-consul/"><meta property="og:site_name" content="Hobi Koding — Mari Ngoding Sambil Tidur"><meta property="og:image" content="https://hobikoding.com/img/secret-key-vault-consul/thumbnail.jpg"><link rel=icon href=/favicon.png type=image/x-icon><link rel=canonical href=https://hobikoding.com/secret-key-vault-consul/><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous><link rel=stylesheet href=/css/styles.css><script>var m=document.createElement('meta');m.name='theme-color';m.content='#204d7b';document.head.appendChild(m);</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136352097-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-136352097-1');</script><script data-ad-client=ca-pub-6815193783560317 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script><script src=https://unpkg.com/lunr/lunr.js></script></head><body><nav class="navbar navbar-expand-lg navbar-dark"><div class=container><a href=/ class="navbar-brand font-weight-bold d-lg-block"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/blog-icon.svg height=32 class="d-inline-block align-bottom" alt=Logo>
+<span class=d-inline>Hobikoding</span></a>
+<button id=btn-nav class=navbar-toggler type=button data-toggle=collapse>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><a href=#! class=nav-link>Node.js</a></li><li class=nav-item><a href=# class=nav-link>Golang</a></li><li class=nav-item><a href=# class=nav-link>React</a></li><li class=nav-item><a href=# class=nav-link>Java</a></li><li class=nav-item><a href=# class=nav-link><span aria-hidden=true>More »</span></a></li><li class="nav-item d-none d-lg-block disabled"><span class="nav-link disabled">⋮</span></li><li class=nav-item><a href=# class=nav-link>Ebook</a></li></ul><form action=/search/ class="form-inline my-2 my-lg-0"><div class=input-group><input type=search name=query class=form-control placeholder=Search aria-label=Search><div class=input-group-append><button class="btn btn-primary my-sm-0" type=submit>
+<img src=/img/icon-search.svg class=pb-1 height=20px alt=icon-cari></button></div></div></form></div></div></nav><div class="container my-4"><div class=row><div class=col-lg-2><aside class=position-fixed id=share-button></aside><script>$(document).scroll(function(){$('#share-button').toggle($(this).scrollTop()>300);})
+$(window).scroll(function(){const offsetTop=$("#share-page").offset()&&$("#share-page").offset().top;const scrollTop=$(window).scrollTop();const target=$("#share-button")
+if(target){scrollTop>offsetTop-700?target.empty():target.html(`
+      <div class="col-sm-12 col-lg-1 position-sticky ml-5 pl-5 mt-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <a href="http://www.facebook.com/sharer.php?u=https:\/\/hobikoding.com\/secret-key-vault-consul\/&t=Management Secret Key with Vault and Consul"
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Facebook">
+              <span><img class="share-btn" src="/img/icon-facebook.svg" alt="share-fb" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href='http://twitter.com/intent/tweet?url="https://hobikoding.com/secret-key-vault-consul/"&text="Management Secret Key with Vault and Consul"&tw_p=tweetbutton'
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Twitter">
+              <span><img class="share-btn" src="/img/icon-twitter.svg" alt="share-twitter" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href="https://github.com/saefullohmaslul/saefullohmaslul.github.io/blob/blog/content/posts\/secret-key-vault-consul.md"
+              onclick="window.open(this.href, 'PCwindow', 'width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Edit on Gitlab">
+              <span><img class="share-btn" src="/img/icon-github.svg" alt="share-github" /></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    `)}})</script></div><div class="col-sm-12 col-lg-8 post-outer"><article id=post-card class="card border-0"><div class="card-body pb-0"><div class=post-header><div class=mb-3><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/author-icon.png alt=author class="rounded-circle mr-1" width=32 height=32 alt=author>
+<a class="align-middle text-dark" href=https://linkedin.com/in/saefullohmaslul target=_blank>Saefulloh Maslul</a>
+<small class="align-middle text-muted">· update terakhir
+<time>19 May 2020</time></small></div><h1 class="card-title mb-3">Management Secret Key with Vault and Consul</h1><hr></div><div><span class="badge badge-primary">#<a href=https://hobikoding.com//topic/vault/ class=text-white>vault</a></span>
+<span class="badge badge-primary">#<a href=https://hobikoding.com//topic/consul/ class=text-white>consul</a></span>
+<span class="badge badge-primary">#<a href=https://hobikoding.com//topic/infrastructure/ class=text-white>infrastructure</a></span></div><section class="post-content mb-5 mt-3"><img src=/img/secret-key-vault-consul/thumbnail.jpg alt="Management Secret Key with Vault and Consul" class="mb-2 w-100"><p class="text-center text-secondary mb-4"><small>Source: https://unsplash.com/@claybanks</small></p><p>Ketika develop aplikasi, pasti tidak lepas dari beberapa konfigurasi. Misalnya database, redis, api-key, dan secret key lainnya.</p><p>Cara termudah untuk menaruh konfigurasi tersebut biasanya di file kusus bernama <code>.env</code>.</p><p>Namun hal ini menjadi kendala ketika misalnya mobile apps kita mengalami perubahan konfigurasi, tentu kita harus menggantinya kembali konfigurasi tersebut di file <code>.env</code> kemudian mendeploy ulang aplikasi kita dan merilisnya di playstore/appstore.</p><p>Kemudian user harus mendownload untuk mendapatkan update dari konfigurasi terbarunya.</p><p>Namun sayangnya bug tersebut sangat kritikal sehingga aplikasi anda tidak bisa berjalan sama sekali jika user belum update aplikasi tersebut, dan hal itu memerlukan waktu yang cukup lama untuk deploy ulang, menunggu acc dari appstore/playstore, kemudian meminta setiap user mengupdate aplikasi mereka kalau tidak aplikasi tersebut tidak dapat berjalan.</p><p>Sangat merugikan bukan!</p><h2 id=manajemen-secret-key>Manajemen Secret Key</h2><p>Namun bayangkan ketika konfigurasi aplikasi anda diletakan dalam suatu service sendiri, sehingga ketika terjadi perubahan secret key hanya tinggal mengubah service tersebut tanpa user perlu mengupdate aplikasi mereka.</p><p>Untungnya terdapat beberapa aplikasi yang dapat menangani hal itu, seperti consul dan vault.</p><p>Salah satu fitur dari consul yaitu key-value store, hal ini dapat kita manfaatkan untuk penyimpanan beberapa konfigurasi.</p><p>Seperti yang dilansir di <a href=https://stackshare.io/stackups/consul-vs-vault>consul vs vault</a>, bahwa &ldquo;Consul can be classified as a tool in the <strong>Open Source Service Discovery</strong> category, while Vault is grouped under <strong>Secrets Management</strong>&rdquo;</p><blockquote><p>Maka untuk mengamankan secret key belum cukup dengan consul saja, kita harus kombinasikan dengan vault. Hal ini karena data yang di simpan melalui vault akan di-enkripsi terlebih dahulu sehingga secret key kita lebih terjamin keamanannya.</p></blockquote><h2 id=preparation>Preparation</h2><p>Artikel ini akan menjelaskan beberapa hal:</p><ul><li>Setup vault</li><li>Setup consul</li><li>Integrating vault with consul</li><li>Testing vault</li></ul><p>Karena seluruh artikel ini akan sangat berhubungan dengan <code>docker</code> dan <code>docker-compose</code>, jika kalian belum paham cara menggunakannya saya sarankan untuk mempelajarinya terlebih dahulu.</p><p>Namun tidak masalah jika ingin melanjutkan artikel ini, karena seluruh konfigurasi akan saya letakan di docker-compose.</p><p>Sebagai gambaran, struktur project yang akan kita buat seperti ini:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>.
+├── consul
+│   ├── config
+│   │   └── consul-config.json
+│   └── Dockerfile
+├── docker-compose.yml
+└── vault
+    ├── config
+    │   └── vault-config.json
+    ├── Dockerfile
+    ├── logs
+    └── policies
+</code></pre></div><h2 id=setup-vault>Setup Vault</h2><p>Pertama buat Dockerfile pada folder vault dan isi dengan kode berikut:</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>vault/Dockerfile</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># install alpine os</span>
+FROM alpine:3.11
+
+<span class=c1># buat environment valut version</span>
+ENV VAULT_VERSION 1.4.1
+
+<span class=c1># membuat folder di docker container</span>
+RUN mkdir -p /vault
+
+<span class=c1># install bash, ca-certificates, dan wget</span>
+RUN apk --no-cache add <span class=se>\
+</span><span class=se></span>  bash <span class=se>\
+</span><span class=se></span>  ca-certificates <span class=se>\
+</span><span class=se></span>  wget
+
+<span class=c1># install vault</span>
+RUN wget --quiet --output-document<span class=o>=</span>/tmp/vault.zip https://releases.hashicorp.com/vault/<span class=si>${</span><span class=nv>VAULT_VERSION</span><span class=si>}</span>/vault_<span class=si>${</span><span class=nv>VAULT_VERSION</span><span class=si>}</span>_linux_amd64.zip <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=se></span>  unzip /tmp/vault.zip -d /vault <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=se></span>  rm -f /tmp/vault.zip <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=se></span>  chmod +x /vault
+
+<span class=c1># setup eksekusi vault</span>
+ENV <span class=nv>PATH</span><span class=o>=</span><span class=s2>&#34;PATH=</span><span class=nv>$PATH</span><span class=s2>:</span><span class=nv>$PWD</span><span class=s2>/vault&#34;</span>
+
+<span class=c1># copy config ke docker container</span>
+COPY ./config/vault-config.json /vault/config/vault-config.json
+
+EXPOSE <span class=m>8200</span>
+
+ENTRYPOINT <span class=o>[</span><span class=s2>&#34;vault&#34;</span><span class=o>]</span>
+</code></pre></div></div><p>Kemudian pada <code>vault/config/vault-config.json</code> masukkan konfigurasi berikut:</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>vault/config/vault-config.json</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+  <span class=nt>&#34;storage&#34;</span><span class=p>:</span> <span class=p>{</span>
+    <span class=nt>&#34;consul&#34;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&#34;address&#34;</span><span class=p>:</span> <span class=s2>&#34;consul:8500&#34;</span><span class=p>,</span>
+      <span class=nt>&#34;path&#34;</span><span class=p>:</span> <span class=s2>&#34;vault/&#34;</span>
+    <span class=p>}</span>
+  <span class=p>},</span>
+  <span class=nt>&#34;listener&#34;</span><span class=p>:</span> <span class=p>{</span>
+    <span class=nt>&#34;tcp&#34;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=nt>&#34;address&#34;</span><span class=p>:</span> <span class=s2>&#34;0.0.0.0:8200&#34;</span><span class=p>,</span>
+      <span class=nt>&#34;tls_disable&#34;</span><span class=p>:</span> <span class=mi>1</span>
+    <span class=p>}</span>
+  <span class=p>},</span>
+  <span class=nt>&#34;ui&#34;</span><span class=p>:</span> <span class=kc>true</span>
+<span class=p>}</span>
+</code></pre></div></div><p>Pada konfigurasi di atas, kita menyimpan storage vault pada alamat consul kita.</p><p>Sebenarnya bisa saja kita hanya menggunakan vault tanpa consul, namun storage harus diubah ke folder lokal. Hal itu tidak akan kita bahas disini.</p><p>Jika sudah, pada root folder kita buat <code>docker-compose.yml</code> dan masukan konfigurasi vault.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>docker-compose.yml</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-yml data-lang=yml><span class=k>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.7&#39;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>services</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=k>vault</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=k>build</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>context</span><span class=p>:</span><span class=w> </span>./vault<span class=w>
+</span><span class=w>      </span><span class=k>dockerfile</span><span class=p>:</span><span class=w> </span>Dockerfile<span class=w>
+</span><span class=w>    </span><span class=k>ports</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=m>8200</span><span class=p>:</span><span class=m>8200</span><span class=w>
+</span><span class=w>    </span><span class=k>volumes</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- ./vault/config<span class=p>:</span>/vault/config<span class=w>
+</span><span class=w>      </span>- ./vault/policies<span class=p>:</span>/vault/policies<span class=w>
+</span><span class=w>      </span>- ./vault/logs<span class=p>:</span>/vault/logs<span class=w>
+</span><span class=w>    </span><span class=k>environment</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>VAULT_ADDR</span><span class=p>:</span><span class=w> </span>http<span class=p>:</span>//<span class=m>127.0.0.1</span><span class=p>:</span><span class=m>8200</span><span class=w>
+</span><span class=w>      </span><span class=k>VAULT_API_ADDR</span><span class=p>:</span><span class=w> </span>http<span class=p>:</span>//<span class=m>127.0.0.1</span><span class=p>:</span><span class=m>8200</span><span class=w>
+</span><span class=w>    </span><span class=k>command</span><span class=p>:</span><span class=w> </span>server<span class=w> </span>-config=/vault/config/vault-config.json<span class=w>
+</span><span class=w>    </span><span class=k>cap_add</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- IPC_LOCK<span class=w>
+</span><span class=w>    </span><span class=k>depends_on</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- consul<span class=w>
+</span><span class=w>    </span><span class=k>ulimits</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>nproc</span><span class=p>:</span><span class=w> </span><span class=m>65535</span><span class=w>
+</span><span class=w>    </span><span class=k>cap_add</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- ALL<span class=w>
+</span><span class=w>    </span><span class=k>privileged</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>    </span><span class=k>deploy</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>restart_policy</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=k>condition</span><span class=p>:</span><span class=w> </span>on-failure<span class=w>
+</span><span class=w>        </span><span class=k>delay</span><span class=p>:</span><span class=w> </span>5s<span class=w>
+</span><span class=w>        </span><span class=k>max_attempts</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w>        </span><span class=k>window</span><span class=p>:</span><span class=w> </span>120s<span class=w>
+</span></code></pre></div></div><p>Sampai sini kita sudah mensetup konfigurasi vault. Namun belum bisa dijalankan karena <em>vault depends_on consul</em>, sehingga menjalankan consul sebelum menjalankan vault ini.</p><h2 id=setup-consul>Setup Consul</h2><p>Selanjutnya hampir sama seperti vault, buat file pada <code>consul/Dockerfile</code> kemudian masukan kode berikut:</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>consul/Dockerfile</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># install alpine os</span>
+FROM alpine:3.11
+
+<span class=c1># buat environment consul version</span>
+ENV CONSUL_VERSION 1.7.3
+
+<span class=c1># membuat folder di docker container</span>
+RUN mkdir /consul
+
+<span class=c1># install bash, ca-certificates, dan wget</span>
+RUN apk --no-cache add <span class=se>\
+</span><span class=se></span>  bash <span class=se>\
+</span><span class=se></span>  ca-certificates <span class=se>\
+</span><span class=se></span>  wget
+
+<span class=c1># install consul</span>
+RUN wget --quiet --output-document<span class=o>=</span>/tmp/consul.zip https://releases.hashicorp.com/consul/<span class=si>${</span><span class=nv>CONSUL_VERSION</span><span class=si>}</span>/consul_<span class=si>${</span><span class=nv>CONSUL_VERSION</span><span class=si>}</span>_linux_amd64.zip <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=se></span>  unzip /tmp/consul.zip -d /consul <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=se></span>  rm -f /tmp/consul.zip <span class=o>&amp;&amp;</span> <span class=se>\
+</span><span class=se></span>  chmod +x /consul/consul
+
+<span class=c1># setup eksekusi vault</span>
+ENV <span class=nv>PATH</span><span class=o>=</span><span class=s2>&#34;PATH=</span><span class=nv>$PATH</span><span class=s2>:</span><span class=nv>$PWD</span><span class=s2>/consul&#34;</span>
+
+<span class=c1># copy config ke docker container</span>
+COPY ./config/consul-config.json /consul/config/config.json
+
+EXPOSE <span class=m>8300</span> <span class=m>8400</span> <span class=m>8500</span> <span class=m>8600</span>
+
+ENTRYPOINT <span class=o>[</span><span class=s2>&#34;consul&#34;</span><span class=o>]</span>
+</code></pre></div></div><p>Kemudian buat juga konfigurasi consulnya pada <code>consul/config/consul-config.json</code>.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>consul/config/consul-config.json</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+  <span class=nt>&#34;datacenter&#34;</span><span class=p>:</span> <span class=s2>&#34;localhost&#34;</span><span class=p>,</span>
+  <span class=nt>&#34;data_dir&#34;</span><span class=p>:</span> <span class=s2>&#34;/consul/data&#34;</span><span class=p>,</span>
+  <span class=nt>&#34;log_level&#34;</span><span class=p>:</span> <span class=s2>&#34;DEBUG&#34;</span><span class=p>,</span>
+  <span class=nt>&#34;server&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=nt>&#34;ui&#34;</span><span class=p>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=nt>&#34;ports&#34;</span><span class=p>:</span> <span class=p>{</span>
+    <span class=nt>&#34;dns&#34;</span><span class=p>:</span> <span class=mi>53</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div></div><p>Kemudian edit kembali file docker-compose.yml menjadi seperti ini:</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>docker-compose.yml</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-yml data-lang=yml><span class=k>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.7&#39;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=k>services</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=k>vault</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=k>build</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>context</span><span class=p>:</span><span class=w> </span>./vault<span class=w>
+</span><span class=w>      </span><span class=k>dockerfile</span><span class=p>:</span><span class=w> </span>Dockerfile<span class=w>
+</span><span class=w>    </span><span class=k>ports</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=m>8200</span><span class=p>:</span><span class=m>8200</span><span class=w>
+</span><span class=w>    </span><span class=k>volumes</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- ./vault/config<span class=p>:</span>/vault/config<span class=w>
+</span><span class=w>      </span>- ./vault/policies<span class=p>:</span>/vault/policies<span class=w>
+</span><span class=w>      </span>- ./vault/logs<span class=p>:</span>/vault/logs<span class=w>
+</span><span class=w>    </span><span class=k>environment</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>VAULT_ADDR</span><span class=p>:</span><span class=w> </span>http<span class=p>:</span>//<span class=m>127.0.0.1</span><span class=p>:</span><span class=m>8200</span><span class=w>
+</span><span class=w>      </span><span class=k>VAULT_API_ADDR</span><span class=p>:</span><span class=w> </span>http<span class=p>:</span>//<span class=m>127.0.0.1</span><span class=p>:</span><span class=m>8200</span><span class=w>
+</span><span class=w>    </span><span class=k>command</span><span class=p>:</span><span class=w> </span>server<span class=w> </span>-config=/vault/config/vault-config.json<span class=w>
+</span><span class=w>    </span><span class=k>cap_add</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- IPC_LOCK<span class=w>
+</span><span class=w>    </span><span class=k>depends_on</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- consul<span class=w>
+</span><span class=w>    </span><span class=k>ulimits</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>nproc</span><span class=p>:</span><span class=w> </span><span class=m>65535</span><span class=w>
+</span><span class=w>    </span><span class=k>cap_add</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- ALL<span class=w>
+</span><span class=w>    </span><span class=k>privileged</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>    </span><span class=k>deploy</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>restart_policy</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span><span class=k>condition</span><span class=p>:</span><span class=w> </span>on-failure<span class=w>
+</span><span class=w>        </span><span class=k>delay</span><span class=p>:</span><span class=w> </span>5s<span class=w>
+</span><span class=w>        </span><span class=k>max_attempts</span><span class=p>:</span><span class=w> </span><span class=m>3</span><span class=w>
+</span><span class=w>        </span><span class=k>window</span><span class=p>:</span><span class=w> </span>120s<span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=k>consul</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=k>build</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=k>context</span><span class=p>:</span><span class=w> </span>./consul<span class=w>
+</span><span class=w>      </span><span class=k>dockerfile</span><span class=p>:</span><span class=w> </span>Dockerfile<span class=w>
+</span><span class=w>    </span><span class=k>ports</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- <span class=m>8500</span><span class=p>:</span><span class=m>8500</span><span class=w>
+</span><span class=w>    </span><span class=k>command</span><span class=p>:</span><span class=w> </span>agent<span class=w> </span>-server<span class=w> </span>-bind<span class=w> </span><span class=m>0.0.0.0</span><span class=w> </span>-client<span class=w> </span><span class=m>0.0.0.0</span><span class=w> </span>-bootstrap-expect<span class=w> </span><span class=m>1</span><span class=w> </span>-config-file=/consul/config/config.json<span class=w>
+</span><span class=w>    </span><span class=k>volumes</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span>- ./consul/config/consul-config.json<span class=p>:</span>/consul/config/config.json<span class=w>
+</span></code></pre></div></div><h2 id=integrating-vault-with-consul>Integrating Vault with Consul</h2><p>Oke jika semua sudah selesai, sekarang kita integrasikan consul ini dengan vault.</p><p>Oya kalian bisa clone repository ini kalau malas ngoding:</p><div class="p-4 m-2 my-4 dwd-container"><div class=media><div class="col-lg-2 col-sm-3 col-4 pr-0 pl-0"><img class="mt-0 mb-0 shadow-none" src=/img/icon-github.svg alt=icon-software></div><div class="col-lg-10 col-sm-9 ml-lg-2 pl-2"><div class=media-body><div class=dwd-title-container><h5 class="mb-0 mt-2 font-weight-bold dwd-title">secret-store</h5></div><div class="d-flex mt-2"><img class="shadow-none m-0 mr-1" height=20px src=https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png title="Github Icon" alt=github-icon><div class="col-lg-10 col-md-10 col-sm-8 pl-1"><p>Storing secret key with vault and consul</p></div></div></div></div></div><div class="col-12 col-lg-4 pl-0 pr-0 mt-3"><a class="btn btn-primary text-white w-100" href=https://github.com/saefullohmaslul/secret-store/ target=_blank>Repository</a></div></div><p>Pertama jalankan terlebih dahulu docker-composenya dengan cara,</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>docker-compose up --build
+</code></pre></div><ul><li><p>Apabila semua container telah running, selanjutnya masuk ke <a href=localhost:8200>localhost:8200</a>.</p><p><img src=/img/secret-key-vault-consul/init-vault.png alt=init-vault></p></li><li><p>Pada key shares dan key threshold isikan dengan angka 1, kemudian klik initialize.</p><blockquote><p>Simpan <strong>initial root token</strong> and <strong>Key 1</strong>. Kemudian klik <strong>continue to unseal</strong>.</p></blockquote><p><img src=/img/secret-key-vault-consul/unseal-vault.png alt=init-vault></p></li><li><p>Masukkan key 1 ke kolom <code>master key portion</code> dan klik unseal.</p><p><img src=/img/secret-key-vault-consul/sign-vault.png alt=init-vault></p></li><li><p>Kemudian masukan <code>initial root token</code> dan klik sign.</p><p><img src=/img/secret-key-vault-consul/consul-kv.png alt=init-vault></p></li></ul><p>Buka link ini <a href=http://localhost:8500/ui/localhost/kv>localhost:8500/ui/localhost/kv</a>, Apabila pada menu Key/Value sudah terdapat folder vault, maka integrasi vault dan consul sudah berhasil.</p><p>Integrasi ini bertujuan agar vault menyimpan semua data pada consul, tidak pada storage lokal.</p><h2 id=testing-vault>Testing Vault</h2><p>Pada testing ini kita akan menyimpan secret key dan mengambilnya dengan perintah GET.</p><ul><li><p>Buka dashboard vault, kemudian tambahkan <code>Enable a Secrets Engine</code>, beri nama sesuai selera kalian, saya sendiri memberi nama <code>kv</code>.</p></li><li><p>Masukan path dan konfigurasi datanya. Saya memberi nama path <code>db-config</code> dan data seperti gambar di bawah. Kemudian klik save.</p><p><img src=/img/secret-key-vault-consul/create-secret-vault.png alt=init-vault></p></li><li><p>Buka terminal dan masukan perintah berikut (ubah <code>s.8ULvB7xH2ayA9lRSFMLVR2Kz</code> sesuai initial root token kalian dan <code>db-config</code> sesuai path yang akan diambil)</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>curl <span class=se>\
+</span><span class=se></span>  --header <span class=s2>&#34;X-Vault-Token: s.8ULvB7xH2ayA9lRSFMLVR2Kz&#34;</span> <span class=se>\
+</span><span class=se></span>  --request GET <span class=se>\
+</span><span class=se></span>  http://127.0.0.1:8200/v1/kv/db-config
+</code></pre></div><p>Maka akan memperoleh response seperti ini:</p><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+  <span class=nt>&#34;request_id&#34;</span><span class=p>:</span> <span class=s2>&#34;b7a0393f-a929-b14c-2017-8a711f08911b&#34;</span><span class=p>,</span>
+  <span class=nt>&#34;lease_id&#34;</span><span class=p>:</span> <span class=s2>&#34;&#34;</span><span class=p>,</span>
+  <span class=nt>&#34;renewable&#34;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,</span>
+  <span class=nt>&#34;lease_duration&#34;</span><span class=p>:</span> <span class=mi>2764800</span><span class=p>,</span>
+<span class=hl>  <span class=nt>&#34;data&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span><span class=hl>    <span class=nt>&#34;host&#34;</span><span class=p>:</span> <span class=s2>&#34;127.0.0.1&#34;</span>
+</span><span class=hl>  <span class=p>},</span>
+</span>  <span class=nt>&#34;wrap_info&#34;</span><span class=p>:</span> <span class=kc>null</span><span class=p>,</span>
+  <span class=nt>&#34;warnings&#34;</span><span class=p>:</span> <span class=kc>null</span><span class=p>,</span>
+  <span class=nt>&#34;auth&#34;</span><span class=p>:</span> <span class=kc>null</span>
+<span class=p>}</span>
+</code></pre></div></li></ul><p>Nah bisa dilihat kita telah mendapatkan data yang kita store sebelumnya pada vault.</p><p>Jika ingin mengintegrasikannya dengan mobile apps, ketika initialize app, sebelum masuk main app, GET terlebih dahulu secret key sehingga apabila ada perubahan akan update ke perubahan terbarunya.</p></section><section class="card-footer p-md-4 bg-white"><div id=share-page class=share><a href=https://gitlab.com/saefullohmaslul/content/blob/master/ title="Edit on Gitlab" onclick="window.open(this.href,'PCwindow','width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="float-left github-post" src=/img/icon-github.svg alt=share-github></a><div class="float-right mt-2"><a class=ml-2 href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fhobikoding.com%2fsecret-key-vault-consul%2f&t=Management%20Secret%20Key%20with%20Vault%20and%20Consul" title="Share on Facebook" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-facebook.svg alt=share-fb></a>
+<a class=ml-2 href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhobikoding.com%2fsecret-key-vault-consul%2f&text=Management%20Secret%20Key%20with%20Vault%20and%20Consul&tw_p=tweetbutton" title="Share on Twitter" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-twitter.svg alt=share-twitter></a></div></div></section></div></article><div class="card px-4 pb-4 border-0"><div class=post-comment><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"hobikode"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class=col-lg-2></div></div></div><footer class="border bg-white border-bottom-0 border-left-0 border-right-0"><div class="container pt-3 pb-3 pt-md-5 pb-md-5"><div class=row><div class="col-md-6 col-sm-12 mb-0 mb-sm-3"><ul class="nav justify-content-center justify-content-lg-start"><li class=nav-item><a href=/ class=nav-link>Home</a></li><li class=nav-item><a href=/about class=nav-link>About</a></li></ul></div><div class="col-md-6 col-sm-12 text-center text-md-right pt-2">© <span>2020</span>
+<a href=https://hobikoding.com/>Hobikoding</a>
+<span class="d-none d-lg-inline">| Made with
+<img class=emoji draggable=false alt=❤️ height=15rem width=15rem src=/img/made-with.svg>
+using
+<a href=https://gohugo.io rel=noopener target=_blank>Hugo</a></span></div></div></div></footer><link href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css rel=stylesheet><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script><script src=/js/site.js></script></body></html>

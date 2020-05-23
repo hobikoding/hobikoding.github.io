@@ -1,0 +1,90 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var | Hobi Koding — Mari Ngoding Sambil Tidur</title><meta name=description content="Hobikoding - Mari ngoding sambil tidur | Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var"><meta property="og:title" content="Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var"><meta property="og:type" content="article"><meta property="article:published_time" content="2019-04-02"><meta property="og:description" content="Hobikoding - Mari ngoding sambil tidur | Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var"><meta property="og:url" content="https://hobikoding.com/variabel-javascript/"><meta property="og:site_name" content="Hobi Koding — Mari Ngoding Sambil Tidur"><meta property="og:image" content="https://res.cloudinary.com/hobikoding/image/upload/v1554204189/js/js.jpg"><link rel=icon href=/favicon.png type=image/x-icon><link rel=canonical href=https://hobikoding.com/variabel-javascript/><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous><link rel=stylesheet href=/css/styles.css><script>var m=document.createElement('meta');m.name='theme-color';m.content='#204d7b';document.head.appendChild(m);</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136352097-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-136352097-1');</script><script data-ad-client=ca-pub-6815193783560317 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script><script src=https://unpkg.com/lunr/lunr.js></script></head><body><nav class="navbar navbar-expand-lg navbar-dark"><div class=container><a href=/ class="navbar-brand font-weight-bold d-lg-block"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/blog-icon.svg height=32 class="d-inline-block align-bottom" alt=Logo>
+<span class=d-inline>Hobikoding</span></a>
+<button id=btn-nav class=navbar-toggler type=button data-toggle=collapse>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><a href=#! class=nav-link>Node.js</a></li><li class=nav-item><a href=# class=nav-link>Golang</a></li><li class=nav-item><a href=# class=nav-link>React</a></li><li class=nav-item><a href=# class=nav-link>Java</a></li><li class=nav-item><a href=# class=nav-link><span aria-hidden=true>More »</span></a></li><li class="nav-item d-none d-lg-block disabled"><span class="nav-link disabled">⋮</span></li><li class=nav-item><a href=# class=nav-link>Ebook</a></li></ul><form action=/search/ class="form-inline my-2 my-lg-0"><div class=input-group><input type=search name=query class=form-control placeholder=Search aria-label=Search><div class=input-group-append><button class="btn btn-primary my-sm-0" type=submit>
+<img src=/img/icon-search.svg class=pb-1 height=20px alt=icon-cari></button></div></div></form></div></div></nav><div class="container my-4"><div class=row><div class=col-lg-2><aside class=position-fixed id=share-button></aside><script>$(document).scroll(function(){$('#share-button').toggle($(this).scrollTop()>300);})
+$(window).scroll(function(){const offsetTop=$("#share-page").offset()&&$("#share-page").offset().top;const scrollTop=$(window).scrollTop();const target=$("#share-button")
+if(target){scrollTop>offsetTop-700?target.empty():target.html(`
+      <div class="col-sm-12 col-lg-1 position-sticky ml-5 pl-5 mt-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <a href="http://www.facebook.com/sharer.php?u=https:\/\/hobikoding.com\/variabel-javascript\/&t=Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var"
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Facebook">
+              <span><img class="share-btn" src="/img/icon-facebook.svg" alt="share-fb" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href='http://twitter.com/intent/tweet?url="https://hobikoding.com/variabel-javascript/"&text="Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var"&tw_p=tweetbutton'
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Twitter">
+              <span><img class="share-btn" src="/img/icon-twitter.svg" alt="share-twitter" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href="https://github.com/saefullohmaslul/saefullohmaslul.github.io/blob/blog/content/posts\/javascript\/variabel-javascript.md"
+              onclick="window.open(this.href, 'PCwindow', 'width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Edit on Gitlab">
+              <span><img class="share-btn" src="/img/icon-github.svg" alt="share-github" /></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    `)}})</script></div><div class="col-sm-12 col-lg-8 post-outer"><article id=post-card class="card border-0"><div class="card-body pb-0"><div class=post-header><div class=mb-3><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/author-icon.png alt=author class="rounded-circle mr-1" width=32 height=32 alt=author>
+<a class="align-middle text-dark" href=https://linkedin.com/in/saefullohmaslul target=_blank>Saefulloh Maslul</a>
+<small class="align-middle text-muted">· update terakhir
+<time>02 Apr 2019</time></small></div><h1 class="card-title mb-3">Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var</h1><hr></div><div><span class="badge badge-primary">#<a href=https://hobikoding.com//topic/javascript/ class=text-white>javascript</a></span></div><section class="post-content mb-5 mt-3"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1554204189/js/js.jpg alt="Mengenal Variabel di Javascript: Perbedaan Const, Let, dan Var" class="mb-2 w-100"><p>Ada tiga cara mendefinisikan variabel dalam javascript. Yaitu dengan:</p><ul><li><em><strong>var</strong></em></li><li><em><strong>let</strong></em></li><li><em><strong>const</strong></em></li></ul><p>contoh:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>pesanPertama</span> <span class=o>=</span> <span class=s1>&#39;Hello World&#39;</span>
+<span class=kd>let</span> <span class=nx>pesanKedua</span> <span class=o>=</span> <span class=s1>&#39;Saya Belajar Javascript&#39;</span>
+<span class=kr>const</span> <span class=nx>pesanKetiga</span> <span class=o>=</span> <span class=s1>&#39;Ternyata Menyenangkan&#39;</span>
+</code></pre></div><h2 id=lalu-apa-perbedaannya>Lalu apa perbedaannya</h2><p><code>var</code> merupakan cara mendefinisikan variabel versi lama. Karena menimbulkan kerancuan akhirnya cara ini mulai ditinggalkan pada gaya penulisan ES6.</p><p>Fungsi <code>var</code> mendefinisikan variabel dalam lingkup global, apabila project kita besar tentu sangat membingungkan mengolah semua variabel dalam skala global. Contoh:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>pesan</span> <span class=o>=</span> <span class=s1>&#39;Hello World&#39;</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>pesan</span><span class=p>)</span>
+
+<span class=k>if</span> <span class=p>(</span><span class=kc>true</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nx>pesan</span> <span class=o>=</span> <span class=s1>&#39;Belajar Javascript&#39;</span>
+    <span class=nx>alert</span><span class=p>(</span><span class=nx>pesan</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=nx>alert</span><span class=p>(</span><span class=nx>pesan</span><span class=p>)</span>
+</code></pre></div><p>Pada <code>alert</code> pertama, menampilkan Hello World. Namun <code>alert</code> kedua dan ketiga menampilkan Belajar Javascript. Hal ini karena nilai variabel telah kita ubah pada sekop <code>if</code>.</p><p>Berbeda dengan let, contoh:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>pesan</span> <span class=o>=</span> <span class=s1>&#39;Hello World&#39;</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>pesan</span><span class=p>)</span>
+
+<span class=k>if</span> <span class=p>(</span><span class=kc>true</span><span class=p>)</span> <span class=p>{</span>
+    <span class=kd>let</span> <span class=nx>pesan</span> <span class=o>=</span> <span class=s1>&#39;Belajar Javascript&#39;</span>
+    <span class=nx>alert</span><span class=p>(</span><span class=nx>pesan</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=nx>alert</span><span class=p>(</span><span class=nx>pesan</span><span class=p>)</span>
+</code></pre></div><p><code>alert</code> pertama dan ketiga menampilkan Hello World sedangkan <code>alert</code> kedua menampilkan Belajar Javascript</p><blockquote><p>Hal ini karena fungsi <code>var</code> mendefinisikan variabel dalam lingkup global, sedangkan <code>let</code> tidak</p></blockquote><h2 id=perbedaan-dengan-const>Perbedaan Dengan const</h2><p>Berbeda dengan yang lainnya, <code>const</code> mendefinisikan variabel sebagai nilai yang konstan, sehingga kita tidak bisa mengubah nilainya lagi. Contoh:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>pesanLet</span> <span class=o>=</span> <span class=s1>&#39;Hello World&#39;</span>
+<span class=kr>const</span> <span class=nx>pesanConst</span> <span class=o>=</span> <span class=s1>&#39;Hello World&#39;</span>
+
+<span class=nx>pesanLet</span> <span class=o>=</span> <span class=s1>&#39;Pesan Let diubah&#39;</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>pesanLet</span><span class=p>)</span>
+
+<span class=nx>pesanConst</span> <span class=o>=</span> <span class=s1>&#39;Pesan Const diubah&#39;</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>pesanConst</span><span class=p>)</span>
+</code></pre></div><p>Alert pertama akan memunculkan <code>Pesan Let diubah</code>. Namun alert kedua tidak muncul?</p><p>Hal ini karena terjadi error ketika mengubah variabel konstal sehingga kode berikutnya tidak dapat dijalankan.</p><h3 id=kenapa-menggunakan-const>Kenapa menggunakan const</h3><p>Mungkin kita juga berfikir, untuk apa menggunakan <code>const</code>, kita bisa kok menggunakan <code>let</code>?</p><p>Perlu diingat terkadang kita menulis kode tidak hanya dibaca oleh kita. Bisa juga bawahan atau atasan kita. <code>const</code> seperti memberikan janji ke pembaca bahwa nilai tersebut benar-benar tidak akan berubah.</p><p>Ya seperti itulah&mldr;</p><h2 id=operasi-di-variabel>Operasi di Variabel</h2><p>Kita juga bisa membuat operasi di variabel yang telah didefinisikan. Contoh:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>a</span> <span class=o>=</span> <span class=mi>5</span>
+<span class=kd>let</span> <span class=nx>b</span> <span class=o>=</span> <span class=mi>10</span>
+
+<span class=hl><span class=kd>let</span> <span class=nx>tambah</span> <span class=o>=</span> <span class=nx>a</span> <span class=o>+</span> <span class=nx>b</span>
+</span><span class=hl><span class=kd>let</span> <span class=nx>kali</span> <span class=o>=</span> <span class=nx>a</span> <span class=o>*</span> <span class=nx>b</span>
+</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>tambah</span><span class=p>)</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>kali</span><span class=p>)</span>
+</code></pre></div><p>Pada kode di atas kita memberikan nilai variabel <code>a</code> dan <code>b</code> kemudian diberikan operasi penjumlahan dan perkalian pada variabel <code>tambah</code> dan <code>kali</code>.</p><h2 id=gaya-penulisan>Gaya Penulisan</h2><p>Kita bisa mendefinisikan terlebih dahulu suatu variabel, kemudian diberikan nilai. Contoh:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=hl><span class=kd>let</span> <span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span>
+</span>
+<span class=hl><span class=nx>a</span> <span class=o>=</span> <span class=mi>10</span>
+</span><span class=hl><span class=nx>b</span> <span class=o>=</span> <span class=mi>5</span>
+</span><span class=hl><span class=nx>c</span> <span class=o>=</span> <span class=nx>a</span> <span class=o>+</span> <span class=nx>b</span>
+</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>c</span><span class=p>)</span>
+</code></pre></div><p>Namun gaya penulisan seperti ini sangat jarang kita jumpai pada Javascript.</p><h2 id=akhir-kata>Akhir Kata</h2><p>Itulah beberapa cara mendefinisikan variabel pada pemrograman Javascript. Saya sendiri lebih sering menggunakan <code>const</code> daripada <code>let</code>.</p><p>Namun jangan kawatir apabila banyak tutorial yang menggunakan <code>var</code>. Kemungkinan tutorial tersebut dibuat dari lama sehingga masih menggunakan gaya penulisan ES5. Untuk sekarang biasakanlah menggunakan <code>let</code> atau <code>const</code> untuk mendefinisikan variabel.</p></section><section class="card-footer p-md-4 bg-white"><div id=share-page class=share><a href=https://gitlab.com/saefullohmaslul/content/blob/master/ title="Edit on Gitlab" onclick="window.open(this.href,'PCwindow','width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="float-left github-post" src=/img/icon-github.svg alt=share-github></a><div class="float-right mt-2"><a class=ml-2 href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fhobikoding.com%2fvariabel-javascript%2f&t=Mengenal%20Variabel%20di%20Javascript%3a%20Perbedaan%20Const%2c%20Let%2c%20dan%20Var" title="Share on Facebook" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-facebook.svg alt=share-fb></a>
+<a class=ml-2 href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhobikoding.com%2fvariabel-javascript%2f&text=Mengenal%20Variabel%20di%20Javascript%3a%20Perbedaan%20Const%2c%20Let%2c%20dan%20Var&tw_p=tweetbutton" title="Share on Twitter" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-twitter.svg alt=share-twitter></a></div></div></section></div></article><div class="card px-4 pb-4 border-0"><div class=post-comment><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"hobikode"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class=col-lg-2></div></div></div><footer class="border bg-white border-bottom-0 border-left-0 border-right-0"><div class="container pt-3 pb-3 pt-md-5 pb-md-5"><div class=row><div class="col-md-6 col-sm-12 mb-0 mb-sm-3"><ul class="nav justify-content-center justify-content-lg-start"><li class=nav-item><a href=/ class=nav-link>Home</a></li><li class=nav-item><a href=/about class=nav-link>About</a></li></ul></div><div class="col-md-6 col-sm-12 text-center text-md-right pt-2">© <span>2020</span>
+<a href=https://hobikoding.com/>Hobikoding</a>
+<span class="d-none d-lg-inline">| Made with
+<img class=emoji draggable=false alt=❤️ height=15rem width=15rem src=/img/made-with.svg>
+using
+<a href=https://gohugo.io rel=noopener target=_blank>Hugo</a></span></div></div></div></footer><link href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css rel=stylesheet><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script><script src=/js/site.js></script></body></html>

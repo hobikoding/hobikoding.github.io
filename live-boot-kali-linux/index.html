@@ -1,0 +1,131 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Cara Boot Live Kali Linux Iso Dari Linux Fedora | Hobi Koding — Mari Ngoding Sambil Tidur</title><meta name=description content="Hobikoding - Mari ngoding sambil tidur | Cara Boot Live Kali Linux Iso Dari Linux Fedora"><meta property="og:title" content="Cara Boot Live Kali Linux Iso Dari Linux Fedora"><meta property="og:type" content="article"><meta property="article:published_time" content="2019-03-18"><meta property="og:description" content="Hobikoding - Mari ngoding sambil tidur | Cara Boot Live Kali Linux Iso Dari Linux Fedora"><meta property="og:url" content="https://hobikoding.com/live-boot-kali-linux/"><meta property="og:site_name" content="Hobi Koding — Mari Ngoding Sambil Tidur"><meta property="og:image" content="https://res.cloudinary.com/hobikoding/image/upload/v1552895931/Kali/kali.jpg"><link rel=icon href=/favicon.png type=image/x-icon><link rel=canonical href=https://hobikoding.com/live-boot-kali-linux/><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous><link rel=stylesheet href=/css/styles.css><script>var m=document.createElement('meta');m.name='theme-color';m.content='#204d7b';document.head.appendChild(m);</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136352097-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-136352097-1');</script><script data-ad-client=ca-pub-6815193783560317 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script><script src=https://unpkg.com/lunr/lunr.js></script></head><body><nav class="navbar navbar-expand-lg navbar-dark"><div class=container><a href=/ class="navbar-brand font-weight-bold d-lg-block"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/blog-icon.svg height=32 class="d-inline-block align-bottom" alt=Logo>
+<span class=d-inline>Hobikoding</span></a>
+<button id=btn-nav class=navbar-toggler type=button data-toggle=collapse>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><a href=#! class=nav-link>Node.js</a></li><li class=nav-item><a href=# class=nav-link>Golang</a></li><li class=nav-item><a href=# class=nav-link>React</a></li><li class=nav-item><a href=# class=nav-link>Java</a></li><li class=nav-item><a href=# class=nav-link><span aria-hidden=true>More »</span></a></li><li class="nav-item d-none d-lg-block disabled"><span class="nav-link disabled">⋮</span></li><li class=nav-item><a href=# class=nav-link>Ebook</a></li></ul><form action=/search/ class="form-inline my-2 my-lg-0"><div class=input-group><input type=search name=query class=form-control placeholder=Search aria-label=Search><div class=input-group-append><button class="btn btn-primary my-sm-0" type=submit>
+<img src=/img/icon-search.svg class=pb-1 height=20px alt=icon-cari></button></div></div></form></div></div></nav><div class="container my-4"><div class=row><div class=col-lg-2><aside class=position-fixed id=share-button></aside><script>$(document).scroll(function(){$('#share-button').toggle($(this).scrollTop()>300);})
+$(window).scroll(function(){const offsetTop=$("#share-page").offset()&&$("#share-page").offset().top;const scrollTop=$(window).scrollTop();const target=$("#share-button")
+if(target){scrollTop>offsetTop-700?target.empty():target.html(`
+      <div class="col-sm-12 col-lg-1 position-sticky ml-5 pl-5 mt-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <a href="http://www.facebook.com/sharer.php?u=https:\/\/hobikoding.com\/live-boot-kali-linux\/&t=Cara Boot Live Kali Linux Iso Dari Linux Fedora"
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Facebook">
+              <span><img class="share-btn" src="/img/icon-facebook.svg" alt="share-fb" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href='http://twitter.com/intent/tweet?url="https://hobikoding.com/live-boot-kali-linux/"&text="Cara Boot Live Kali Linux Iso Dari Linux Fedora"&tw_p=tweetbutton'
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Twitter">
+              <span><img class="share-btn" src="/img/icon-twitter.svg" alt="share-twitter" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href="https://github.com/saefullohmaslul/saefullohmaslul.github.io/blob/blog/content/posts\/boot-kali-linux.md"
+              onclick="window.open(this.href, 'PCwindow', 'width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Edit on Gitlab">
+              <span><img class="share-btn" src="/img/icon-github.svg" alt="share-github" /></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    `)}})</script></div><div class="col-sm-12 col-lg-8 post-outer"><article id=post-card class="card border-0"><div class="card-body pb-0"><div class=post-header><div class=mb-3><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/author-icon.png alt=author class="rounded-circle mr-1" width=32 height=32 alt=author>
+<a class="align-middle text-dark" href=https://linkedin.com/in/saefullohmaslul target=_blank>Saefulloh Maslul</a>
+<small class="align-middle text-muted">· update terakhir
+<time>18 Mar 2019</time></small></div><h1 class="card-title mb-3">Cara Boot Live Kali Linux Iso Dari Linux Fedora</h1><hr></div><div><span class="badge badge-primary">#<a href=https://hobikoding.com//topic/linux/ class=text-white>linux</a></span></div><section class="post-content mb-5 mt-3"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552895931/Kali/kali.jpg alt="Cara Boot Live Kali Linux Iso Dari Linux Fedora" class="mb-2 w-100"><p>Kita biasa membuat bootable linux via Windows. Bahkan ketika mencari artikel membuat bootable linux melalui linux sendiri sangat susah ditemukan.</p><p>Ketika ditemukan, ternyata boot tersebut untuk distro lain. Dan ternyata lagi, caranya berbeda dengan distro kita!</p><p>Contohnya ketika membuat live boot Kali Linux, kebanyakan linux bisa di boot melalui uNetbootin. Namun jika Anda mencari distro kali linux di pilihan OS pada uNetbootin tidak ada.</p><p>Jadi bagaimana cara yang benar untuk membuat bootable kali linux dari linux sendiri?</p><h2 id=menggunakan-terminal>Menggunakan Terminal</h2><p>Ya, cara ini memang sedikit menakutkan apabila kita melakukan kesalahan. Tapi mau bagaimana lagi?</p><p>Caranya cukup mudah dan sudah dilansir pada <a href=https://docs.kali.org/downloading/kali-linux-live-usb-install>dokumentasi</a> kali linux juga dalam bahasa inggris.</p><h3 id=cek-disk-instalasi>Cek Disk Instalasi</h3><p>Cek disk anda dengan perintah berikut:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo fdisk -l
+</code></pre></div><p>Perintah di atas akan menampilkan output seperti ini, atau mirip seperti ini:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Disk /dev/sda: 931,5 GiB, <span class=m>1000204886016</span> bytes, <span class=m>1953525168</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+Disklabel type: gpt
+Disk identifier: C2DAB005-4E66-4FA5-ACCE-DE0A3764988F
+
+Perangkat       Start      Akhir    Sektor   Size Tipe
+/dev/sda1        <span class=m>2048</span>     <span class=m>923647</span>    <span class=m>921600</span>   450M Windows recovery environment
+/dev/sda2      <span class=m>923648</span>    <span class=m>1128447</span>    <span class=m>204800</span>   100M EFI System
+/dev/sda3     <span class=m>1128448</span>    <span class=m>1161215</span>     <span class=m>32768</span>    16M Microsoft reserved
+/dev/sda4     <span class=m>1161216</span>  <span class=m>409602047</span> <span class=m>408440832</span> 194,8G Microsoft basic data
+/dev/sda5   <span class=m>409602048</span> <span class=m>1228797951</span> <span class=m>819195904</span> 390,6G Microsoft basic data
+/dev/sda6  <span class=m>1228800000</span> <span class=m>1851121663</span> <span class=m>622321664</span> 296,8G Microsoft basic data
+/dev/sda7  <span class=m>1851121664</span> <span class=m>1853218815</span>   <span class=m>2097152</span>     1G Linux filesystem
+/dev/sda8  <span class=m>1853218816</span> <span class=m>1953523711</span> <span class=m>100304896</span>  47,8G Linux LVM
+
+
+Disk /dev/mapper/fedora-root: <span class=m>30</span> GiB, <span class=m>32212254720</span> bytes, <span class=m>62914560</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+
+
+Disk /dev/mapper/fedora-swap: 4,9 GiB, <span class=m>5247074304</span> bytes, <span class=m>10248192</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+
+
+Disk /dev/mapper/fedora-home: <span class=m>13</span> GiB, <span class=m>13895729152</span> bytes, <span class=m>27140096</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+</code></pre></div><h2 id=colokan-flashdisk-untuk-live-kali-linux>Colokan Flashdisk Untuk Live Kali Linux</h2><p>Setelah melakukan pengecekan, masukan flashdisk untuk boot kali linuxnya.</p><p>Kemudian lakukan perintah yang sama:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo fdisk -l
+</code></pre></div><p>Perintah di atas akan memiliki output yang berbeda. Kita jadi tau dimana letak flashdisk yang baru saja kita masukan.</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>Disk /dev/sda: 931,5 GiB, <span class=m>1000204886016</span> bytes, <span class=m>1953525168</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+Disklabel type: gpt
+Disk identifier: C2DAB005-4E66-4FA5-ACCE-DE0A3764988F
+
+Perangkat       Start      Akhir    Sektor   Size Tipe
+/dev/sda1        <span class=m>2048</span>     <span class=m>923647</span>    <span class=m>921600</span>   450M Windows recovery environment
+/dev/sda2      <span class=m>923648</span>    <span class=m>1128447</span>    <span class=m>204800</span>   100M EFI System
+/dev/sda3     <span class=m>1128448</span>    <span class=m>1161215</span>     <span class=m>32768</span>    16M Microsoft reserved
+/dev/sda4     <span class=m>1161216</span>  <span class=m>409602047</span> <span class=m>408440832</span> 194,8G Microsoft basic data
+/dev/sda5   <span class=m>409602048</span> <span class=m>1228797951</span> <span class=m>819195904</span> 390,6G Microsoft basic data
+/dev/sda6  <span class=m>1228800000</span> <span class=m>1851121663</span> <span class=m>622321664</span> 296,8G Microsoft basic data
+/dev/sda7  <span class=m>1851121664</span> <span class=m>1853218815</span>   <span class=m>2097152</span>     1G Linux filesystem
+/dev/sda8  <span class=m>1853218816</span> <span class=m>1953523711</span> <span class=m>100304896</span>  47,8G Linux LVM
+
+
+Disk /dev/mapper/fedora-root: <span class=m>30</span> GiB, <span class=m>32212254720</span> bytes, <span class=m>62914560</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+
+
+Disk /dev/mapper/fedora-swap: 4,9 GiB, <span class=m>5247074304</span> bytes, <span class=m>10248192</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+
+
+Disk /dev/mapper/fedora-home: <span class=m>13</span> GiB, <span class=m>13895729152</span> bytes, <span class=m>27140096</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>4096</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>4096</span> bytes / <span class=m>4096</span> bytes
+
+
+Disk /dev/sdb: 7,2 GiB, <span class=m>7748448256</span> bytes, <span class=m>15133688</span> sectors
+Units: sectors of <span class=m>1</span> * <span class=nv>512</span> <span class=o>=</span> <span class=m>512</span> bytes
+Sector size <span class=o>(</span>logical/physical<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>512</span> bytes
+I/O size <span class=o>(</span>minimum/optimal<span class=o>)</span>: <span class=m>512</span> bytes / <span class=m>512</span> bytes
+Disklabel type: dos
+Disk identifier: 0x00a2e163
+
+Perangkat  Boot Start    Akhir   Sektor  Size Id Tipe
+/dev/sdb1  *     <span class=m>2048</span> <span class=m>15133687</span> <span class=m>15131640</span>  7,2G  c W95 FAT32 <span class=o>(</span>LBA<span class=o>)</span>
+</code></pre></div><p>Terlihat kan perbedaannya?</p><p>Ada tambahan <code>Disk /dev/sdb: 7,2 GiB, 7748448256 bytes, 15133688 sectors ...</code> tepat seperti size dari flashdisk yang saya masukan.</p><h3 id=menyalin-file-instalasi-kali-linux>Menyalin File Instalasi Kali Linux</h3><p>Kita telah mengetahui lokasi flashdisk yang baru saja kita masukan. Yaitu di <code>/dev/sdb</code>.</p><p>Selanjutnya pada terminal, masuk ke folder tempat anda menyimpan file iso dari kali linuxnya. Kemudian lakukan perintah berikut (<strong><em>hati-hati!!</em></strong>):</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo dd <span class=k>if</span><span class=o>=</span>kali-linux-2017.3-amd64.iso <span class=nv>of</span><span class=o>=</span>/dev/sdb <span class=nv>bs</span><span class=o>=</span>512k
+</code></pre></div><blockquote><p><strong>Catatan:</strong> <code>kali-linux-2017.3-amd64.iso</code> adalah nama file iso dari kali linuxnya. <code>/dev/sdb</code> merupakan tempat/letak dari flashdisk kita tadi. Dan tambahkan kode <code>bs=512k</code></p><p>Ganti <code>kali-linux-2017.3-amd64.iso</code> dan <code>/dev/sdb</code> sesuai kondisi anda!</p></blockquote><p>Proses ini memakan waktu yang lama. Sekitar 10 menit atau bahkan lebih.</p><p>Pada terminal, perintah di atas tidak menunjukan feedback sama sekali, jadi tenang saja, tunggu saja.</p><p>Jika sudah selesai semua, akan muncul seperti ini (atau mirip):</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>5505+1 catatan masuk
+5505+1 catatan keluar
+<span class=m>2886402048</span> bytes <span class=o>(</span>2,9 GB, 2,7 GiB<span class=o>)</span> copied, 661,27 s, 4,4 MB/s
+</code></pre></div><blockquote><p><strong>Catatan:</strong> Linux saya menggunakan bahasa Indonesia sehingga menampilkan output bahasa Indonesia seperti terlihat di atas.</p></blockquote><h2 id=penutup>Penutup</h2><p>Anda sekarang sudah bisa menggunakan flashdisk tersebut untuk live maupun instal kali linux di laptop lainnya. Sangat mudah sebenarnya, tapi perlu kehati-hatian. Sama saja ketika kita menggunakan uNetbootin atau Rufus.</p></section><section class="card-footer p-md-4 bg-white"><div id=share-page class=share><a href=https://gitlab.com/saefullohmaslul/content/blob/master/ title="Edit on Gitlab" onclick="window.open(this.href,'PCwindow','width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="float-left github-post" src=/img/icon-github.svg alt=share-github></a><div class="float-right mt-2"><a class=ml-2 href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fhobikoding.com%2flive-boot-kali-linux%2f&t=Cara%20Boot%20Live%20Kali%20Linux%20Iso%20Dari%20Linux%20Fedora" title="Share on Facebook" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-facebook.svg alt=share-fb></a>
+<a class=ml-2 href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhobikoding.com%2flive-boot-kali-linux%2f&text=Cara%20Boot%20Live%20Kali%20Linux%20Iso%20Dari%20Linux%20Fedora&tw_p=tweetbutton" title="Share on Twitter" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-twitter.svg alt=share-twitter></a></div></div></section></div></article><div class="card px-4 pb-4 border-0"><div class=post-comment><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"hobikode"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class=col-lg-2></div></div></div><footer class="border bg-white border-bottom-0 border-left-0 border-right-0"><div class="container pt-3 pb-3 pt-md-5 pb-md-5"><div class=row><div class="col-md-6 col-sm-12 mb-0 mb-sm-3"><ul class="nav justify-content-center justify-content-lg-start"><li class=nav-item><a href=/ class=nav-link>Home</a></li><li class=nav-item><a href=/about class=nav-link>About</a></li></ul></div><div class="col-md-6 col-sm-12 text-center text-md-right pt-2">© <span>2020</span>
+<a href=https://hobikoding.com/>Hobikoding</a>
+<span class="d-none d-lg-inline">| Made with
+<img class=emoji draggable=false alt=❤️ height=15rem width=15rem src=/img/made-with.svg>
+using
+<a href=https://gohugo.io rel=noopener target=_blank>Hugo</a></span></div></div></div></footer><link href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css rel=stylesheet><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script><script src=/js/site.js></script></body></html>

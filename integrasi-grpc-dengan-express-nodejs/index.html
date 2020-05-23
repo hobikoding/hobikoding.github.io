@@ -1,0 +1,181 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Integrasi gRPC Server Dengan Express Node.js | Hobi Koding — Mari Ngoding Sambil Tidur</title><meta name=description content="Hobikoding - Mari ngoding sambil tidur | Integrasi gRPC Server Dengan Express Node.js"><meta property="og:title" content="Integrasi gRPC Server Dengan Express Node.js"><meta property="og:type" content="article"><meta property="article:published_time" content="2020-05-01"><meta property="og:description" content="Hobikoding - Mari ngoding sambil tidur | Integrasi gRPC Server Dengan Express Node.js"><meta property="og:url" content="https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/"><meta property="og:site_name" content="Hobi Koding — Mari Ngoding Sambil Tidur"><meta property="og:image" content="https://hobikoding.com/img/integrasi-grpc-dengan-express-nodejs/thumbnail.jpg"><link rel=icon href=/favicon.png type=image/x-icon><link rel=canonical href=https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous><link rel=stylesheet href=/css/styles.css><script>var m=document.createElement('meta');m.name='theme-color';m.content='#204d7b';document.head.appendChild(m);</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136352097-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-136352097-1');</script><script data-ad-client=ca-pub-6815193783560317 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script><script src=https://unpkg.com/lunr/lunr.js></script></head><body><nav class="navbar navbar-expand-lg navbar-dark"><div class=container><a href=/ class="navbar-brand font-weight-bold d-lg-block"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/blog-icon.svg height=32 class="d-inline-block align-bottom" alt=Logo>
+<span class=d-inline>Hobikoding</span></a>
+<button id=btn-nav class=navbar-toggler type=button data-toggle=collapse>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><a href=#! class=nav-link>Node.js</a></li><li class=nav-item><a href=# class=nav-link>Golang</a></li><li class=nav-item><a href=# class=nav-link>React</a></li><li class=nav-item><a href=# class=nav-link>Java</a></li><li class=nav-item><a href=# class=nav-link><span aria-hidden=true>More »</span></a></li><li class="nav-item d-none d-lg-block disabled"><span class="nav-link disabled">⋮</span></li><li class=nav-item><a href=# class=nav-link>Ebook</a></li></ul><form action=/search/ class="form-inline my-2 my-lg-0"><div class=input-group><input type=search name=query class=form-control placeholder=Search aria-label=Search><div class=input-group-append><button class="btn btn-primary my-sm-0" type=submit>
+<img src=/img/icon-search.svg class=pb-1 height=20px alt=icon-cari></button></div></div></form></div></div></nav><div class="container my-4"><div class=row><div class=col-lg-2><aside class=position-fixed id=share-button></aside><script>$(document).scroll(function(){$('#share-button').toggle($(this).scrollTop()>300);})
+$(window).scroll(function(){const offsetTop=$("#share-page").offset()&&$("#share-page").offset().top;const scrollTop=$(window).scrollTop();const target=$("#share-button")
+if(target){scrollTop>offsetTop-700?target.empty():target.html(`
+      <div class="col-sm-12 col-lg-1 position-sticky ml-5 pl-5 mt-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <a href="http://www.facebook.com/sharer.php?u=https:\/\/hobikoding.com\/integrasi-grpc-dengan-express-nodejs\/&t=Integrasi gRPC Server Dengan Express Node.js"
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Facebook">
+              <span><img class="share-btn" src="/img/icon-facebook.svg" alt="share-fb" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href='http://twitter.com/intent/tweet?url="https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/"&text="Integrasi gRPC Server Dengan Express Node.js"&tw_p=tweetbutton'
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Twitter">
+              <span><img class="share-btn" src="/img/icon-twitter.svg" alt="share-twitter" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href="https://github.com/saefullohmaslul/saefullohmaslul.github.io/blob/blog/content/posts\/integrasi-grpc-dengan-express-nodejs.md"
+              onclick="window.open(this.href, 'PCwindow', 'width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Edit on Gitlab">
+              <span><img class="share-btn" src="/img/icon-github.svg" alt="share-github" /></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    `)}})</script></div><div class="col-sm-12 col-lg-8 post-outer"><article id=post-card class="card border-0"><div class="card-body pb-0"><div class=post-header><div class=mb-3><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/author-icon.png alt=author class="rounded-circle mr-1" width=32 height=32 alt=author>
+<a class="align-middle text-dark" href=https://linkedin.com/in/saefullohmaslul target=_blank>Saefulloh Maslul</a>
+<small class="align-middle text-muted">· update terakhir
+<time>01 May 2020</time></small></div><h1 class="card-title mb-3">Integrasi gRPC Server Dengan Express Node.js</h1><hr></div><div><span class="badge badge-primary">#<a href=https://hobikoding.com//topic/microservices/ class=text-white>microservices</a></span>
+<span class="badge badge-primary">#<a href=https://hobikoding.com//topic/nodejs/ class=text-white>nodejs</a></span></div><section class="post-content mb-5 mt-3"><img src=/img/integrasi-grpc-dengan-express-nodejs/thumbnail.jpg alt="Integrasi gRPC Server Dengan Express Node.js" class="mb-2 w-100"><p class="text-center text-secondary mb-4"><small>Source: https://unsplash.com/@jefflssantos</small></p><p>Sebelumnya saya telah membuat artikel yang membahas <a href=http://hobikoding.com/nodejs-grpc-microservices/>cara membuat microservices grpc di nodejs</a>. Sekarang kita akan mengintegrasikan microservices grpc tersebut dengan expressjs.</p><p>Bagi yang belum membaca artikel di atas dan bingung dengan pembahasan pada artikel ini, saya sarankan untuk membaca terlebih dahulu artikel <a href=http://hobikoding.com/nodejs-grpc-microservices/>sebelumnya</a>.</p><h2 id=preparation>Preparation</h2><p>Di project ini kita akan membuat server nodejs menggunakan express. Server tersebut disamping menjalankan express app, juga sekaligus menjalankan grpc server.</p><p>Struktur project akan jadi seperti ini:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>.
+├── grpc
+│   ├── index.js
+│   └── notes
+│       └── index.js
+├── proto
+│   └── notes.proto
+├── routes
+│   └── index.js
+├── app.js
+├── index.js
+├── package.json
+└── package-lock.json
+</code></pre></div><p>Pada struktur tersebut, main app adalah <code>index.js</code>, sedangkan <code>app.js</code> berisi konfigurasi dari express.</p><p>Di index.js, kita akan menjalankan server express sekaligus server gRPC-nya.</p><h2 id=init-project>Init Project</h2><p>Kita telah mengetahui struktur dan konsep dari aplikasi yang akan kita buat, selanjutnya adalah inisialisasi awal project kita.</p><p>Install seluruh dependensi yang dibutuhkan. Karena kita akan berurusan dengan express, grpc, dan proto file maka kita memerlukan beberapa dependensi: <code>express, grpc dan @grpc/proto-loader</code></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>mkdir service-utility <span class=o>&amp;&amp;</span> <span class=nb>cd</span> service-utility
+npm init -y
+npm i grpc @grpc/proto-loader express
+</code></pre></div><p>Saya telah membuat repository untuk artikel ini:</p><div class="p-4 m-2 my-4 dwd-container"><div class=media><div class="col-lg-2 col-sm-3 col-4 pr-0 pl-0"><img class="mt-0 mb-0 shadow-none" src=/img/icon-github.svg alt=icon-software></div><div class="col-lg-10 col-sm-9 ml-lg-2 pl-2"><div class=media-body><div class=dwd-title-container><h5 class="mb-0 mt-2 font-weight-bold dwd-title">gRPC-Node-Utility</h5></div><div class="d-flex mt-2"><img class="shadow-none m-0 mr-1" height=20px src=https://github.githubassets.com/images/icons/emoji/unicode/1f4da.png title="Github Icon" alt=github-icon><div class="col-lg-10 col-md-10 col-sm-8 pl-1"><p>Utility service of gRPC Microservices with Node.js</p></div></div></div></div></div><div class="col-12 col-lg-4 pl-0 pr-0 mt-3"><a class="btn btn-primary text-white w-100" href=https://github.com/saefullohmaslul/gRPC-Node-Utility/ target=_blank>Repository</a></div></div><h2 id=setup-proto-file>Setup Proto File</h2><p>Sebelum membuat konfigurasi server, kita buat terlebih dahulu proto filenya. Proto file ini yang nantinya digunakan sebagai skema transfer data antar service.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>proto/notes.proto</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=nv>syntax</span> <span class=o>=</span> <span class=s2>&#34;proto3&#34;</span><span class=p>;</span>
+package notes<span class=p>;</span>
+
+service NoteService <span class=o>{</span>
+<span class=hl>  rpc List <span class=o>(</span>Empty<span class=o>)</span> returns <span class=o>(</span>NoteList<span class=o>)</span> <span class=o>{}</span>
+</span><span class=o>}</span>
+
+message Empty <span class=o>{}</span>
+
+message Note <span class=o>{</span>
+  string <span class=nv>id</span> <span class=o>=</span> 1<span class=p>;</span>
+  string <span class=nv>title</span> <span class=o>=</span> 2<span class=p>;</span>
+  string <span class=nv>content</span> <span class=o>=</span> 3<span class=p>;</span>
+<span class=o>}</span>
+
+message NoteList <span class=o>{</span>
+  repeated Note <span class=nv>notes</span> <span class=o>=</span> 1<span class=p>;</span>
+<span class=o>}</span>
+</code></pre></div></div><blockquote><p>Pada kode di atas perlu dipahami beberapa hal berikut:</p><ul><li>Kita membuat package dengan nama <code>notes</code></li><li>Package tersebut memiliki method bernama <code>List</code></li><li>Method ini memiliki parameter <code>Empty</code> yaitu parameter kosong</li><li>Memiliki return berupa <code>NoteList</code></li><li>NoteList adalah repeated <code>Note</code> atau array of note</li><li>Note memiliki properti <code>id, title, dan content</code>.</li></ul></blockquote><h2 id=setup-grpc>Setup gRPC</h2><p>Setelah selesai membuat proto file, Kita lanjutkan dengan membuat gRPC server.</p><p>Pada direktori grpc, buatlah file <code>index.js</code>. Fungsi dari file ini yaitu membaca semua proto file yang ada dan menjadikannya sebagai package definition sehingga RPC tinggal memakainya saja.</p><p>Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupun package definition, kita hanya akan fokus ke file ini, tidak satu per satu service yang di cek.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>grpc/index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-js data-lang=js><span class=kr>const</span> <span class=nx>path</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;path&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>grpc</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;grpc&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>protoLoader</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;@grpc/proto-loader&#39;</span><span class=p>)</span>
+
+<span class=hl><span class=kr>const</span> <span class=nx>notesProtoPath</span> <span class=o>=</span> <span class=nx>path</span><span class=p>.</span><span class=nx>join</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;..&#39;</span><span class=p>,</span> <span class=s1>&#39;proto&#39;</span><span class=p>,</span> <span class=s1>&#39;notes.proto&#39;</span><span class=p>)</span>
+</span><span class=kr>const</span> <span class=nx>notesProtoDefinition</span> <span class=o>=</span> <span class=nx>protoLoader</span><span class=p>.</span><span class=nx>loadSync</span><span class=p>(</span><span class=nx>notesProtoPath</span><span class=p>)</span>
+
+<span class=kr>const</span> <span class=nx>notesPackageDefinition</span> <span class=o>=</span> <span class=nx>grpc</span><span class=p>.</span><span class=nx>loadPackageDefinition</span><span class=p>(</span><span class=nx>notesProtoDefinition</span><span class=p>).</span><span class=nx>notes</span>
+
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
+<span class=hl>  <span class=nx>notesPackageDefinition</span>
+</span><span class=p>}</span>
+</code></pre></div></div><p>Selanjutnya pada direktori grpc, buatlah folder notes. Apabila terdapat service lain selain notes, maka buatlah folder baru dengan nama service tersebut (jangan digabung di notes).</p><p>Di dalam folder notes, buatlah <code>index.js</code></p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>grpc/notes/index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-js data-lang=js><span class=kr>const</span> <span class=nx>grpc</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;grpc&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=p>{</span> <span class=nx>notesPackageDefinition</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;..&#39;</span><span class=p>)</span>
+
+<span class=hl><span class=kr>const</span> <span class=nx>list</span> <span class=o>=</span> <span class=p>(</span><span class=nx>call</span><span class=p>,</span> <span class=nx>callback</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span><span class=hl>  <span class=k>try</span> <span class=p>{</span>
+</span><span class=hl>    <span class=kr>const</span> <span class=nx>notes</span> <span class=o>=</span> <span class=p>[</span>
+</span><span class=hl>      <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=s1>&#39;1&#39;</span><span class=p>,</span> <span class=nx>title</span><span class=o>:</span> <span class=s1>&#39;Note 1&#39;</span><span class=p>,</span> <span class=nx>content</span><span class=o>:</span> <span class=s1>&#39;Content 1&#39;</span> <span class=p>},</span>
+</span><span class=hl>      <span class=p>{</span> <span class=nx>id</span><span class=o>:</span> <span class=s1>&#39;2&#39;</span><span class=p>,</span> <span class=nx>title</span><span class=o>:</span> <span class=s1>&#39;Note 2&#39;</span><span class=p>,</span> <span class=nx>content</span><span class=o>:</span> <span class=s1>&#39;Content 2&#39;</span> <span class=p>}</span>
+</span><span class=hl>    <span class=p>]</span>
+</span><span class=hl>    <span class=k>return</span> <span class=nx>callback</span><span class=p>(</span><span class=kc>null</span><span class=p>,</span> <span class=p>{</span> <span class=nx>notes</span> <span class=p>})</span>
+</span><span class=hl>  <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span><span class=hl>    <span class=k>return</span> <span class=nx>callback</span><span class=p>(</span><span class=nx>error</span><span class=p>,</span> <span class=kc>null</span><span class=p>)</span>
+</span><span class=hl>  <span class=p>}</span>
+</span><span class=hl><span class=p>}</span>
+</span>
+<span class=kr>const</span> <span class=nx>notesServer</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>grpc</span><span class=p>.</span><span class=nx>Server</span><span class=p>()</span>
+<span class=nx>notesServer</span><span class=p>.</span><span class=nx>addService</span><span class=p>(</span><span class=nx>notesPackageDefinition</span><span class=p>.</span><span class=nx>NoteService</span><span class=p>.</span><span class=nx>service</span><span class=p>,</span> <span class=p>{</span>
+<span class=hl>  <span class=nx>list</span>
+</span><span class=p>})</span>
+
+<span class=nx>notesServer</span><span class=p>.</span><span class=nx>bind</span><span class=p>(</span>
+  <span class=s1>&#39;0.0.0.0:50051&#39;</span><span class=p>,</span>
+  <span class=nx>grpc</span><span class=p>.</span><span class=nx>ServerCredentials</span><span class=p>.</span><span class=nx>createInsecure</span><span class=p>()</span>
+<span class=p>)</span>
+
+<span class=hl><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>notesServer</span>
+</span></code></pre></div></div><p>Sesuai dengan proto file tadi, bahwa service ini memiliki method bernama List. Penulisan method tidak menggunakan format Capitalize, namun lowercase.</p><p>Apabila terdapat method lain selain List, maka harus dideklarasikan juga dalam <code>addService</code></p><div class=highlight><pre class=chroma><code class=language-js data-lang=js><span class=p>....</span>
+<span class=nx>notesServer</span><span class=p>.</span><span class=nx>addService</span><span class=p>(</span><span class=nx>notesPackageDefinition</span><span class=p>.</span><span class=nx>NoteService</span><span class=p>.</span><span class=nx>service</span><span class=p>,</span> <span class=p>{</span>
+  <span class=nx>list</span><span class=p>,</span>
+<span class=hl>  <span class=c1>// masukan method lain di sini
+</span></span><span class=c1></span>  <span class=p>....</span>
+<span class=p>})</span>
+<span class=p>....</span>
+</code></pre></div><h2 id=setup-express>Setup Express</h2><p>Para root project, buatlah file <code>app.js</code>, file ini akan berisi seluruh konfigurasi express secara global.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>app.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-js data-lang=js><span class=kr>const</span> <span class=nx>express</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;express&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>routes</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./routes&#39;</span><span class=p>)</span>
+
+<span class=kr>const</span> <span class=nx>app</span> <span class=o>=</span> <span class=nx>express</span><span class=p>()</span>
+
+<span class=nx>app</span><span class=p>.</span><span class=nx>use</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>,</span> <span class=nx>routes</span><span class=p>)</span>
+
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>app</span>
+</code></pre></div></div><p>Selanjutnya pada <code>routes/index.js</code>, masukan seluruh controller dari express app ini.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>routes/index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-js data-lang=js><span class=kr>const</span> <span class=p>{</span> <span class=nx>Router</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;express&#39;</span><span class=p>)</span>
+
+<span class=cm>/**
+</span><span class=cm> * import seluruh controller disini
+</span><span class=cm> */</span>
+
+<span class=kr>const</span> <span class=nx>router</span> <span class=o>=</span> <span class=nx>Router</span><span class=p>()</span>
+
+<span class=cm>/**
+</span><span class=cm> * Masukan seluruh routing ke controller di sini
+</span><span class=cm> * contoh:
+</span><span class=cm> * router.get(&#39;/user&#39;, userController.profile)
+</span><span class=cm> */</span>
+
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>router</span>
+</code></pre></div></div><h2 id=inisialisasi-express-dan-grpc>Inisialisasi Express dan gRPC</h2><p>Kita telah selesai membuat gRPC server maupun Express server. Selanjutnya kita binding kedua service tersebut pada address masing-masing.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>index.js</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-js data-lang=js><span class=kr>const</span> <span class=nx>app</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./app&#39;</span><span class=p>)</span>
+<span class=kr>const</span> <span class=nx>notesServer</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./grpc/notes&#39;</span><span class=p>)</span>
+
+<span class=hl><span class=nx>app</span><span class=p>.</span><span class=nx>listen</span><span class=p>(</span><span class=mi>5000</span><span class=p>,</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span><span class=hl>  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`App running on port: 5000`</span><span class=p>)</span>
+</span><span class=hl><span class=p>})</span>
+</span>
+<span class=hl><span class=nx>notesServer</span><span class=p>.</span><span class=nx>start</span><span class=p>()</span>
+</span><span class=hl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;gRPC Server running at http://localhost:50051&#39;</span><span class=p>)</span>
+</span></code></pre></div></div><p>Pada contoh di atas, kita binding express server ke port 5000, sedangkan gRPC server pada port 50051 (sesuai dengan file <code>grpc/notes/index.js</code>).</p><h2 id=setting-packagejson>Setting Package.json</h2><p>Di package.json, kita buat script untuk menjalankan microservice ini. Karena semua bertumpu pada satu file, yaitu <em>index.js</em> pada root project, kita hanya perlu menjalankannya dengan <code>node index.js</code></p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>package.json</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+  <span class=err>...</span>
+<span class=hl>  <span class=nt>&#34;main&#34;</span><span class=p>:</span> <span class=s2>&#34;index.js&#34;</span><span class=p>,</span>
+</span>  <span class=nt>&#34;scripts&#34;</span><span class=p>:</span> <span class=p>{</span>
+<span class=hl>    <span class=nt>&#34;start&#34;</span><span class=p>:</span> <span class=s2>&#34;node .&#34;</span>
+</span>    <span class=err>...</span>
+  <span class=p>},</span>
+  <span class=err>...</span>
+<span class=p>}</span>
+</code></pre></div></div><p>Untuk menjalankannya, di terminal masukan perintah <code>npm run start</code></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=hl>npm run start
+</span>
+&gt; service-utility@0.0.1 start /service-utility
+&gt; node .
+
+<span class=hl>gRPC Server running at http://localhost:50051
+</span><span class=hl>App running on port: <span class=m>5000</span>
+</span></code></pre></div><p>Jika sesuai dengan keterangan di atas, maka kita telah berhasil menjalankan kedua service tersebut yaitu express server dan gRPC server.</p><h2 id=penutup>Penutup</h2><p>Demikian cara mengintegrasikan gRPC server dengan express. Di artikel berikutnya kita akan integrasi antar service dengan membuat gRPC client untuk mengkonsumsi service dari project ini.</p><p>Artikel sudah terbit di <a href=https://hobikoding.com/transfer-data-antar-service-grpc/>Transfer Data Antar Service Menggunakan gRPC</a></p></section><section class="card-footer p-md-4 bg-white"><div id=share-page class=share><a href=https://gitlab.com/saefullohmaslul/content/blob/master/ title="Edit on Gitlab" onclick="window.open(this.href,'PCwindow','width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="float-left github-post" src=/img/icon-github.svg alt=share-github></a><div class="float-right mt-2"><a class=ml-2 href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fhobikoding.com%2fintegrasi-grpc-dengan-express-nodejs%2f&t=Integrasi%20gRPC%20Server%20Dengan%20Express%20Node.js" title="Share on Facebook" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-facebook.svg alt=share-fb></a>
+<a class=ml-2 href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhobikoding.com%2fintegrasi-grpc-dengan-express-nodejs%2f&text=Integrasi%20gRPC%20Server%20Dengan%20Express%20Node.js&tw_p=tweetbutton" title="Share on Twitter" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-twitter.svg alt=share-twitter></a></div></div></section></div></article><div class="card px-4 pb-4 border-0"><div class=post-comment><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"hobikode"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class=col-lg-2></div></div></div><footer class="border bg-white border-bottom-0 border-left-0 border-right-0"><div class="container pt-3 pb-3 pt-md-5 pb-md-5"><div class=row><div class="col-md-6 col-sm-12 mb-0 mb-sm-3"><ul class="nav justify-content-center justify-content-lg-start"><li class=nav-item><a href=/ class=nav-link>Home</a></li><li class=nav-item><a href=/about class=nav-link>About</a></li></ul></div><div class="col-md-6 col-sm-12 text-center text-md-right pt-2">© <span>2020</span>
+<a href=https://hobikoding.com/>Hobikoding</a>
+<span class="d-none d-lg-inline">| Made with
+<img class=emoji draggable=false alt=❤️ height=15rem width=15rem src=/img/made-with.svg>
+using
+<a href=https://gohugo.io rel=noopener target=_blank>Hugo</a></span></div></div></div></footer><link href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css rel=stylesheet><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script><script src=/js/site.js></script></body></html>

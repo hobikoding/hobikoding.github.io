@@ -1,0 +1,148 @@
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Tiga Cara Menggabungkan CSS Dengan HTML | Hobi Koding — Mari Ngoding Sambil Tidur</title><meta name=description content="Hobikoding - Mari ngoding sambil tidur | Tiga Cara Menggabungkan CSS Dengan HTML"><meta property="og:title" content="Tiga Cara Menggabungkan CSS Dengan HTML"><meta property="og:type" content="article"><meta property="article:published_time" content="2019-03-19"><meta property="og:description" content="Hobikoding - Mari ngoding sambil tidur | Tiga Cara Menggabungkan CSS Dengan HTML"><meta property="og:url" content="https://hobikoding.com/menghubungkan-css-dan-html/"><meta property="og:site_name" content="Hobi Koding — Mari Ngoding Sambil Tidur"><meta property="og:image" content="https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg"><link rel=icon href=/favicon.png type=image/x-icon><link rel=canonical href=https://hobikoding.com/menghubungkan-css-dan-html/><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous><link rel=stylesheet href=/css/styles.css><script>var m=document.createElement('meta');m.name='theme-color';m.content='#204d7b';document.head.appendChild(m);</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136352097-1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-136352097-1');</script><script data-ad-client=ca-pub-6815193783560317 async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script><script src=https://unpkg.com/lunr/lunr.js></script></head><body><nav class="navbar navbar-expand-lg navbar-dark"><div class=container><a href=/ class="navbar-brand font-weight-bold d-lg-block"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/blog-icon.svg height=32 class="d-inline-block align-bottom" alt=Logo>
+<span class=d-inline>Hobikoding</span></a>
+<button id=btn-nav class=navbar-toggler type=button data-toggle=collapse>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav mr-auto"><li class=nav-item><a href=#! class=nav-link>Node.js</a></li><li class=nav-item><a href=# class=nav-link>Golang</a></li><li class=nav-item><a href=# class=nav-link>React</a></li><li class=nav-item><a href=# class=nav-link>Java</a></li><li class=nav-item><a href=# class=nav-link><span aria-hidden=true>More »</span></a></li><li class="nav-item d-none d-lg-block disabled"><span class="nav-link disabled">⋮</span></li><li class=nav-item><a href=# class=nav-link>Ebook</a></li></ul><form action=/search/ class="form-inline my-2 my-lg-0"><div class=input-group><input type=search name=query class=form-control placeholder=Search aria-label=Search><div class=input-group-append><button class="btn btn-primary my-sm-0" type=submit>
+<img src=/img/icon-search.svg class=pb-1 height=20px alt=icon-cari></button></div></div></form></div></div></nav><div class="container my-4"><div class=row><div class=col-lg-2><aside class=position-fixed id=share-button></aside><script>$(document).scroll(function(){$('#share-button').toggle($(this).scrollTop()>300);})
+$(window).scroll(function(){const offsetTop=$("#share-page").offset()&&$("#share-page").offset().top;const scrollTop=$(window).scrollTop();const target=$("#share-button")
+if(target){scrollTop>offsetTop-700?target.empty():target.html(`
+      <div class="col-sm-12 col-lg-1 position-sticky ml-5 pl-5 mt-6">
+        <ul class="list-unstyled">
+          <li class="media">
+            <a href="http://www.facebook.com/sharer.php?u=https:\/\/hobikoding.com\/menghubungkan-css-dan-html\/&t=Tiga Cara Menggabungkan CSS Dengan HTML"
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Facebook">
+              <span><img class="share-btn" src="/img/icon-facebook.svg" alt="share-fb" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href='http://twitter.com/intent/tweet?url="https://hobikoding.com/menghubungkan-css-dan-html/"&text="Tiga Cara Menggabungkan CSS Dengan HTML"&tw_p=tweetbutton'
+              onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Share on Twitter">
+              <span><img class="share-btn" src="/img/icon-twitter.svg" alt="share-twitter" /></span>
+            </a>
+          </li>
+
+          <li class="media my-4">
+            <a href="https://github.com/saefullohmaslul/saefullohmaslul.github.io/blob/blog/content/posts\/html\/menggabungkan-css-html.md"
+              onclick="window.open(this.href, 'PCwindow', 'width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+              title="Edit on Gitlab">
+              <span><img class="share-btn" src="/img/icon-github.svg" alt="share-github" /></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    `)}})</script></div><div class="col-sm-12 col-lg-8 post-outer"><article id=post-card class="card border-0"><div class="card-body pb-0"><div class=post-header><div class=mb-3><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552640822/author-icon.png alt=author class="rounded-circle mr-1" width=32 height=32 alt=author>
+<a class="align-middle text-dark" href=https://linkedin.com/in/saefullohmaslul target=_blank>Saefulloh Maslul</a>
+<small class="align-middle text-muted">· update terakhir
+<time>19 Mar 2019</time></small></div><h1 class="card-title mb-3">Tiga Cara Menggabungkan CSS Dengan HTML</h1><hr></div><div><span class="badge badge-primary">#<a href=https://hobikoding.com//topic/html/ class=text-white>html</a></span>
+<span class="badge badge-primary">#<a href=https://hobikoding.com//topic/css/ class=text-white>css</a></span></div><section class="post-content mb-5 mt-3"><img src=https://res.cloudinary.com/hobikoding/image/upload/v1552981967/HTML/html.jpg alt="Tiga Cara Menggabungkan CSS Dengan HTML" class="mb-2 w-100"><p>Untuk membuat halaman html menjadi lebih elegan dan dinamis, harus dilengkapi dengan css.</p><p>CSS berfungsi untuk mengatur tampilan html menjadi lebih baik. Contohnya antara elemen form A dengan elemen form B memiliki tampilan yang berbeda walaupun sama-sama berasal dari elemen form.</p><p>Terdapat 3 cara untuk menggabungkan file html dengan css, yaitu:</p><ul><li><strong>Inline Style</strong></li><li><strong>Inline Style Sheets</strong></li><li><strong>External Style Sheets</strong></li></ul><p>Kita bahas satu per satu&mldr;</p><h2 id=inline-style>Inline Style</h2><p>Cara ini merupakan cara yang paling mudah.</p><p>Kita bisa menyisipkan kode css pada elemen html secara langsung. Contoh:</p><div class=highlight><pre class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>h3</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;color:blue&#34;</span><span class=p>&gt;</span>Ini elemen heading dengan warna biru<span class=p>&lt;/</span><span class=nt>h3</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>p</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;text-align:center; color:red&#34;</span><span class=p>&gt;</span>Ini elemen paragraf dengan rata tengah warna merah<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</code></pre></div><h2 id=inline-style-sheets>Inline Style Sheets</h2><p>Cara selanjutnya adalah dengan <em>inline style sheets</em>.</p><p>Untuk menggunakan <em>inline style sheets</em> dan <em>external style sheets</em>, diperlukan selector. Selector berfungsi untuk memisahkan style satu dengan lainnya.</p><p>Terdapat tiga jenis selector:</p><ul><li><strong>Berdasarkan Elemen</strong></li><li><strong>Berdasarkan ID</strong></li><li><strong>Berdasarkan Class</strong></li></ul><h3 id=1-selector-elemen>1. Selector Elemen</h3><p>Selector berdasarkan <code>elemen</code> akan mengubah style dari elemen yang diseleksi secara keseluruhan. Contoh:</p><div class=highlight><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>HTML <span class=err>&amp;</span> CSS<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=nt>p</span> <span class=p>{</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf pertama<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf kedua<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf ketiga<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></div><blockquote><p><strong>Catatan:</strong> Penulisan css inline style sheets diletakan pada elemen <code>&lt;style></code> yang terletak pada elemen <code>&lt;head></code></p></blockquote><h3 id=2-selector-id>2. Selector ID</h3><p>Berbeda dengan selector elemen, kita perlu menambahkan <code>id</code> pada elemen tertentu yang akan diubah tampilannya.</p><div class=highlight><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>HTML <span class=err>&amp;</span> CSS<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=nt>p</span> <span class=p>{</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=p>#</span><span class=nn>p-dua</span> <span class=p>{</span>
+            <span class=k>font-size</span><span class=p>:</span> <span class=mi>25</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>yellow</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf pertama<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+<span class=hl>    <span class=p>&lt;</span><span class=nt>p</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;p-dua&#34;</span><span class=p>&gt;</span>Ini adalah paragraf kedua<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf ketiga<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></div><blockquote><p><strong>Catatan:</strong> Perlu diingat bahwa <code>id</code> pada elemen tertentu <strong>tidak boleh sama</strong> dengan elemen lainnya. <code>id</code> pada elemen paragraf A tidak boleh sama dengan ID elemen paragraf B</p></blockquote><h3 id=3-selector-class>3. Selector Class</h3><p>Selector dengan <code>class</code> paling banyak digunakan. Hal ini karena dalam elemen html boleh menggunakan class yang sama.</p><p>Meskipun begitu kita masih tetap dapat mengubah elemen yang mempunyai class sama dengan menambahkan class unik-nya.</p><div class=highlight><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>HTML <span class=err>&amp;</span> CSS<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=nt>p</span> <span class=p>{</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=p>#</span><span class=nn>p-dua</span> <span class=p>{</span>
+            <span class=k>font-size</span><span class=p>:</span> <span class=mi>25</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>yellow</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=p>.</span><span class=nc>paragraf</span><span class=p>{</span>
+            <span class=k>color</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=p>.</span><span class=nc>paragraf</span><span class=p>.</span><span class=nc>tiga</span><span class=p>{</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+            <span class=k>font-size</span><span class=p>:</span> <span class=mi>20</span><span class=kt>pt</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf pertama<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+<span class=hl>    <span class=p>&lt;</span><span class=nt>p</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;p-dua&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;paragraf&#34;</span><span class=p>&gt;</span>Ini adalah paragraf kedua<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span><span class=hl>    <span class=p>&lt;</span><span class=nt>p</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;paragraf tiga&#34;</span><span class=p>&gt;</span>Ini adalah paragraf ketiga<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></div><h2 id=external-style-sheets>External Style Sheets</h2><p><em>External style sheets</em> hampir mirip dengan <em>internal style sheets</em>. Hanya saja penulisan css terletak pada file yang berbeda.</p><p>Contoh dalam satu folder terdapat file <code>index.html</code> dan <code>main.css</code>.</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>external-css
+└── src
+    ├── index.html
+    └── main.css
+</code></pre></div><p>Seluruh kode css diletakan pada file <code>main.css</code>.</p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>src/main.css</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-css data-lang=css><span class=nt>p</span> <span class=p>{</span>
+    <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=p>#</span><span class=nn>p-dua</span> <span class=p>{</span>
+    <span class=k>font-size</span><span class=p>:</span> <span class=mi>25</span><span class=kt>px</span><span class=p>;</span>
+    <span class=k>background</span><span class=p>:</span> <span class=kc>yellow</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=p>.</span><span class=nc>paragraf</span><span class=p>{</span>
+    <span class=k>color</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=p>.</span><span class=nc>paragraf</span><span class=p>.</span><span class=nc>tiga</span><span class=p>{</span>
+    <span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+    <span class=k>font-size</span><span class=p>:</span> <span class=mi>20</span><span class=kt>pt</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></div></div><p>Kemudian di import oleh <code>index.html</code></p><div class=pre-title><div class=highlight><pre class=chroma><code class=language-ini data-lang=ini><span class=na>src/index.html</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>HTML <span class=err>&amp;</span> CSS<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1&#34;</span><span class=p>&gt;</span>
+<span class=hl>    <span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>&#34;stylesheet&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text/css&#34;</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;main.css&#34;</span><span class=p>&gt;</span>
+</span><span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Ini adalah paragraf pertama<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;p-dua&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;paragraf&#34;</span><span class=p>&gt;</span>Ini adalah paragraf kedua<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>p</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;paragraf tiga&#34;</span><span class=p>&gt;</span>Ini adalah paragraf ketiga<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></div></div><h2 id=penutup>Penutup</h2><p>Itulah beberapa cara menggunakan css pada file html. Tentu masih banyak sekali <em>syntax</em> css yang perlu dipahami untuk membuat website yang lebih dinamis.</p><p>Oleh karena itu apabila teman-teman ingin belajar lebih lanjut materi css dan html, silakan menuju halaman <a href=/topic/html>Materi HTML dan CSS</a></p></section><section class="card-footer p-md-4 bg-white"><div id=share-page class=share><a href=https://gitlab.com/saefullohmaslul/content/blob/master/ title="Edit on Gitlab" onclick="window.open(this.href,'PCwindow','width=1000, height=800, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="float-left github-post" src=/img/icon-github.svg alt=share-github></a><div class="float-right mt-2"><a class=ml-2 href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fhobikoding.com%2fmenghubungkan-css-dan-html%2f&t=Tiga%20Cara%20Menggabungkan%20CSS%20Dengan%20HTML" title="Share on Facebook" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-facebook.svg alt=share-fb></a>
+<a class=ml-2 href="http://twitter.com/intent/tweet?url=https%3a%2f%2fhobikoding.com%2fmenghubungkan-css-dan-html%2f&text=Tiga%20Cara%20Menggabungkan%20CSS%20Dengan%20HTML&tw_p=tweetbutton" title="Share on Twitter" onclick="window.open(this.href,'PCwindow','width=550, height=350, menubar=no, toolbar=no, scrollbars=yes');return false;"><img class="share-btn down" src=/img/icon-twitter.svg alt=share-twitter></a></div></div></section></div></article><div class="card px-4 pb-4 border-0"><div class=post-comment><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"hobikode"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><div class=col-lg-2></div></div></div><footer class="border bg-white border-bottom-0 border-left-0 border-right-0"><div class="container pt-3 pb-3 pt-md-5 pb-md-5"><div class=row><div class="col-md-6 col-sm-12 mb-0 mb-sm-3"><ul class="nav justify-content-center justify-content-lg-start"><li class=nav-item><a href=/ class=nav-link>Home</a></li><li class=nav-item><a href=/about class=nav-link>About</a></li></ul></div><div class="col-md-6 col-sm-12 text-center text-md-right pt-2">© <span>2020</span>
+<a href=https://hobikoding.com/>Hobikoding</a>
+<span class="d-none d-lg-inline">| Made with
+<img class=emoji draggable=false alt=❤️ height=15rem width=15rem src=/img/made-with.svg>
+using
+<a href=https://gohugo.io rel=noopener target=_blank>Hugo</a></span></div></div></div></footer><link href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/googlecode.min.css rel=stylesheet><script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js></script><script>hljs.initHighlightingOnLoad();</script><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script><script src=/js/site.js></script></body></html>
