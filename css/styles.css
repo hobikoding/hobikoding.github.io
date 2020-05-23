@@ -9,21 +9,25 @@
 .post-content h5, 
 .post-content h6 {font-family: "PT Sans",Roboto,sans-serif;font-weight: 700;letter-spacing: .01rem;margin-top: 2rem;}
 
+.post-content h3{font-size: 1.5rem;}
 
 @media (min-width: 992px){
   /* pagination */
-  .justify-content-center {-webkit-box-pack: start!important;justify-content: flex-start!important;}
+  .justify-content-center {justify-content: flex-start!important;}
 
   /* share */
   .share-btn{display: block;}
   .share-page-link a{margin-left: 1.5rem!important;}
+  .series ol {-moz-columns: 3;columns: 3;-moz-column-gap: 40px;column-gap: 40px;}
 }
 
 @media (min-width: 1200px){
   /* subscription */
-  .home-subscription {
-    height: 80%;
-  }
+  .home-subscription {height: 80%;}
+}
+
+@media (max-width: 750px) {
+  .series ol {-moz-columns: 1;columns: 1;}
 }
 
 /* home page */
@@ -61,10 +65,10 @@ span.hl{background: #d9e0e4;display: block;margin-right: -1.5em;margin-left: -1.
 /* share */
 #share-button{display: none;}
 .share a {display: inline-block;}
-.share-btn{opacity: 0.7;-webkit-transition: all 0.3s;transition: all 0.3s;height: 23px;max-width: none;}
+.share-btn{opacity: 0.7;transition: all 0.3s;height: 23px;max-width: none;}
 .share-btn.down{display: block!important;}
 .share-btn:hover{opacity: 1.0;cursor: pointer;}
-.github-post{opacity: 0.7;height: 45px;-webkit-transition: all 0.3s;transition: all 0.3s;}
+.github-post{opacity: 0.7;height: 45px;transition: all 0.3s;}
 .github-post:hover{opacity: 1;}
 
 /* blockquote */
@@ -100,3 +104,8 @@ body p img{max-width: 100%;}
 /* post */
 .author-follow{font-weight: normal;color: rgba(115, 113, 113, 1);border: 1px rgba(115, 113, 113, 1) solid;}
 .author-contanier{border-top: 1px rgba(0,0,0,.125) solid!important; border-radius: 0;}
+
+/* series */
+.series ol {-moz-column-gap: 40px;column-gap: 40px;}
+.series-header{background:#204d7b!important;}
+.series-header:after{content: "";position: absolute;left: 50%;margin-left: -16px;border-bottom: 19px solid #ffffff;border-left: 16px solid transparent;border-right: 16px solid transparent;}
