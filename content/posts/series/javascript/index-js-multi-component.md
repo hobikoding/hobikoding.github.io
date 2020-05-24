@@ -81,7 +81,7 @@ membuat_komponen_index
 
 Kemudian kita masukkan kode berikut ke komponennnya.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Page/About.js
@@ -103,9 +103,9 @@ class About extends Component {
 export default About;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Page/Blog.js
@@ -127,9 +127,9 @@ class Blog extends Component {
 export default Blog;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Page/Kontak.js
@@ -151,9 +151,9 @@ class Kontak extends Component {
 export default Kontak;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Page/MenuUtama.js
@@ -175,7 +175,7 @@ class MenuUtama extends Component {
 export default MenuUtama;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 >Kode di atas sengaja saya buat menjadi class component, anda bisa berlatih dengan mengubahnya menjadi functional component.
 
@@ -183,7 +183,7 @@ export default MenuUtama;
 
 Selanjutnya kita _export_ seluruh komponen tersebut dengan `index.js`
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Page/index.js
@@ -196,7 +196,7 @@ export {default as Kontak} from './Kontak'
 export {default as MenuUtama} from './MenuUtama'
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Perintah di atas akan meng-_export_ semua komponen, sehingga kita bisa mengakses seluruh komponen tersebut hanya dengan `index.js`.
 
@@ -204,7 +204,7 @@ Perintah di atas akan meng-_export_ semua komponen, sehingga kita bisa mengakses
 
 Setelah membuat komponen yang diperlukan dan di _export_ melalui `index.js`, kita bisa mengaksesnya dari `App.js` menuju `index.js` untuk seluruh komponen tersebut.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/App.js
@@ -230,7 +230,7 @@ class App extends Component {
 export default App;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ## Penutup
 

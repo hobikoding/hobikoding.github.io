@@ -165,7 +165,7 @@ Untuk memudahkannya, kita akan pisahkan masing-masing komponen kedalam file yang
 
 Kita buat terlebih dahulu file dari masing-masing komponen. Buat file `Header.js` kemudian masukkan kode berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Header.js
@@ -185,11 +185,11 @@ const Header = () => {
 export default Header;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian buat file `Body.js` dan masukan kode berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Body.js
@@ -209,11 +209,11 @@ const Body = () => {
 export default Body;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Buat file `Footer.js` dan masukan kode berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/Footer.js
@@ -235,7 +235,7 @@ class Footer extends React.Component {
 export default Footer;
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 >**Catatan:** Jika kita lihat, file `Header.js`, `Body.js` dan `Footer.js` mengandung perintah `import React from 'react'` Ini adalah perintah dasar yang harus selalu ditulis ketika membuat React JS
 >
@@ -243,7 +243,7 @@ export default Footer;
 
 Selanjutnya pada file `App.js` tuliskan kode berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/App.js
@@ -268,7 +268,7 @@ export default class App extends Component {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 >**Catatan:** Kode `import {komponen} from './lokasi komponen';` digunakan untuk meng-_import_ komponen yang sebelumnya sudah kita _export_
 

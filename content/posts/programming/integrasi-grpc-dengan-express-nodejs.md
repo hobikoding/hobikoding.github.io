@@ -62,7 +62,7 @@ Saya telah membuat repository untuk artikel ini:
 
 Sebelum membuat konfigurasi server, kita buat terlebih dahulu proto filenya. Proto file ini yang nantinya digunakan sebagai skema transfer data antar service.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 proto/notes.proto
@@ -89,7 +89,7 @@ message NoteList {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 >Pada kode di atas perlu dipahami beberapa hal berikut:
 >
@@ -108,7 +108,7 @@ Pada direktori grpc, buatlah file `index.js`. Fungsi dari file ini yaitu membaca
 
 Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupun package definition, kita hanya akan fokus ke file ini, tidak satu per satu service yang di cek.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/index.js
@@ -129,13 +129,13 @@ module.exports = {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Selanjutnya pada direktori grpc, buatlah folder notes. Apabila terdapat service lain selain notes, maka buatlah folder baru dengan nama service tersebut (jangan digabung di notes).
 
 Di dalam folder notes, buatlah `index.js`
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/notes/index.js
@@ -170,7 +170,7 @@ notesServer.bind(
 module.exports = notesServer
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Sesuai dengan proto file tadi, bahwa service ini memiliki method bernama List. Penulisan method tidak menggunakan format Capitalize, namun lowercase.
 
@@ -190,7 +190,7 @@ notesServer.addService(notesPackageDefinition.NoteService.service, {
 
 Para root project, buatlah file `app.js`, file ini akan berisi seluruh konfigurasi express secara global.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 app.js
@@ -207,11 +207,11 @@ app.use('/', routes)
 module.exports = app
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Selanjutnya pada `routes/index.js`, masukan seluruh controller dari express app ini.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 routes/index.js
@@ -235,13 +235,13 @@ const router = Router()
 module.exports = router
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ## Inisialisasi Express dan gRPC
 
 Kita telah selesai membuat gRPC server maupun Express server. Selanjutnya kita binding kedua service tersebut pada address masing-masing.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 index.js
@@ -259,7 +259,7 @@ notesServer.start()
 console.log('gRPC Server running at http://localhost:50051')
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada contoh di atas, kita binding express server ke port 5000, sedangkan gRPC server pada port 50051 (sesuai dengan file `grpc/notes/index.js`).
 
@@ -267,7 +267,7 @@ Pada contoh di atas, kita binding express server ke port 5000, sedangkan gRPC se
 
 Di package.json, kita buat script untuk menjalankan microservice ini. Karena semua bertumpu pada satu file, yaitu _index.js_ pada root project, kita hanya perlu menjalankannya dengan `node index.js`
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 package.json
@@ -285,7 +285,7 @@ package.json
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Untuk menjalankannya, di terminal masukan perintah `npm run start`
 

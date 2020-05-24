@@ -70,7 +70,7 @@ Sebagai gambaran, struktur project yang akan kita buat seperti ini:
 
 Pertama buat Dockerfile pada folder vault dan isi dengan kode berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 vault/Dockerfile
@@ -109,11 +109,11 @@ EXPOSE 8200
 ENTRYPOINT ["vault"]
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian pada `vault/config/vault-config.json` masukkan konfigurasi berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 vault/config/vault-config.json
@@ -137,7 +137,7 @@ vault/config/vault-config.json
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada konfigurasi di atas, kita menyimpan storage vault pada alamat consul kita.
 
@@ -145,7 +145,7 @@ Sebenarnya bisa saja kita hanya menggunakan vault tanpa consul, namun storage ha
 
 Jika sudah, pada root folder kita buat `docker-compose.yml` dan masukan konfigurasi vault.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 docker-compose.yml
@@ -186,7 +186,7 @@ services:
         window: 120s
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Sampai sini kita sudah mensetup konfigurasi vault. Namun belum bisa dijalankan karena _vault depends_on consul_, sehingga menjalankan consul sebelum menjalankan vault ini.
 
@@ -194,7 +194,7 @@ Sampai sini kita sudah mensetup konfigurasi vault. Namun belum bisa dijalankan k
 
 Selanjutnya hampir sama seperti vault, buat file pada `consul/Dockerfile` kemudian masukan kode berikut:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 consul/Dockerfile
@@ -233,11 +233,11 @@ EXPOSE 8300 8400 8500 8600
 ENTRYPOINT ["consul"]
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian buat juga konfigurasi consulnya pada `consul/config/consul-config.json`.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 consul/config/consul-config.json
@@ -256,11 +256,11 @@ consul/config/consul-config.json
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian edit kembali file docker-compose.yml menjadi seperti ini:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 docker-compose.yml
@@ -311,7 +311,7 @@ services:
       - ./consul/config/consul-config.json:/consul/config/config.json
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ## Integrating Vault with Consul
 

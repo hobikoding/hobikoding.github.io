@@ -67,7 +67,7 @@ Kita tentukan terlebih dahulu struktur project yang akan dibuat. Struktur projec
 
 Proto file digunakan sebagai format transfer data, seperti layaknya json di REST. Kita akan membuat proto file untuk service notes.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 proto/notes.proto
@@ -94,7 +94,7 @@ message NoteList {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Keterangan:
 
@@ -123,7 +123,7 @@ npm i grpc @grpc/proto-loader
 
 Selanjutnya pada ```grpc/index.js```
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/index.js
@@ -144,13 +144,13 @@ module.exports = {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada kode di atas kita membuat package definition untuk service notes dan meng-_export_-nya untuk digunakan file lain.
 
 Kemudian:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/notes/server/index.js
@@ -209,7 +209,7 @@ server.start()
 console.log('Server running at http://localhost:50051')
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ## Membuat Notes Client
 
@@ -223,7 +223,7 @@ Notes server adalah service producer, dalam hal ini service yang menyediakan dat
 >
 >**Method dari client akan dipanggil pada setiap service yang membutuhkannya.**
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/notes/client/index.js
@@ -240,11 +240,11 @@ const client = new notesPackageDefinition.NoteService(
 module.exports = client
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada kode di atas, kita membuat sebuah client dari notes server. Client ini akan digunakan pada setiap method yang dipanggil.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/notes/client/get-notes.js
@@ -277,7 +277,7 @@ const getNotes = async () => {
 getNotes()
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada kode di atas, kita membuat method dengan nama ```getNotes```. Method tersebut akan menghasilkan nilai balik berupa notes yang di dapatkan dengan memanggil method list dari client.
 
@@ -285,7 +285,7 @@ Pada kode di atas, kita membuat method dengan nama ```getNotes```. Method terseb
 
 Untuk lebih memudahkan pemanggilan server, kita akan menambahkan script berikut dalam package.json
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 package.json
@@ -301,7 +301,7 @@ package.json
 ...
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Selanjutnya kita buka dua terminal. Terminal pertama menjalankan server:
 

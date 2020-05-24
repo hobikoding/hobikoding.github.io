@@ -30,7 +30,7 @@ Untuk membuat program baru di golang, teman-teman bisa meletakan filenya di `$GO
 
 Kemudian buat file pada project kita dengan nama main.go.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 $GOPATH/src/belajar-golang/hello-world/main.go
@@ -46,7 +46,7 @@ func main() {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ### Penjelasan
 

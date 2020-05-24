@@ -125,7 +125,7 @@ npm i grpc @grpc/proto-loader express
 
 Pada dasarnya proto file baik untuk server maupun client adalah sama. Sehingga harus disamakan isi file dari `service-utility/proto/notes.proto` dengan `service-user/proto/notes.proto`:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 proto/notes.proto
@@ -152,7 +152,7 @@ message NoteList {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada proto file di atas, kita memiliki sebuah method pada [gRPC server](https://hobikoding.com/integrasi-grpc-dengan-express-nodejs/) bernama List. List ini memiliki parameter Empty yaitu kosong, dan return NoteList yaitu repeated Note atau array of Note.
 
@@ -162,7 +162,7 @@ Pada direktori grpc, buatlah file `index.js`. Fungsi dari file ini yaitu membaca
 
 Dengan begitu ketika ada bug yang berhubungan dengan pembacaan proto file ataupun package definition, kita hanya akan fokus ke file ini, tidak satu per satu service yang di cek.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/index.js
@@ -183,11 +183,11 @@ module.exports = {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian buatlah folder notes di dalam folder grpc. Folder grpc nantinya akan berisi beberapa sub folder sesuai dengan module yang akan di consume.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/notes/client/index.js
@@ -204,13 +204,13 @@ const client = new notesPackageDefinition.NoteService(
 module.exports = client
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada kode di atas, kita mengekspor client yang mana mengonsumsi server grpc dengan alamat `0.0.0.0:50051`.
 
 Selanjutnya buat method untuk mengambil notes:
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 grpc/notes/client/get-notes.grpc.js
@@ -237,7 +237,7 @@ const getNotes = async () => {
 module.exports = getNotes
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Method tersebut kita export agar bisa digunakan di banyak tempat.
 
@@ -245,7 +245,7 @@ Method tersebut kita export agar bisa digunakan di banyak tempat.
 
 Selanjutnya kita setup express server untuk service user ini. Seperti biasanya pada root project, buatlah file `app.js`. File ini akan berisi semua konfigurasi express app secara global.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 app.js
@@ -262,11 +262,11 @@ app.use('/', routes)
 module.exports = app
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Selanjutnya pada `routes/index.js`, masukan seluruh controller dari express app ini.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 routes/index.js
@@ -283,11 +283,11 @@ router.get('/user/notes', userController.userNotes)
 module.exports = router
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada kode diatas kita membuat sebuah endpoint dengan method `GET /user/notes` yang akan di handle oleh user controller
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 controllers/user.controller.js
@@ -311,13 +311,13 @@ exports.userNotes = async (req, res, next) => {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Pada user controller, kita menggunakan method `getNotes` yang sebelumnya telah kita buat, untuk mengambil semua notes yang ada pada **service utility**.
 
 Apabila tidak terdapat error, maka akan mereturn success namun ketika gagal akan mereturn error.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 utils/response.js
@@ -345,11 +345,11 @@ module.exports = {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian pada file `index.js` kita listen express app ke dalam port 5050.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 index.js
@@ -363,13 +363,13 @@ app.listen(5050, () => {
 })
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ## Setting Package.json
 
 Selanjutnya, kita buat script untuk menjalankan express app ini. Karena main projectnya adalah index.js, maka kita jalankan aplikasi ini dengan perintah `node index.js`
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 package.json
@@ -387,7 +387,7 @@ package.json
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Untuk menjalankannya, di terminal masukan perintah `npm run start`
 

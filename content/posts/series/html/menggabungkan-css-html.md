@@ -154,7 +154,7 @@ external-css
 
 Seluruh kode css diletakan pada file `main.css`.
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/main.css
@@ -177,11 +177,11 @@ p {
 }
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 Kemudian di import oleh `index.html`
 
-{{< code/title >}}
+{{< code >}}
 
 ```ini
 src/index.html
@@ -203,7 +203,7 @@ src/index.html
 </html>
 ```
 
-{{< /code/title >}}
+{{< /code >}}
 
 ## Penutup
 
