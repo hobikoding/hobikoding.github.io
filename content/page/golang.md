@@ -1,7 +1,7 @@
 ---
 title : "Series: Golang" 
 description: "Belajar step-by-step bahasa pemrograman golang: beginner to advance"
-summary: "Golang merupakan salah satu bahasa yang sedang trend untuk saat ini. Golang biasa digunakan untuk membangun web dan REST API"
+summary: "Golang merupakan salah satu bahasa yang sedang trend untuk saat ini. Golang biasa digunakan untuk membangun Web dan REST API"
 draft: false
 type : series
 slug: series/golang
@@ -23,6 +23,7 @@ Bab ini membahas tentang instalasi, pengenalan dan fundamental golang.
 
 1. [Hello World](https://hobikoding.com/hello-world-golang/)
 1. [Variabel](https://hobikoding.com/variabel-golang/)
+1. [Tipe Data](https://hobikoding.com/tipe-data-golang/)
 1. Function
 1. Operator
 1. Percabangan
