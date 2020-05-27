@@ -24,10 +24,10 @@ Bab ini membahas tentang instalasi, pengenalan dan fundamental golang.
 1. [Hello World](https://hobikoding.com/hello-world-golang/)
 1. [Variabel](https://hobikoding.com/variabel-golang/)
 1. [Tipe Data](https://hobikoding.com/tipe-data-golang/)
-1. Function
-1. Operator
+1. [Operator](https://hobikoding.com/operator-golang/)
 1. Percabangan
 1. Looping
+1. Function
 
 ### Object Oriented Programing (Struct)
 
