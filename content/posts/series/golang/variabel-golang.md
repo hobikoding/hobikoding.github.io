@@ -149,6 +149,33 @@ go run main.go
 Halo my name is Saefulloh Maslul, I am 10 years old and my address in Jakarta
 ```
 
+## Konstan
+
+Deklarasi variabel selain menggunakan `var` juga bisa menggunakan `const`. Perbedaannya ketika menggunakan `const` maka variabel tersebut tidak bisa diubah (konstan).
+
+Contohnya ketika mendeklarasikan variabel pi (22/7), atau bilangan konstan lainnya.
+
+Kita juga bisa menggunakan const apabila variabel yang kita deklarasikan tidak akan berubah.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  const pi = 3.14
+
+  fmt.Println("Nilai Pi adalah: " + Pi)
+}
+```
+
+Hasilnya,
+
+```bash
+go run main.go
+Nilai Pi adalah: 3.14
+```
+
 ## Penutup
 
 Demikian beberapa cara penulisan deklarasi variabel di golang. Kita akan melanjutkan pembahasannya pada [series golang](https://hobikoding.com/series/golang/) berikutnya.
