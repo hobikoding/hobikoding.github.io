@@ -1,6 +1,7 @@
-User-agent: Mediapartners-Google
-Disallow: 
-
 User-agent: *
-Disallow: 
 Allow: /
+Disallow: /faq/
+Disallow: /disclaimer/
+Disallow: /page/
+Disallow: /series/
+Sitemap: https://hobikoding.com/sitemap.xml
