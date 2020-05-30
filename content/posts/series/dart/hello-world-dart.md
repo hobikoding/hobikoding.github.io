@@ -1,5 +1,5 @@
 ---
-title: "Dart #1 How to join The Dart Side & Make your first Hello World"
+title: "Dart #1 How to join Dart Side & Make your first Hello World"
 date: 2020-05-30T00:55:31+07:00
 draft: false
 description: Pengenalan Dart, Instalasi Dart, pengenalan syntax dart hello world, belajar bahasa dart, belajar fundamental dart, belajar dart advance
