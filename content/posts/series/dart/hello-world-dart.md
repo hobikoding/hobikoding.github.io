@@ -79,13 +79,13 @@ mkdir Belajar-dart
 cd Belajar-dart
 code .
 ```
-![VS Code start](http://drive.google.com/uc?export=view&id=1KmmqwKgOo795zOzY9YCREEbEeMXowjQr)
+![VS Code start](https://i.ibb.co/k9ywws8/dart-code.png)
 
 Yay... setelah terbuka vs code tersebut kita akan mulai ngoding dart
 
 buat file baru bernama `hello_world.dart` :
 
-![VS code new file dart](http://drive.google.com/uc?export=view&id=1dXWgEFA2igs9IrBJCBk_MIu_EKKfXXgb)
+![VS code new file dart](https://i.ibb.co/F7VpwwB/newfiledart.png)
 
 mari kita tulis kodingan hello world kita ke dalam file `hello_world.dart` yang telah di buat tadi
 
@@ -105,7 +105,7 @@ dart hello_world.dart
 
 lalu hasilnya akan seperti ini
 
-![VS code Hello World Dart](http://drive.google.com/uc?export=view&id=1eJN8jrI9XsJfsPKRYssKDBixdba73Zha)
+![VS code Hello World Dart](https://i.ibb.co/12FRLJx/helloworlddart.png)
 
 
 
