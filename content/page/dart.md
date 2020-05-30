@@ -20,7 +20,7 @@ Bab ini membahas tentang instalasi, pengenalan dan fundamental dart.
 
 ### Syntax Dasar
 
-1. Hello World
+1. [Hello World](https://hobikoding.com/hello-world-dart/)
 1. Variabel
 1. Tipe Data
 1. Operator
