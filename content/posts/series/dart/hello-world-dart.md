@@ -78,7 +78,7 @@ brew info dart
 
 ## Hello World
 
-Pertama silahkan buat direktori atau folder baru dengan nama Belajar-dart. Setelah itu buka dengan [teks editor VS Code](https://hobikoding.com/series/dart/).
+Pertama silahkan buat direktori atau folder baru dengan nama Belajar-dart. Setelah itu buka dengan [teks editor VS Code](https://code.visualstudio.com/).
 
 ```bash
 mkdir Belajar-dart
