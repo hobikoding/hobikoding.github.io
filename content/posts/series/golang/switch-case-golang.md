@@ -4,7 +4,7 @@ date: 2020-06-02T22:30:28+07:00
 draft: false
 description: penerapan switch case di golang, kelebihan switch case di golang, pengkondisian di golang menggunakan switch case, switch case golang
 keywords: switch case golang
-thumbnail: https://ik.imagekit.io/hobikoding/thumbs/switch-case-golang/thumbs_U0rzNIfC-.jpg
+thumbnail: https://ik.imagekit.io/hobikoding/thumbs/golang/switch-case/thumbs_g1y55ARRS.jpg
 source: https://unsplash.com/@patrykgradyscom
 topic: [golang]
 slug: switch-case-golang

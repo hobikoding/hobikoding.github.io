@@ -4,11 +4,11 @@ date: 2020-05-30T12:24:45+07:00
 draft: false
 description: pengkondisian di golang, if else golang, percabangan di golang, seleksi kondisi menggunakan if-else di golang
 keywords: golang if-else pengkondisian kondisi
-thumbnail: /img/if-else-golang/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hobikoding/thumbs/golang/if-else/thumbnail_TOEq9BJuj.jpg
 source: https://unsplash.com/@artmatters
 topic: [golang]
 slug: if-else-golang
-github: /posts/series/golang/pengkondisian-golang.md
+github: /posts/series/golang/if-else-golang.md
 author: maslul
 ---
 

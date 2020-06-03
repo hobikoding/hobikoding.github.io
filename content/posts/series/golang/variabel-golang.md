@@ -4,7 +4,7 @@ date: 2020-05-24T05:26:58+07:00
 draft: false
 description: mengenal variabel dalam pemrograman golang, membuat variabel di golang, deklarasi variabel di golang, how to make variable in golang, create variable in golang with two way
 keywords: golang variabel
-thumbnail: /img/variabel-golang/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hobikoding/thumbs/golang/variabel/thumbnail_a2hc6XL97.jpg
 source: https://unsplash.com/@mpho_mojapelo
 topic: [golang]
 slug: variabel-golang

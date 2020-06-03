@@ -1,7 +1,7 @@
 ---
 title: About Hobikoding
 description: Tentang Hobikoding adalah blog yang dirintis pada 13 Maret 2019. Blog ini fokus pada konten pemrograman baik di Windows, Linux dan Mac. Awal mula pembuatan Hobikoding karena ingin menyajikan konten pemrograman yang runtut step demi stepnya dalam bahasa Indonesia sehingga pembaca dapat memulainya dari dasar
-thumbnail: /img/about/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hobikoding/thumbs/page/about/thumbnail_CD7Poueq7.jpg
 source: https://unsplash.com/@thomholmes
 keywords: about tentang hobikoding
 draft: false

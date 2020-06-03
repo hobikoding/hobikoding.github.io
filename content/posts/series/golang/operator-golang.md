@@ -1,10 +1,10 @@
 ---
-title: "Belajar Golang #4 Operator"
+title: "Belajar Golang #4 Mengenal Operator di Golang"
 date: 2020-05-27T11:56:16+07:00
 draft: false
 description: mengenal operator pada bahasa pemrograman golang, beberapa jenis operator di golang, operator aritmetika, operator logika, operator perbandingan di golang
 keywords: operator golang
-thumbnail: /img/operator-golang/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hobikoding/thumbs/golang/operator/thumbnail_aVn64eU2U.jpg
 source: https://unsplash.com/@alexkixa
 topic: [golang]
 slug: operator-golang

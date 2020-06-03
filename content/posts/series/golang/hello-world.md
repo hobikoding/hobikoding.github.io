@@ -1,10 +1,10 @@
 ---
-title: "Belajar Golang #1 Hello World"
+title: "Belajar Golang #1 Membuat Hello World di Golang"
 date: 2020-05-23T00:55:31+07:00
 draft: false
 description: pengenalan syntax golang hello world, belajar bahasa golang, belajar fundamental golang, belajar golang advance
 keywords: golang fundamental
-thumbnail: /img/hello-world-golang/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hobikoding/thumbs/golang/hello-world/thumbnail_SbbguQ8CI.jpg
 source: https://unsplash.com/@andrewtneel
 topic: [golang]
 slug: hello-world-golang
