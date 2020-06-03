@@ -1,5 +1,5 @@
 ---
-title: "Belajar Golang #3 Tipe Data"
+title: "Belajar Golang #3 Mengenal Tipe Data di Golang"
 date: 2020-05-25T20:59:17+07:00
 draft: false
 description: tipe data pada bahasa pemrograman golang, tipe data integer, boolean, string, float golang

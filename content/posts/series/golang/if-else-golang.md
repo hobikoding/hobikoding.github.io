@@ -1,5 +1,5 @@
 ---
-title: "Belajar Golang #5 Pengkondisian If-Else"
+title: "Belajar Golang #5 Pengkondisian If Else di Golang"
 date: 2020-05-30T12:24:45+07:00
 draft: false
 description: pengkondisian di golang, if else golang, percabangan di golang, seleksi kondisi menggunakan if-else di golang

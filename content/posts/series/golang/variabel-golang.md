@@ -1,5 +1,5 @@
 ---
-title: "Belajar Golang #2 Variabel"
+title: "Belajar Golang #2 Deklarasi Variabel di Golang"
 date: 2020-05-24T05:26:58+07:00
 draft: false
 description: mengenal variabel dalam pemrograman golang, membuat variabel di golang, deklarasi variabel di golang, how to make variable in golang, create variable in golang with two way
