@@ -52,13 +52,13 @@ Deklarasi tipe data integer :
 - dengan keyword int
 
 ```
-int bilanganbulat = 69
+int bilanganbulat = 69;
 ```
 
 - dengan keyword var
 
 ```
-var bilanganbulat = 69
+var bilanganbulat = 69;
 ```
 
 ## Double
@@ -70,14 +70,14 @@ deklarasi tipe data double :
 
 - dengan keyword double
 ```
-double phi = 3.14
+double phi = 3.14;
 
 ```
 
 - dengan var atau dynamic
 ```
-var phi = 3.14
-dynamic phi = 3.14
+var phi = 3.14;
+dynamic phi = 3.14;
 ```
 
 
@@ -88,31 +88,31 @@ dynamic phi = 3.14
 - Dengan satu kutip (')
 
 ```
-String tulisan = 'Hobikoding is debessst'
+String tulisan = 'Hobikoding is debessst';
 ```
 
 - Dengan dua kutip (")
 
 ```
-String tulisan = "Hobikoding is debeeeeest"
+String tulisan = "Hobikoding is debeeeeest";
 ```
 
 - Dengan keyword var
 
 ```
-var tulisan = "hobikoding is debeeeesst"
+var tulisan = "hobikoding is debeeeesst";
 ```
 
 - Dengan pemisahan kutip
 
 ```
-String tulisan = "Hobi" "Koding"
+String tulisan = "Hobi" "Koding";
 ```
 
 - Dengan pemisahan kutip dan plus 
 
 ```
-String tulisan = "Hobi"+"Koding"
+String tulisan = "Hobi"+"Koding";
 ```
 
 ## Boolean
@@ -123,7 +123,7 @@ String tulisan = "Hobi"+"Koding"
 
 
 ```
-bool isOpen = true
+bool isOpen = true;
 ```
 
 
