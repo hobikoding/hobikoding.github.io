@@ -4,7 +4,7 @@ date: 2020-05-30T00:55:31+07:00
 draft: false
 description: Pengenalan Dart, Instalasi Dart, pengenalan syntax dart hello world, belajar bahasa dart, belajar fundamental dart, belajar dart advance
 keywords: dart fundamental
-thumbnail: /img/hello-world-dart/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hiwbjdxpmw/thumbnail_O7KIy9kmr.jpg
 source: https://unsplash.com/@valccrn
 topic: [dart]
 slug: hello-world-dart
