@@ -1,10 +1,10 @@
 ---
-title: "Dart #2 Variabel"
+title: "Dart #2 Variabel dalam Dart"
 date: 2020-06-01T01:49:50+00:00
 draft: false
 description: mengenal variabel dalam pemrograman dart, membuat variabel di dart, deklarasi variabel di dart,
 keywords: dart variabel
-thumbnail: /img/variabel-dart/thumbnail.jpg
+thumbnail: https://ik.imagekit.io/hiwbjdxpmw/thumbnail_eWEj4WGlV.jpg
 source: https://unsplash.com/@cgower
 topic: [dart]
 slug: variabel-dart
