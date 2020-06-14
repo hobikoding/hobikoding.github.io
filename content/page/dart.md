@@ -21,8 +21,9 @@ Bab ini membahas tentang instalasi, pengenalan dan fundamental dart.
 ### Syntax Dasar
 
 1. [Hello World](https://hobikoding.com/hello-world-dart/)
-1. Variabel
-1. Tipe Data
+1. [Variabel pada Dart](https://hobikoding.com/variabel-dart/)
+1. [Mengenal Tipe Data Dart Bagian 1](https://hobikoding.com/tipe-data-dart-1/)
+1. Mengenal Tipe Data Dart Bagian 2
 1. Operator
 1. Percabangan
 1. Looping
