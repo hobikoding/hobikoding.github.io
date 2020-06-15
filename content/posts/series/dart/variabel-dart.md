@@ -1,5 +1,5 @@
 ---
-title: "Dart #2 Variabel dalam Dart"
+title: "Dart #2 Dart Variables"
 date: 2020-06-01T01:49:50+00:00
 draft: false
 description: mengenal variabel dalam pemrograman dart, membuat variabel di dart, deklarasi variabel di dart,

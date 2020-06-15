@@ -1,5 +1,5 @@
 ---
-title: "Dart #3 Mengenal Tipe Data pada Dart - Bagian 1"
+title: "Dart #3 Dart Data Types - Part 1"
 date: 2020-06-14T03:19:48+00:00
 draft: false
 description: tipe data pada bahasa pemrograman Dart, tipe data Dart, boolean, string, Double Dart
