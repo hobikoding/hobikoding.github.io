@@ -19,7 +19,7 @@ Di series ini kita akan belajar Dart Basic hingga Advance.
 
 ## Tipe Data
 
-seperti yang dijelaskan dalam materi sebelumnya tentang [variabel](https://hobikoding.com/variabel-dart/) yang menyinggung mengenai tipe data, pada materi kali ini akan kita
+seperti yang dijelaskan dalam materi sebelumnya tentang [tipedata](https://tipe-data-dart-1/) yang menyinggung mengenai tipe data, pada materi kali ini akan kita
 coba menyederhanakan pengertiannya dan kenapa sih diperlukan tipe data.
 
 jadi,
@@ -37,8 +37,7 @@ berikut tipe data yang dapat digunakan pada Dart:
 3. Tipe Boolean: `Boolean`
 4. List
 5. Maps
-6. Runes
-7. Symbols
+6. Dynamic Type
 
 
 ## Integer
