@@ -66,9 +66,8 @@ var user = {'username':'ricky','password':'rickyganteng'};
 
 Dart adalah bahasa yang `optionally typed`. Jika jenis variabel tidak ditentukan secara eksplisit / jelas, jenis variabel itu dinamis. keyword `dynamic` juga dapat digunakan sebagai jenis `anotasi` yang jelas.
 
-Deklarasi variabel menggunakan keyword dynamic :
+Deklarasi variabel menggunakan keyword `dynamic` :
 
-- dengan dynamic
 ```
 dynamic phi = 3.14;
 ```
