@@ -19,7 +19,7 @@ Di series ini kita akan belajar Dart Basic hingga Advance.
 
 ## Tipe Data
 
-seperti yang dijelaskan dalam materi sebelumnya tentang [tipedata](https://tipe-data-dart-1/) yang menyinggung mengenai tipe data, pada materi kali ini akan kita
+seperti yang dijelaskan dalam materi sebelumnya tentang [variabel](https://hobikoding.com/variabel-dart/) yang menyinggung mengenai tipe data, pada materi kali ini akan kita
 coba menyederhanakan pengertiannya dan kenapa sih diperlukan tipe data.
 
 jadi,
